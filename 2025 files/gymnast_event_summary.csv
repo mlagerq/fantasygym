@@ -1,0 +1,951 @@
+GymnastID,Name,Team_x,Event,week1_score,week2_score,week3_score,week4_score,week5_score,week6_score,week7_score,week8_score,average_score,high_score,low_score,Team_y,Price
+32645,maggie slife,Air Force,BB,,9.775,9.725,9.85,9.725000000000001,9.7,,9.85,9.770833333333334,9.85,9.7,Air Force (Mountain West),1000.0
+32645,maggie slife,Air Force,FX,,9.85,9.9,9.9,9.85,9.925,,9.875,9.883333333333333,9.925,9.85,Air Force (Mountain West),5000.0
+32645,maggie slife,Air Force,UB,,9.825,9.85,9.825,9.825,9.925,,9.85,9.85,9.925,9.825,Air Force (Mountain West),4000.0
+32645,maggie slife,Air Force,VT,,9.725,9.8,9.8,9.875,9.675,,9.75,9.770833333333334,9.875,9.675,Air Force (Mountain West),2000.0
+30804,shania adams,Alabama,BB,,,9.275,9.875,9.75,,,,9.633333333333333,9.875,9.275,Alabama (SEC),4000.0
+30804,shania adams,Alabama,FX,,9.925,9.8,9.85,9.85,9.875,9.825,9.9,9.860714285714286,9.925,9.8,Alabama (SEC),4000.0
+30804,shania adams,Alabama,UB,,,,,,,9.8,9.9,9.850000000000001,9.9,9.8,Alabama (SEC),5000.0
+30804,shania adams,Alabama,VT,,,,9.8,,9.75,,,9.775,9.8,9.75,Alabama (SEC),1000.0
+31245,corinne bunagan,Alabama,BB,,9.85,9.65,9.825,9.85,9.7,,9.875,9.791666666666666,9.875,9.65,Alabama (SEC),1000.0
+31245,corinne bunagan,Alabama,VT,,9.425,9.85,9.6,9.825,9.925,9.9,9.575,9.728571428571428,9.925,9.425,Alabama (SEC),2000.0
+32923,ryan fuller,Alabama,BB,,,,,,,,9.825,9.825,9.825,9.825,Alabama (SEC),2000.0
+32923,ryan fuller,Alabama,FX,,9.75,9.75,,,,,,9.75,9.75,9.75,Alabama (SEC),2000.0
+32923,ryan fuller,Alabama,UB,,9.85,9.925,9.8,9.775,9.875,9.925,9.9,9.864285714285716,9.925,9.775,Alabama (SEC),4000.0
+31794,karis german,Alabama,FX,,,9.675,,,,,,9.675,9.675,9.675,Alabama (SEC),1000.0
+31794,karis german,Alabama,VT,,9.725,9.6,9.775,9.725,9.85,,,9.735,9.85,9.6,Alabama (SEC),4000.0
+31795,gabby gladieux,Alabama,BB,,9.85,9.9,9.8,9.625,9.875,9.225,9.925,9.742857142857144,9.925,9.225,Alabama (SEC),1000.0
+31795,gabby gladieux,Alabama,FX,,9.95,9.9,9.95,9.9,9.975,9.95,9.95,9.939285714285715,9.975,9.9,Alabama (SEC),6250.0
+31795,gabby gladieux,Alabama,UB,,9.85,9.825,9.775,9.85,9.8,9.8,9.875,9.825000000000001,9.875,9.775,Alabama (SEC),3000.0
+31795,gabby gladieux,Alabama,VT,,9.925,9.8,9.875,9.85,9.775,9.85,9.8,9.839285714285714,9.925,9.775,Alabama (SEC),4000.0
+31247,lilly hudson,Alabama,BB,,9.9,9.85,9.85,9.775,9.9,9.275,9.875,9.775000000000002,9.9,9.275,Alabama (SEC),1000.0
+31247,lilly hudson,Alabama,FX,,9.9,9.875,8.95,9.875,9.9,10.0,9.95,9.778571428571427,10.0,8.95,Alabama (SEC),6250.0
+31247,lilly hudson,Alabama,UB,,9.875,9.8,9.775,9.85,9.9,9.775,9.9,9.839285714285714,9.9,9.775,Alabama (SEC),4000.0
+31247,lilly hudson,Alabama,VT,,9.875,9.925,9.875,9.85,9.875,9.9,9.9,9.885714285714286,9.925,9.85,Alabama (SEC),5000.0
+32924,kylee kvamme,Alabama,BB,,9.65,9.1,,,,9.85,,9.533333333333333,9.85,9.1,Alabama (SEC),2000.0
+32924,kylee kvamme,Alabama,VT,,9.775,9.9,,,,9.8,9.775,9.8125,9.9,9.775,Alabama (SEC),5000.0
+32306,chloe lacoursiere,Alabama,BB,,9.8,9.875,9.825,9.775,9.85,9.875,9.85,9.835714285714285,9.875,9.775,Alabama (SEC),4000.0
+32306,chloe lacoursiere,Alabama,FX,,,,9.75,9.85,9.825,9.8,9.9,9.825,9.9,9.75,Alabama (SEC),5000.0
+32306,chloe lacoursiere,Alabama,UB,,9.825,9.875,9.85,9.8,9.9,9.9,9.7,9.835714285714287,9.9,9.7,Alabama (SEC),4000.0
+32306,chloe lacoursiere,Alabama,VT,,,,,9.75,,,,9.75,9.75,9.75,Alabama (SEC),4000.0
+32307,gabby ladanyi,Alabama,BB,,9.825,,9.825,9.875,9.475,9.7,,9.74,9.875,9.475,Alabama (SEC),1000.0
+31248,jordyn paradise,Alabama,UB,,9.8,9.75,9.85,,,,,9.8,9.85,9.75,Alabama (SEC),1000.0
+31248,jordyn paradise,Alabama,VT,,9.775,9.875,9.75,9.85,9.7,9.85,9.8,9.799999999999999,9.875,9.7,Alabama (SEC),3000.0
+32004,natalia pawlak,Alabama,UB,,,,,9.825,9.775,,,9.8,9.825,9.775,Alabama (SEC),4000.0
+31799,rachel rybicki,Alabama,BB,,,,,,9.8,9.85,9.85,9.833333333333334,9.85,9.8,Alabama (SEC),1000.0
+31799,rachel rybicki,Alabama,FX,,9.9,9.7,9.575,,9.875,9.9,9.9,9.808333333333332,9.9,9.575,Alabama (SEC),1000.0
+32308,jamison sears,Alabama,FX,,,,9.75,9.8,9.875,9.9,,9.83125,9.9,9.75,Alabama (SEC),5000.0
+32308,jamison sears,Alabama,VT,,,,,,,9.825,9.65,9.7375,9.825,9.65,Alabama (SEC),4000.0
+32926,paityn walker,Alabama,FX,,9.75,,,9.775,,,9.85,9.791666666666666,9.85,9.75,Alabama (SEC),1000.0
+32926,paityn walker,Alabama,UB,,9.9,9.0,9.875,9.825,9.8,9.8,9.875,9.724999999999998,9.9,9.0,Alabama (SEC),1000.0
+30817,elena deets,Arizona,BB,9.875,9.9,9.125,9.775,9.925,9.8,9.85,9.875,9.765625,9.925,9.125,Arizona (Big 12),4000.0
+30817,elena deets,Arizona,UB,9.775,9.85,9.9,9.9,9.925,9.825,9.725,9.825,9.840625,9.925,9.725,Arizona (Big 12),4000.0
+32315,sophie derr,Arizona,UB,9.8,9.75,9.725,9.75,9.875,9.9,9.75,9.75,9.787500000000001,9.9,9.725,Arizona (Big 12),2000.0
+32315,sophie derr,Arizona,VT,9.65,9.8,9.75,9.825,9.775,,9.8,9.775,9.767857142857142,9.825,9.65,Arizona (Big 12),2000.0
+31253,alysen fears,Arizona,BB,9.75,9.775,9.65,9.8,9.825,9.775,9.9,9.85,9.790625,9.9,9.65,Arizona (Big 12),2000.0
+31253,alysen fears,Arizona,FX,9.65,9.225,9.775,9.7,9.9,9.85,9.875,9.825,9.725000000000001,9.9,9.225,Arizona (Big 12),2000.0
+31253,alysen fears,Arizona,UB,9.9,9.9,9.85,9.7,9.925,9.85,9.9,9.825,9.85625,9.925,9.7,Arizona (Big 12),5000.0
+31253,alysen fears,Arizona,VT,9.7,9.85,9.85,9.8,9.8,9.775,9.65,9.8,9.778125,9.85,9.65,Arizona (Big 12),3000.0
+32936,aubrey krohnfeldt,Arizona,FX,9.75,9.35,9.925,9.8,9.85,9.725,9.85,9.675,9.740625,9.925,9.35,Arizona (Big 12),2000.0
+32936,aubrey krohnfeldt,Arizona,UB,9.85,9.75,9.725,9.85,9.825,9.1,9.825,9.775,9.712499999999999,9.85,9.1,Arizona (Big 12),2000.0
+31254,elizabeth larusso,Arizona,FX,9.575,9.75,9.775,9.725,9.825,9.775,9.85,9.8,9.759375,9.85,9.575,Arizona (Big 12),2000.0
+31254,elizabeth larusso,Arizona,VT,9.65,9.85,9.75,9.8,9.7,9.775,9.75,9.725,9.75,9.85,9.65,Arizona (Big 12),2000.0
+31807,gianna lenczner,Arizona,BB,9.85,9.85,9.825,9.775,9.825,9.75,9.15,9.725,9.71875,9.85,9.15,Arizona (Big 12),2000.0
+32319,abigayle martin,Arizona,BB,9.9,9.9,9.775,9.85,9.875,9.775,9.85,9.825,9.84375,9.9,9.775,Arizona (Big 12),4000.0
+32319,abigayle martin,Arizona,FX,9.775,9.775,9.875,9.775,9.85,9.825,9.725,9.825,9.803125,9.875,9.725,Arizona (Big 12),3000.0
+32319,abigayle martin,Arizona,UB,9.75,9.65,9.825,9.85,9.875,9.8,9.8,9.8,9.79375,9.875,9.65,Arizona (Big 12),3000.0
+32319,abigayle martin,Arizona,VT,9.6,9.775,9.775,9.875,9.725,9.85,9.675,9.825,9.7625,9.875,9.6,Arizona (Big 12),2000.0
+31255,emily mueller,Arizona,BB,9.075,9.8,9.825,9.95,9.725,9.825,9.85,9.875,9.740625,9.95,9.075,Arizona (Big 12),4000.0
+31255,emily mueller,Arizona,FX,9.775,9.8,9.875,9.875,9.8,9.875,9.9,8.9,9.725000000000001,9.9,8.9,Arizona (Big 12),3000.0
+31255,emily mueller,Arizona,UB,9.7,9.825,9.75,9.825,9.825,9.775,9.775,9.75,9.778125,9.825,9.7,Arizona (Big 12),2000.0
+31255,emily mueller,Arizona,VT,9.65,9.75,9.65,9.775,9.725,9.8,9.775,9.8,9.740625000000001,9.8,9.65,Arizona (Big 12),2000.0
+31810,emma strom,Arizona,BB,9.3,9.7,,,,,9.25,,9.416666666666666,9.7,9.25,Arizona (Big 12),4000.0
+31810,emma strom,Arizona,FX,9.775,9.825,9.925,9.9,9.9,9.75,9.9,9.825,9.850000000000001,9.925,9.75,Arizona (Big 12),4000.0
+31810,emma strom,Arizona,VT,9.8,9.75,9.7,9.825,9.675,9.775,9.775,9.85,9.76875,9.85,9.675,Arizona (Big 12),2000.0
+32320,tirzah wise,Arizona,BB,,,9.775,9.9,9.85,8.45,,9.7,9.535,9.9,8.45,Arizona (Big 12),1000.0
+31418,jenna blair,Arizona State,FX,,9.775,,,,,,,9.775,9.775,9.775,Arizona State (Big 12),1000.0
+31418,jenna blair,Arizona State,VT,,9.7,,,,,,,9.7,9.7,9.7,Arizona State (Big 12),1000.0
+32940,halle braaflat,Arizona State,FX,,9.7,,9.8,9.8,9.85,9.75,9.8,9.783333333333333,9.85,9.7,Georgia (SEC),2000.0
+32940,halle braaflat,Arizona State,UB,,9.6,,9.3,,,,,9.45,9.6,9.3,Georgia (SEC),1000.0
+32940,halle braaflat,Arizona State,VT,,9.675,,9.6875,9.75,9.725,9.8,9.8,9.739583333333334,9.8,9.675,Georgia (SEC),1000.0
+30824,sarah clark,Arizona State,BB,,9.7,,9.8125,9.875,9.85,9.825,9.85,9.81875,9.875,9.7,Arizona State (Big 12),2000.0
+30824,sarah clark,Arizona State,FX,,,,9.5625,9.8,9.8,9.85,9.875,9.7775,9.875,9.5625,Arizona State (Big 12),4000.0
+30824,sarah clark,Arizona State,UB,,9.8,,9.8875,9.85,9.875,9.875,9.925,9.86875,9.925,9.8,Arizona State (Big 12),4000.0
+31812,isabella kowan,Arizona State,BB,,,,,,9.775,9.875,9.1,9.583333333333334,9.875,9.1,Arizona State (Big 12),1000.0
+31813,kayla lee,Arizona State,BB,,9.525,,9.8,9.875,9.8,9.85,9.775,9.770833333333334,9.875,9.525,Arizona State (Big 12),1000.0
+31813,kayla lee,Arizona State,FX,,9.675,,9.6875,9.7,9.75,9.675,9.8,9.714583333333332,9.8,9.675,Arizona State (Big 12),1000.0
+31813,kayla lee,Arizona State,UB,,,,9.675,9.775,9.85,9.8,9.8,9.780000000000001,9.85,9.675,Arizona State (Big 12),1000.0
+31814,caroline lichtman,Arizona State,BB,,9.6,,9.75,9.675,9.75,9.8,9.05,9.604166666666668,9.8,9.05,Arizona State (Big 12),1000.0
+31814,caroline lichtman,Arizona State,VT,,9.575,,9.662500000000001,9.775,9.75,9.725,9.75,9.706249999999999,9.775,9.575,Arizona State (Big 12),1000.0
+30826,jada mangahas,Arizona State,UB,,,,9.85,9.8,9.875,9.875,9.9,9.860000000000001,9.9,9.8,Arizona State (Big 12),5000.0
+30826,jada mangahas,Arizona State,VT,,,,9.825,9.725,9.85,9.9,9.875,9.834999999999999,9.9,9.725,Arizona State (Big 12),4000.0
+32942,tiara platkin,Arizona State,UB,,9.775,,9.675,9.725,9.775,9.7,9.8,9.741666666666667,9.8,9.675,Arizona State (Big 12),1000.0
+32322,lilia purler,Arizona State,BB,,8.4,,,,,,,8.4,8.4,8.4,Arizona State (Big 12),1000.0
+32322,lilia purler,Arizona State,FX,,9.8,,9.6625,9.85,9.875,9.85,9.825,9.810416666666667,9.875,9.6625,Arizona State (Big 12),3000.0
+32322,lilia purler,Arizona State,VT,,9.825,,9.712499999999999,9.625,9.775,9.725,9.775,9.739583333333334,9.825,9.625,Arizona State (Big 12),1000.0
+32323,chloe seaga,Arizona State,BB,,,,9.175,8.75,,,,8.9625,9.175,8.75,Arizona State (Big 12),1000.0
+31815,kimberly smith,Arizona State,BB,,9.375,,9.775,9.75,9.725,9.125,9.775,9.5875,9.775,9.125,Arizona State (Big 12),1000.0
+31815,kimberly smith,Arizona State,FX,,9.9,,9.7375,9.875,9.85,9.25,9.9,9.752083333333333,9.9,9.25,Arizona State (Big 12),3000.0
+31815,kimberly smith,Arizona State,UB,,9.775,,9.825,9.825,9.85,9.85,9.875,9.833333333333334,9.875,9.775,Arizona State (Big 12),3000.0
+31815,kimberly smith,Arizona State,VT,,9.8,,9.725,9.725,9.825,9.8,9.8,9.779166666666667,9.825,9.725,Arizona State (Big 12),2000.0
+31257,alex theodorou,Arizona State,UB,,9.7,,9.8,,,,,9.75,9.8,9.7,Arizona State (Big 12),1000.0
+31257,alex theodorou,Arizona State,VT,,9.875,,9.825,,,,,9.85,9.875,9.825,Arizona State (Big 12),4000.0
+30829,emily white,Arizona State,BB,,9.875,,9.8875,9.875,9.875,9.875,9.825,9.86875,9.8875,9.825,Arizona State (Big 12),5000.0
+30829,emily white,Arizona State,FX,,9.75,,9.875,9.925,9.875,9.925,9.95,9.883333333333333,9.95,9.75,Arizona State (Big 12),5000.0
+30829,emily white,Arizona State,UB,,9.825,,9.8625,9.8,9.875,9.85,9.95,9.860416666666666,9.95,9.8,Arizona State (Big 12),4000.0
+30829,emily white,Arizona State,VT,,,,9.825,9.625,9.775,9.725,9.85,9.76,9.85,9.625,Arizona State (Big 12),3000.0
+32326,dakota essenpries,Arkansas,VT,,9.85,9.825,9.8625,9.825,9.725,9.7,,9.797916666666666,9.8625,9.7,Arkansas (SEC),3000.0
+30902,kaitlyn ewald,Arkansas,BB,,,,,,9.675,,,9.675,9.675,9.675,Arkansas (SEC),3000.0
+30902,kaitlyn ewald,Arkansas,UB,,9.825,9.825,9.8125,9.775,9.825,9.8,9.825,9.8125,9.825,9.775,Arkansas (SEC),3000.0
+31260,kalyxta gamiao,Arkansas,BB,,9.825,9.85,9.8375,9.75,9.825,9.875,9.875,9.833928571428572,9.875,9.75,Arkansas (SEC),4000.0
+31260,kalyxta gamiao,Arkansas,FX,,9.875,9.775,9.85,9.525,9.825,9.825,9.875,9.792857142857143,9.875,9.525,Arkansas (SEC),3000.0
+31262,maddie jones,Arkansas,BB,,9.825,9.825,9.6625,9.7,,,9.0,9.6025,9.825,9.0,Arkansas (SEC),1000.0
+31262,maddie jones,Arkansas,FX,,9.875,9.75,9.8875,9.85,9.875,9.175,9.825,9.748214285714285,9.8875,9.175,Arkansas (SEC),4000.0
+31262,maddie jones,Arkansas,UB,,9.825,9.725,9.837499999999999,9.75,9.925,9.925,9.9,9.841071428571428,9.925,9.725,Arkansas (SEC),4000.0
+32327,hailey klein,Arkansas,BB,,9.05,,,,,9.825,,9.4375,9.825,9.05,Arkansas (SEC),3000.0
+32327,hailey klein,Arkansas,FX,,,9.8,9.837499999999999,9.775,9.85,9.825,9.85,9.822916666666666,9.85,9.775,Arkansas (SEC),3000.0
+32327,hailey klein,Arkansas,VT,,,,9.8,,9.8,,9.25,9.616666666666667,9.8,9.25,Arkansas (SEC),5000.0
+32944,ja'leigh lang,Arkansas,VT,,,9.825,9.837499999999999,9.8,9.9,9.85,9.875,9.847916666666668,9.9,9.8,Arkansas (SEC),4000.0
+32328,priscilla park,Arkansas,BB,,9.875,9.825,9.7625,9.8,9.825,9.925,9.825,9.833928571428572,9.925,9.7625,Arkansas (SEC),3000.0
+32328,priscilla park,Arkansas,UB,,9.75,9.8,9.8125,9.775,9.8,9.825,9.875,9.805357142857144,9.875,9.75,Arkansas (SEC),3000.0
+32328,priscilla park,Arkansas,VT,,9.675,,,,,,,9.675,9.675,9.675,Arkansas (SEC),4000.0
+31259,frankie price,Arkansas,FX,,9.9,9.85,9.95,9.875,9.925,9.875,9.825,9.885714285714284,9.95,9.825,Arkansas (SEC),6250.0
+31259,frankie price,Arkansas,VT,,9.6,9.7,9.8,9.8,,9.875,9.9,9.779166666666667,9.9,9.6,Arkansas (SEC),2000.0
+32945,joscelyn roberson,Arkansas,BB,,9.825,9.925,9.8,9.925,9.9,9.9,9.875,9.87857142857143,9.925,9.8,Arkansas (SEC),6250.0
+32945,joscelyn roberson,Arkansas,FX,,9.95,9.85,9.925,9.75,9.875,9.8,9.9,9.864285714285714,9.95,9.75,Arkansas (SEC),5000.0
+32945,joscelyn roberson,Arkansas,UB,,9.825,9.675,9.8,,9.8,9.85,9.725,9.779166666666667,9.85,9.675,Arkansas (SEC),2000.0
+32945,joscelyn roberson,Arkansas,VT,,9.875,9.825,9.825,9.75,9.875,9.9,9.8,9.835714285714285,9.9,9.75,Arkansas (SEC),4000.0
+31261,leah smith,Arkansas,FX,,9.875,9.75,9.912500000000001,9.75,,,,9.821875,9.912500000000001,9.75,Arkansas (SEC),5000.0
+31261,leah smith,Arkansas,UB,,,9.775,,9.85,,,,9.8125,9.85,9.775,Arkansas (SEC),6250.0
+31261,leah smith,Arkansas,VT,,9.825,9.775,9.8375,9.85,,,,9.821875,9.85,9.775,Arkansas (SEC),5000.0
+31822,cally swaney,Arkansas,BB,,9.025,9.8,9.7625,9.775,,,,9.590625,9.8,9.025,Arkansas (SEC),2000.0
+31822,cally swaney,Arkansas,UB,,9.725,,9.75,9.7,9.9,9.775,9.825,9.779166666666667,9.9,9.7,Arkansas (SEC),1000.0
+30345,mati waligora,Arkansas,BB,,,,,,9.175,9.9,9.85,9.641666666666667,9.9,9.175,Arkansas (SEC),4000.0
+30345,mati waligora,Arkansas,FX,,,,,,9.925,9.9,9.85,9.891666666666667,9.925,9.85,Arkansas (SEC),5000.0
+30345,mati waligora,Arkansas,UB,,9.8,9.8,9.85,9.25,9.95,9.9,9.75,9.757142857142856,9.95,9.25,Arkansas (SEC),4000.0
+31258,cami weaver,Arkansas,BB,,,9.775,9.837499999999999,9.825,9.8,9.85,9.225,9.71875,9.85,9.225,Arkansas (SEC),3000.0
+31258,cami weaver,Arkansas,VT,,9.75,9.825,9.8875,9.775,9.85,9.75,9.875,9.81607142857143,9.8875,9.75,Arkansas (SEC),4000.0
+31823,lauren williams,Arkansas,FX,,9.875,,,,,,,9.875,9.875,9.875,Arkansas (SEC),6250.0
+32949,olivia ahern,Auburn,BB,9.825,9.775,9.7,,9.8,9.8,9.85,9.9,9.807142857142859,9.9,9.7,Auburn (SEC),3000.0
+32329,bryn bartman,Auburn,FX,,,,,,9.85,,,9.85,9.85,9.85,Auburn (SEC),1000.0
+32329,bryn bartman,Auburn,UB,8.625,9.825,9.775,9.725,9.825,9.85,9.45,,9.582142857142857,9.85,8.625,Auburn (SEC),1000.0
+32950,sophia bell,Auburn,FX,9.675,9.925,9.725,9.775,9.825,9.925,9.85,9.875,9.821875,9.925,9.675,Auburn (SEC),4000.0
+32950,sophia bell,Auburn,VT,9.2,9.675,9.775,9.675,,9.775,,,9.620000000000001,9.775,9.2,Auburn (SEC),4000.0
+32330,emma grace boyd,Auburn,UB,9.8,9.75,9.825,9.75,9.775,9.825,9.8,9.825,9.79375,9.825,9.75,Auburn (SEC),2000.0
+31816,olivia greaves,Auburn,BB,,,,,9.875,9.7,9.825,9.85,9.8125,9.875,9.7,Auburn (SEC),1000.0
+31816,olivia greaves,Auburn,FX,9.675,9.725,9.8,9.85,9.775,9.9,9.875,9.875,9.809375,9.9,9.675,Auburn (SEC),3000.0
+31816,olivia greaves,Auburn,UB,9.8,9.8,9.875,9.925,9.825,9.825,9.125,9.725,9.7375,9.925,9.125,Auburn (SEC),3000.0
+31265,sophia groth,Auburn,BB,9.85,9.625,9.85,9.75,,9.9,9.95,9.85,9.825000000000001,9.95,9.625,Auburn (SEC),4000.0
+31265,sophia groth,Auburn,FX,9.825,9.85,9.85,9.9,,9.95,9.875,9.95,9.885714285714284,9.95,9.825,Auburn (SEC),5000.0
+31265,sophia groth,Auburn,UB,9.775,9.825,9.725,,,9.85,9.9,9.9,9.829166666666667,9.9,9.725,Auburn (SEC),3000.0
+30835,olivia hollingsworth,Auburn,BB,9.875,9.8,,9.825,,,,,9.833333333333334,9.875,9.8,Auburn (SEC),4000.0
+30835,olivia hollingsworth,Auburn,FX,9.5,9.85,,,4.4,,,,7.916666666666667,9.85,4.4,Auburn (SEC),5000.0
+30835,olivia hollingsworth,Auburn,UB,9.825,9.75,,9.75,9.8,,,,9.78125,9.825,9.75,Auburn (SEC),3000.0
+30835,olivia hollingsworth,Auburn,VT,,9.85,,,,,,,9.85,9.85,9.85,Auburn (SEC),4000.0
+31266,sara hubbard,Auburn,VT,9.825,9.875,9.825,9.825,9.85,9.875,9.825,9.875,9.846874999999999,9.875,9.825,Auburn (SEC),4000.0
+32333,julianne huff,Auburn,VT,9.725,9.8,,9.75,9.875,9.55,9.85,9.675,9.74642857142857,9.875,9.55,Auburn (SEC),2000.0
+32576,alex irvine,Auburn,UB,,,9.8,9.825,9.85,9.95,9.9,9.925,9.875,9.95,9.8,Auburn (SEC),4000.0
+32951,katelyn jong,Auburn,BB,9.8,9.9,9.85,9.925,9.95,9.85,9.775,9.625,9.834375,9.95,9.625,Auburn (SEC),5000.0
+32951,katelyn jong,Auburn,FX,9.8,9.825,9.85,9.9,9.75,,9.825,9.75,9.814285714285715,9.9,9.75,Auburn (SEC),3000.0
+32951,katelyn jong,Auburn,UB,9.9,9.9,9.9,9.925,9.9,9.875,9.875,9.925,9.9,9.925,9.875,Auburn (SEC),6250.0
+32951,katelyn jong,Auburn,VT,9.675,9.875,9.875,9.75,9.725,,9.875,9.95,9.817857142857141,9.95,9.675,Auburn (SEC),3000.0
+31268,caroline leonard,Auburn,UB,,,,,,,,9.85,9.85,9.85,9.85,Auburn (SEC),1000.0
+30836,gabby mclaughlin,Auburn,BB,9.75,9.825,9.85,9.9,9.875,9.8,9.925,9.85,9.846875,9.925,9.75,Auburn (SEC),4000.0
+30836,gabby mclaughlin,Auburn,FX,9.85,9.875,9.75,9.875,9.85,9.875,9.675,9.875,9.828125,9.875,9.675,Auburn (SEC),4000.0
+32952,marissa neal,Auburn,BB,9.9,9.8,9.925,9.975,9.925,,,,9.905000000000001,9.975,9.8,Auburn (SEC),1000.0
+32952,marissa neal,Auburn,FX,,,9.85,9.875,9.85,,,,9.858333333333334,9.875,9.85,Auburn (SEC),1000.0
+31684,sydney schumaker,Auburn,VT,9.775,,9.8,9.775,9.8,9.875,9.775,9.9,9.814285714285715,9.9,9.775,Auburn (SEC),3000.0
+32335,paige zancan,Auburn,BB,,,9.75,9.825,9.825,9.9,9.875,9.925,9.850000000000001,9.925,9.75,Auburn (SEC),4000.0
+32335,paige zancan,Auburn,FX,,,,,,9.9,9.75,9.875,9.841666666666667,9.9,9.75,Auburn (SEC),1000.0
+32335,paige zancan,Auburn,VT,,9.85,9.9,9.9,9.625,9.8,9.85,9.9,9.832142857142856,9.9,9.625,Auburn (SEC),5000.0
+31333,sarah zois,Auburn,VT,9.775,,9.8,,9.65,9.825,9.9,9.875,9.804166666666667,9.9,9.65,Auburn (SEC),2000.0
+31827,zoe middleton,Ball State,BB,9.625,9.35,9.525,9.475,9.75,9.825,9.775,9.675,9.625,9.825,9.35,Ball State (MAC),1000.0
+31827,zoe middleton,Ball State,FX,,9.9,9.875,9.85,9.9,9.9,9.675,9.65,9.821428571428571,9.9,9.65,Ball State (MAC),3000.0
+31827,zoe middleton,Ball State,UB,9.725,9.8,9.2,9.8,9.75,9.8,9.85,9.725,9.70625,9.85,9.2,Ball State (MAC),1000.0
+31827,zoe middleton,Ball State,VT,9.7,9.8,9.775,9.8,9.8,9.75,9.775,8.825,9.653125000000001,9.8,8.825,Ball State (MAC),2000.0
+30841,suki pfister,Ball State,VT,,,,,9.725,9.875,9.75,9.8,9.787500000000001,9.875,9.725,Ball State (MAC),6250.0
+32666,ashley szymanski,Ball State,BB,9.775,9.8,9.75,9.775,9.75,9.85,9.825,9.75,9.784375,9.85,9.75,Ball State (MAC),2000.0
+32666,ashley szymanski,Ball State,UB,9.875,9.525,9.875,9.875,9.8,9.875,9.875,9.475,9.771875000000001,9.875,9.475,Ball State (MAC),4000.0
+32960,noelle ball,Boise State,UB,,9.65,9.75,9.425,9.8,9.825,9.85,9.75,9.721428571428573,9.85,9.425,Boise State (Mountain West Conference),1000.0
+32960,noelle ball,Boise State,VT,,9.6,9.65,9.7625,9.775,9.675,9.75,9.725,9.705357142857142,9.775,9.6,Boise State (Mountain West Conference),1000.0
+32961,bridget kemp,Boise State,FX,,9.7,8.85,9.8125,9.675,9.875,9.85,9.825,9.655357142857142,9.875,8.85,Boise State (Mountain West Conference),2000.0
+32961,bridget kemp,Boise State,VT,,9.675,9.625,9.75,9.75,9.65,9.675,9.75,9.696428571428571,9.75,9.625,Boise State (Mountain West Conference),1000.0
+30846,emily lopez,Boise State,BB,,9.85,9.775,9.8125,9.85,9.875,9.85,9.375,9.769642857142857,9.875,9.375,Boise State (Mountain West Conference),4000.0
+30846,emily lopez,Boise State,UB,,9.85,9.875,9.912500000000001,9.8,9.85,9.95,9.825,9.866071428571429,9.95,9.8,Boise State (Mountain West Conference),5000.0
+30846,emily lopez,Boise State,VT,,9.8,9.75,9.787500000000001,9.8,9.8,9.8,9.8,9.79107142857143,9.8,9.75,Boise State (Mountain West Conference),2000.0
+32963,kristina shchennikova,Boise State,BB,,,,,,9.9,9.9,9.775,9.858333333333334,9.9,9.775,Boise State (Mountain West Conference),1000.0
+32963,kristina shchennikova,Boise State,UB,,9.775,9.825,9.837499999999999,9.825,9.8,9.9,9.8,9.823214285714286,9.9,9.775,Boise State (Mountain West Conference),3000.0
+32399,brynlee andersen,BYU,BB,9.475,9.825,9.95,9.912500000000001,9.7,9.9,9.9,9.725,9.798437499999999,9.95,9.475,BYU (Big 12),6250.0
+32399,brynlee andersen,BYU,FX,9.725,9.45,,9.825,9.9,9.825,9.9,9.85,9.782142857142857,9.9,9.45,BYU (Big 12),3000.0
+33243,ondine achampong,California,BB,,,,,,,,9.775,9.775,9.775,9.775,California (ACC),1000.0
+31860,miki aderinto,California,UB,,,,,,,9.9,9.775,9.8375,9.9,9.775,California (ACC),1000.0
+31861,casey brown,California,UB,9.6,9.875,9.9,9.875,9.85,9.825,,,9.820833333333333,9.9,9.6,California (ACC),2000.0
+31861,casey brown,California,VT,,,,,9.8,,,,9.8,9.8,9.8,California (ACC),4000.0
+31292,ella cesario,California,BB,9.85,9.825,9.9,9.8,9.825,9.775,9.6,9.85,9.803125,9.9,9.6,California (ACC),3000.0
+31292,ella cesario,California,FX,9.775,9.85,9.2,9.85,9.875,9.925,9.9,9.95,9.790625,9.95,9.2,California (ACC),5000.0
+31292,ella cesario,California,UB,9.85,9.85,9.825,9.925,9.85,9.875,9.825,9.825,9.853125,9.925,9.825,California (ACC),4000.0
+31292,ella cesario,California,VT,9.725,9.825,9.775,9.9,9.725,9.775,9.7,9.8,9.778125,9.9,9.7,California (ACC),2000.0
+31862,emjae frazier,California,BB,9.725,9.9,9.875,9.875,9.85,9.8,9.875,9.875,9.846875,9.9,9.725,California (ACC),5000.0
+31862,emjae frazier,California,FX,9.725,9.925,9.8,9.9,9.85,9.9,9.9,9.0,9.75,9.925,9.0,California (ACC),4000.0
+31862,emjae frazier,California,UB,9.825,9.825,9.875,9.9,9.875,9.9,9.85,9.925,9.871875,9.925,9.825,California (ACC),5000.0
+31862,emjae frazier,California,VT,9.75,9.9,9.85,9.75,9.85,9.85,9.85,9.9,9.8375,9.9,9.75,California (ACC),5000.0
+31293,jordan kane,California,BB,9.75,9.9,9.825,9.0,,,,,9.618749999999999,9.9,9.0,California (ACC),1000.0
+31293,jordan kane,California,FX,9.85,9.825,9.875,,,,,,9.85,9.875,9.825,California (ACC),5000.0
+31293,jordan kane,California,UB,,,,7.75,,,,,7.75,7.75,7.75,California (ACC),1000.0
+33244,cj keuneke,California,FX,,9.825,,9.9,,9.825,9.9,9.825,9.855,9.9,9.825,California (ACC),3000.0
+31294,mya lauzon,California,BB,9.9,9.825,9.875,9.65,9.9,9.925,9.7,9.925,9.8375,9.925,9.65,California (ACC),6250.0
+31294,mya lauzon,California,FX,9.9,9.9,9.925,9.9,9.95,10.0,9.975,9.95,9.9375,10.0,9.9,California (ACC),6250.0
+31294,mya lauzon,California,UB,9.825,9.9,9.75,9.825,9.925,9.925,9.875,9.925,9.86875,9.925,9.75,California (ACC),6250.0
+31294,mya lauzon,California,VT,9.9,9.825,9.875,9.825,9.875,9.9,9.825,9.9,9.865625,9.9,9.825,California (ACC),5000.0
+32651,kyen mayhew,California,BB,9.75,9.75,9.825,9.7,9.825,9.175,9.75,,9.682142857142859,9.825,9.175,California (ACC),1000.0
+32651,kyen mayhew,California,FX,9.8,9.85,9.775,9.875,9.825,9.95,9.875,9.9,9.85625,9.95,9.775,California (ACC),4000.0
+32651,kyen mayhew,California,VT,9.775,9.9,9.775,9.875,9.175,9.875,9.825,9.925,9.765625,9.925,9.175,California (ACC),4000.0
+32652,annalise newman-achee,California,UB,,,,,9.825,9.85,9.875,9.85,9.85,9.875,9.825,California (ACC),1000.0
+31295,abbey scanlon,California,BB,,,,,9.95,9.875,9.725,9.8,9.837499999999999,9.95,9.725,California (ACC),1000.0
+32298,jayden silvers,California,VT,,,,9.625,,,,,9.625,9.625,9.625,California (ACC),4000.0
+33246,brianna taurek,California,FX,,,,,9.35,,,,9.35,9.35,9.35,California (ACC),1000.0
+33247,mya wiley,California,UB,9.725,9.075,9.75,,,,,,9.516666666666666,9.75,9.075,California (ACC),2000.0
+33247,mya wiley,California,VT,9.8,9.825,9.75,,,9.8,9.85,9.85,9.8125,9.85,9.75,California (ACC),3000.0
+31296,madelyn williams,California,BB,9.85,9.875,9.85,9.85,9.775,9.9,9.875,9.95,9.865625,9.95,9.775,California (ACC),5000.0
+31296,madelyn williams,California,FX,9.675,,9.875,9.9,9.9,9.85,9.925,9.925,9.864285714285714,9.925,9.675,California (ACC),5000.0
+31296,madelyn williams,California,UB,9.95,9.875,9.85,9.875,9.85,9.85,9.925,9.875,9.88125,9.95,9.85,California (ACC),5000.0
+31296,madelyn williams,California,VT,9.7,9.75,9.9,9.825,9.825,9.825,9.75,9.85,9.803125,9.9,9.7,California (ACC),3000.0
+32738,molly arnold,Clemson,FX,,9.775,9.7,9.825,9.6,9.675,9.8,9.9,9.75357142857143,9.9,9.6,Clemson (ACC),1000.0
+32738,molly arnold,Clemson,VT,,9.625,,,,,,,9.625,9.625,9.625,Clemson (ACC),4000.0
+32742,takoda berry,Clemson,UB,,9.8,9.825,9.725,9.775,9.8,,9.875,9.799999999999999,9.875,9.725,Clemson (ACC),2000.0
+32743,trinity brown,Clemson,FX,,,9.75,,,,,,9.75,9.75,9.75,Clemson (ACC),1000.0
+32743,trinity brown,Clemson,VT,,9.825,9.825,9.8,9.825,,,,9.81875,9.825,9.8,Clemson (ACC),4000.0
+32731,kate bryant,Clemson,VT,,,,,,9.75,9.6,9.7,9.683333333333332,9.75,9.6,Clemson (ACC),2000.0
+32741,sierra church,Clemson,BB,,9.75,9.85,9.15,9.775,9.775,9.9,9.725,9.703571428571427,9.9,9.15,Clemson (ACC),2000.0
+32727,brie clark,Clemson,BB,,9.8,9.225,9.8,9.9,9.825,9.675,9.825,9.721428571428572,9.9,9.225,Clemson (ACC),2000.0
+32727,brie clark,Clemson,FX,,9.3,9.625,9.9,9.925,9.95,9.925,9.925,9.792857142857143,9.95,9.3,Clemson (ACC),4000.0
+32984,hannah clark,Clemson,UB,,9.25,9.8,9.875,9.275,9.875,9.825,9.875,9.682142857142855,9.875,9.25,Clemson (ACC),1000.0
+32737,maggie holman,Clemson,FX,,9.65,,9.625,9.85,9.825,8.775,9.625,9.558333333333332,9.85,8.775,Clemson (ACC),1000.0
+32737,maggie holman,Clemson,VT,,9.525,9.825,9.775,9.85,9.725,9.75,9.85,9.757142857142856,9.85,9.525,Clemson (ACC),2000.0
+32728,eve jackson,Clemson,FX,,9.75,9.775,9.825,9.825,9.175,9.8,9.95,9.728571428571428,9.95,9.175,Clemson (ACC),2000.0
+32728,eve jackson,Clemson,UB,,9.875,9.75,9.8,9.775,9.825,9.825,9.775,9.803571428571429,9.875,9.75,Clemson (ACC),2000.0
+32728,eve jackson,Clemson,VT,,,9.825,9.625,9.7,9.725,9.825,9.8,9.75,9.825,9.625,Clemson (ACC),1000.0
+32739,quinn kuhl,Clemson,BB,,9.75,9.825,9.825,8.9,9.5,9.45,9.875,9.589285714285714,9.875,8.9,Clemson (ACC),1000.0
+32739,quinn kuhl,Clemson,UB,,9.775,9.75,9.875,8.975,9.85,9.8,,9.670833333333333,9.875,8.975,Clemson (ACC),1000.0
+32739,quinn kuhl,Clemson,VT,,9.775,9.8,9.775,9.725,9.7,9.7,9.725,9.742857142857142,9.8,9.7,Clemson (ACC),1000.0
+32734,lilly lippeatt,Clemson,BB,,9.775,9.75,9.75,9.825,9.825,9.7,9.8,9.775,9.825,9.7,Clemson (ACC),2000.0
+32734,lilly lippeatt,Clemson,FX,,9.825,9.725,9.775,9.8,9.825,9.8,9.675,9.775,9.825,9.675,Clemson (ACC),2000.0
+32734,lilly lippeatt,Clemson,UB,,9.825,9.575,9.7,9.85,9.85,9.775,9.8,9.767857142857142,9.85,9.575,Clemson (ACC),2000.0
+32732,kielyn mccright,Clemson,BB,,9.65,9.725,9.85,,9.35,,,9.64375,9.85,9.35,Clemson (ACC),1000.0
+32736,madison minner,Clemson,FX,,9.75,9.75,9.85,9.825,9.8,9.8,9.85,9.803571428571429,9.85,9.75,Clemson (ACC),2000.0
+32736,madison minner,Clemson,VT,,9.775,9.75,9.8,9.775,9.85,9.825,9.825,9.799999999999999,9.85,9.75,Clemson (ACC),2000.0
+32985,danika nielsen,Clemson,BB,,9.7,9.8,9.8,9.8,9.8,9.825,8.925,9.664285714285715,9.825,8.925,Clemson (ACC),2000.0
+32733,lauren rutherford,Clemson,UB,,,,,,9.85,9.725,9.825,9.799999999999999,9.85,9.725,Clemson (ACC),1000.0
+32986,tara walsh,Clemson,BB,,,,,9.475,,9.875,9.75,9.700000000000001,9.875,9.475,Clemson (ACC),1000.0
+32986,tara walsh,Clemson,VT,,9.8,9.75,9.75,9.7,9.7,9.75,9.85,9.757142857142856,9.85,9.7,Clemson (ACC),2000.0
+32740,rebecca wells,Clemson,UB,,9.75,9.7,9.85,9.8,,9.775,9.875,9.791666666666666,9.875,9.7,Clemson (ACC),1000.0
+31871,mila brusch,Denver,FX,9.85,9.85,,9.8125,8.825,9.8,9.75,9.825,9.673214285714286,9.85,8.825,Denver (Big 12),1000.0
+31871,mila brusch,Denver,VT,9.8,9.85,,9.850000000000001,9.825,9.85,9.8,9.8,9.825000000000001,9.850000000000001,9.8,Denver (Big 12),3000.0
+30873,rosie casali,Denver,BB,9.0,,,,,,,,9.0,9.0,9.0,Denver (Big 12),3000.0
+30873,rosie casali,Denver,UB,9.875,9.825,,9.7875,9.65,9.85,9.875,9.9,9.823214285714284,9.9,9.65,Denver (Big 12),2000.0
+30873,rosie casali,Denver,VT,,9.85,,9.775,9.275,9.85,9.75,9.925,9.737499999999999,9.925,9.275,Denver (Big 12),1000.0
+31872,cecilia cooley,Denver,BB,9.8,9.85,,9.7,9.825,9.825,9.875,9.875,9.821428571428571,9.875,9.7,Denver (Big 12),3000.0
+31872,cecilia cooley,Denver,FX,9.875,9.9,,9.8375,9.825,9.8,9.8,9.875,9.844642857142857,9.9,9.8,Denver (Big 12),4000.0
+31872,cecilia cooley,Denver,UB,9.85,9.8,,9.8125,9.85,9.775,9.925,9.925,9.848214285714286,9.925,9.775,Denver (Big 12),4000.0
+32358,ashley gallen,Denver,BB,,,,,,,,9.85,9.85,9.85,9.85,Denver (Big 12),1000.0
+32359,amanda hargraves,Denver,VT,9.6,,,9.8,,,9.85,,9.75,9.85,9.6,Denver (Big 12),3000.0
+31317,mia hebinck,Denver,BB,,,,,,,9.15,,9.15,9.15,9.15,Denver (Big 12),3000.0
+31317,mia hebinck,Denver,UB,9.9,9.75,,9.5625,9.825,9.7,9.9,,9.772916666666665,9.9,9.5625,Denver (Big 12),3000.0
+31318,momoko iwai,Denver,BB,9.25,9.9,,9.6625,9.85,9.825,9.85,9.95,9.755357142857141,9.95,9.25,Denver (Big 12),4000.0
+31318,momoko iwai,Denver,FX,9.825,9.8,,,,,9.8,,9.808333333333334,9.825,9.8,Denver (Big 12),5000.0
+31318,momoko iwai,Denver,UB,9.875,9.8,,,,,,9.325,9.666666666666666,9.875,9.325,Denver (Big 12),4000.0
+30875,bella mabanta,Denver,BB,9.85,9.75,,9.8,9.1,8.9,,,9.48,9.85,8.9,Denver (Big 12),3000.0
+30875,bella mabanta,Denver,FX,8.975,8.775,,,9.625,,9.875,9.85,9.42,9.875,8.775,Denver (Big 12),1000.0
+30875,bella mabanta,Denver,VT,9.75,9.825,,9.775,9.875,9.9,9.825,9.825,9.825000000000001,9.9,9.75,Denver (Big 12),4000.0
+30876,rylie mundell,Denver,BB,9.225,9.825,,9.725000000000001,9.8,9.825,9.8,9.725,9.703571428571427,9.825,9.225,Denver (Big 12),2000.0
+30876,rylie mundell,Denver,FX,9.85,9.675,,9.8625,9.825,9.85,,,9.8125,9.8625,9.675,Denver (Big 12),4000.0
+30876,rylie mundell,Denver,UB,9.9,9.9,,9.8,9.9,9.8,9.85,9.875,9.860714285714286,9.9,9.8,Denver (Big 12),5000.0
+30876,rylie mundell,Denver,VT,9.875,9.875,,9.7,9.8,9.85,,9.875,9.829166666666666,9.875,9.7,Denver (Big 12),2000.0
+32360,maddison reidenbach,Denver,FX,,,,9.75,,9.85,,9.775,9.791666666666666,9.85,9.75,Denver (Big 12),4000.0
+32360,maddison reidenbach,Denver,VT,9.85,9.85,,9.8375,9.825,9.825,9.975,9.875,9.862499999999999,9.975,9.825,Denver (Big 12),4000.0
+31874,kiley rorich,Denver,FX,,,,9.8125,8.725,9.65,9.65,9.825,9.5325,9.825,8.725,Denver (Big 12),1000.0
+31874,kiley rorich,Denver,UB,,,,9.8625,9.875,9.775,9.9,9.875,9.857499999999998,9.9,9.775,Denver (Big 12),4000.0
+30877,abbie thompson,Denver,BB,,9.8,,9.7375,9.025,9.825,9.875,9.85,9.685416666666667,9.875,9.025,Denver (Big 12),1000.0
+32361,madison ulrich,Denver,BB,9.85,9.35,,9.5,9.875,9.8,9.875,9.875,9.732142857142858,9.875,9.35,Denver (Big 12),4000.0
+32361,madison ulrich,Denver,FX,9.85,9.775,,9.825,9.8,9.875,9.875,9.875,9.839285714285714,9.875,9.775,Denver (Big 12),4000.0
+32361,madison ulrich,Denver,UB,9.9,9.875,,9.837499999999999,9.825,9.875,9.875,9.95,9.876785714285713,9.95,9.825,Denver (Big 12),4000.0
+32361,madison ulrich,Denver,VT,9.75,9.8,,9.8,9.65,9.825,9.825,9.85,9.785714285714286,9.85,9.65,Denver (Big 12),2000.0
+31886,morgan price,Fisk,BB,,9.775,9.266666666666667,9.85,9.875,9.85,9.725,9.85,9.741666666666665,9.875,9.266666666666667,Fisk (GCAC),3000.0
+31886,morgan price,Fisk,FX,,9.7,9.712499999999999,9.875,9.8,9.8,9.775,9.925,9.798214285714286,9.925,9.7,Fisk (GCAC),3000.0
+31886,morgan price,Fisk,UB,,9.7,9.641666666666666,9.8,9.825,10.0,9.225,9.825,9.716666666666667,10.0,9.225,Fisk (GCAC),3000.0
+31886,morgan price,Fisk,VT,,9.8,9.549999999999999,9.925,9.825,9.85,9.825,9.9,9.810714285714285,9.925,9.549999999999999,Fisk (GCAC),4000.0
+32412,alyssa arana,Florida,UB,,,,,,9.875,,,9.875,9.875,9.875,Florida (SEC),1000.0
+32994,skye blakely,Florida,UB,,9.725,9.775,9.9,9.825,,9.325,9.9,9.741666666666667,9.9,9.325,Florida (SEC),1000.0
+31325,sloane blakely,Florida,BB,,9.925,9.95,9.95,9.9,,9.9,,9.925,9.95,9.9,Florida (SEC),5000.0
+31325,sloane blakely,Florida,FX,,9.9,9.95,9.925,9.95,,10.0,6.35,9.345833333333333,10.0,6.35,Florida (SEC),1000.0
+31325,sloane blakely,Florida,UB,,9.9,9.25,9.825,9.875,,,,9.7125,9.9,9.25,Florida (SEC),3000.0
+31325,sloane blakely,Florida,VT,,9.775,9.85,9.9,9.2,,,,9.681249999999999,9.9,9.2,Florida (SEC),4000.0
+31890,lori brubach,Florida,FX,,9.175,,,,,,,9.175,9.175,9.175,Florida (SEC),5000.0
+33385,ly bui,Florida,BB,,,,,,,,9.25,9.25,9.25,9.25,Florida (SEC),2000.0
+33385,ly bui,Florida,UB,,,,,,9.9,9.0,,9.45,9.9,9.0,Florida (SEC),3000.0
+33385,ly bui,Florida,VT,,9.775,9.85,9.925,9.925,9.775,9.8,9.725,9.825000000000001,9.925,9.725,Florida (SEC),3000.0
+32996,taylor clark,Florida,FX,,9.875,9.875,9.9,9.8,9.925,9.675,9.775,9.832142857142857,9.925,9.675,Florida (SEC),3000.0
+32414,gabby disidore,Florida,VT,,,,,,,9.85,9.875,9.8625,9.875,9.85,Florida (SEC),1000.0
+32415,skylar draser,Florida,BB,,,9.85,9.9,9.875,9.8,9.75,9.825,9.833333333333334,9.9,9.75,Florida (SEC),3000.0
+32415,skylar draser,Florida,UB,,,,,,,,9.75,9.75,9.75,9.75,Florida (SEC),4000.0
+32416,danie ferris,Florida,FX,,,9.875,,,9.85,9.875,9.875,9.86875,9.875,9.85,Florida (SEC),4000.0
+32416,danie ferris,Florida,VT,,9.95,9.825,,9.825,9.75,9.825,9.875,9.841666666666667,9.95,9.75,Florida (SEC),3000.0
+32075,selena harris-miranda,Florida,BB,,9.9,9.875,9.925,9.775,8.85,9.975,9.8,9.728571428571428,9.975,8.85,Florida (SEC),4000.0
+32075,selena harris-miranda,Florida,FX,,,9.9,9.9,9.925,9.9,9.925,9.9,9.908333333333333,9.925,9.9,Florida (SEC),6250.0
+32075,selena harris-miranda,Florida,UB,,9.825,9.825,9.85,9.9,9.925,9.975,9.875,9.882142857142856,9.975,9.825,Florida (SEC),5000.0
+32075,selena harris-miranda,Florida,VT,,9.8,9.9,9.95,9.95,9.95,9.875,9.925,9.907142857142858,9.95,9.8,Florida (SEC),6250.0
+30885,ellie lazzari,Florida,BB,,9.75,,,,9.225,,,9.4875,9.75,9.225,Florida (SEC),3000.0
+30885,ellie lazzari,Florida,FX,,9.05,,,,,,,9.05,9.05,9.05,Florida (SEC),5000.0
+30885,ellie lazzari,Florida,VT,,,,9.775,,9.9,,9.8,9.825000000000001,9.9,9.775,Florida (SEC),1000.0
+31327,riley mccusker,Florida,BB,,,,,,,,9.175,9.175,9.175,9.175,Florida (SEC),1000.0
+31327,riley mccusker,Florida,UB,,9.1,9.75,9.875,9.9,9.85,9.825,9.85,9.735714285714286,9.9,9.1,Florida (SEC),3000.0
+30893,victoria nguyen,Florida,BB,,9.85,9.9,9.95,9.8,9.75,9.975,9.875,9.871428571428572,9.975,9.75,Florida (SEC),5000.0
+30893,victoria nguyen,Florida,FX,,9.75,9.9,9.5,9.65,9.875,9.925,9.875,9.782142857142857,9.925,9.5,Florida (SEC),3000.0
+32417,anya pilgrim,Florida,BB,,9.875,9.9,9.95,9.875,9.675,9.85,,9.854166666666666,9.95,9.675,Florida (SEC),4000.0
+32417,anya pilgrim,Florida,FX,,,,9.85,9.7,9.75,,,9.766666666666666,9.85,9.7,Florida (SEC),5000.0
+32417,anya pilgrim,Florida,UB,,9.925,9.825,9.9,9.925,9.875,9.95,8.975,9.767857142857142,9.95,8.975,Florida (SEC),6250.0
+32417,anya pilgrim,Florida,VT,,9.8,9.925,9.85,9.775,9.85,9.825,,9.8375,9.925,9.775,Florida (SEC),3000.0
+31328,leanne wong,Florida,BB,,9.95,9.775,9.625,9.9,9.8,10.0,9.875,9.846428571428572,10.0,9.625,Florida (SEC),4000.0
+31328,leanne wong,Florida,FX,,9.95,9.825,9.925,9.925,9.925,9.875,9.925,9.907142857142858,9.95,9.825,Florida (SEC),6250.0
+31328,leanne wong,Florida,UB,,9.95,9.85,9.875,9.925,9.95,9.975,9.9,9.917857142857143,9.975,9.85,Florida (SEC),6250.0
+31328,leanne wong,Florida,VT,,9.875,9.925,9.925,9.925,9.9,9.9,9.9,9.907142857142857,9.925,9.875,Florida (SEC),6250.0
+31893,kasey burke,George Washington,FX,,9.55,9.825,9.875,9.725,,9.825,9.675,9.745833333333334,9.875,9.55,George Washington (Atlantic 10 Conference),1000.0
+31893,kasey burke,George Washington,UB,,9.675,9.675,9.6,9.575,,,,9.63125,9.675,9.575,George Washington (Atlantic 10 Conference),1000.0
+31893,kasey burke,George Washington,VT,,9.725,9.775,9.725,9.7875,,9.825,9.7,9.75625,9.825,9.7,George Washington (Atlantic 10 Conference),2000.0
+32382,alexa chuy,George Washington,FX,,,,9.05,,,,,9.05,9.05,9.05,George Washington (Atlantic 10 Conference),1000.0
+32998,lola montevago,George Washington,BB,,9.325,9.7,9.725,9.8,,9.85,9.85,9.708333333333334,9.85,9.325,George Washington (Atlantic 10 Conference),2000.0
+32998,lola montevago,George Washington,FX,,,,,,,,9.45,9.45,9.45,9.45,George Washington (Atlantic 10 Conference),1000.0
+32998,lola montevago,George Washington,UB,,9.725,9.825,9.9,9.9125,,9.85,9.825,9.839583333333334,9.9125,9.725,George Washington (Atlantic 10 Conference),4000.0
+32998,lola montevago,George Washington,VT,,,9.725,9.7,,,,,9.712499999999999,9.725,9.7,George Washington (Atlantic 10 Conference),1000.0
+32999,zoe safran,George Washington,UB,,9.55,8.775,9.65,9.6375,,9.675,9.075,9.393749999999999,9.675,8.775,George Washington (Atlantic 10 Conference),1000.0
+32999,zoe safran,George Washington,VT,,9.7,9.6,9.65,9.775,,9.15,9.575,9.575000000000001,9.775,9.15,George Washington (Atlantic 10 Conference),1000.0
+33001,natalie thomas,George Washington,VT,,9.55,,,,,,,9.55,9.55,9.55,George Washington (Atlantic 10 Conference),3000.0
+30890,kendall whitman,George Washington,BB,,9.825,9.65,9.775,9.7625,,9.75,9.875,9.772916666666667,9.875,9.65,George Washington (Atlantic 10 Conference),2000.0
+30890,kendall whitman,George Washington,FX,,9.175,9.75,9.95,9.8125,,9.925,9.875,9.747916666666667,9.95,9.175,George Washington (Atlantic 10 Conference),3000.0
+30890,kendall whitman,George Washington,VT,,9.775,9.825,9.75,9.7,,9.725,9.75,9.754166666666668,9.825,9.7,George Washington (Atlantic 10 Conference),1000.0
+33002,nyla aquino,Georgia,FX,,9.6,9.8,9.875,9.85,9.9,9.95,9.925,9.842857142857143,9.95,9.6,Georgia (SEC),4000.0
+33002,nyla aquino,Georgia,VT,,9.875,9.825,9.925,9.725,9.825,9.775,9.8,9.821428571428571,9.925,9.725,Georgia (SEC),3000.0
+33003,sadie jane berry,Georgia,UB,,9.875,9.875,9.6,,,,9.85,9.8,9.875,9.6,Georgia (SEC),2000.0
+33256,kara eaker,Georgia,BB,,,,,9.925,9.9,9.875,9.925,9.90625,9.925,9.875,Georgia (SEC),5000.0
+31901,sidney fitzgerald,Georgia,UB,,9.8,,,,9.825,9.825,,9.816666666666666,9.825,9.8,Georgia (SEC),3000.0
+33006,brooke gleichowski,Georgia,BB,,9.125,9.125,9.95,9.7,9.775,,9.875,9.591666666666667,9.95,9.125,Georgia (SEC),1000.0
+31902,naya howard,Georgia,BB,,9.275,9.75,,9.825,9.775,9.85,9.9,9.729166666666666,9.9,9.275,Georgia (SEC),1000.0
+31902,naya howard,Georgia,UB,,9.875,9.75,9.85,9.775,9.8,9.875,,9.820833333333335,9.875,9.75,Georgia (SEC),3000.0
+31902,naya howard,Georgia,VT,,9.825,9.725,9.85,,,9.75,9.75,9.78,9.85,9.725,Georgia (SEC),3000.0
+31903,nicole king,Georgia,FX,,9.625,,9.75,,,,,9.6875,9.75,9.625,Georgia (SEC),1000.0
+31903,nicole king,Georgia,VT,,,,9.8,9.875,9.7,,,9.791666666666666,9.875,9.7,Georgia (SEC),1000.0
+33007,emma mason,Georgia,BB,,9.575,,,,,,,9.575,9.575,9.575,Georgia (SEC),2000.0
+33007,emma mason,Georgia,FX,,,9.875,,,,,,9.875,9.875,9.875,Georgia (SEC),2000.0
+33007,emma mason,Georgia,UB,,,9.85,9.75,9.85,,,,9.816666666666668,9.85,9.75,Georgia (SEC),5000.0
+32368,zora morgan,Georgia,BB,,,9.775,,,,,,9.775,9.775,9.775,Georgia (SEC),2000.0
+33008,aberdeen o'driscoll,Georgia,BB,,,,9.85,,,9.8,,9.825,9.85,9.8,Georgia (SEC),1000.0
+32370,lily smith,Georgia,BB,,9.9,9.9,9.85,9.875,9.95,9.8,9.85,9.875,9.95,9.8,Georgia (SEC),5000.0
+32370,lily smith,Georgia,FX,,9.875,9.925,9.55,9.9,9.9,9.95,9.8,9.842857142857143,9.95,9.55,Georgia (SEC),5000.0
+32370,lily smith,Georgia,UB,,,,9.875,9.775,9.9,9.95,9.95,9.89,9.95,9.775,Georgia (SEC),6250.0
+30828,anaya smith,Georgia,VT,,9.8,9.675,9.875,9.9,9.9,9.85,9.75,9.821428571428571,9.9,9.675,Georgia (SEC),4000.0
+32371,holly snyder,Georgia,FX,,,,,9.85,9.825,9.85,9.9,9.85625,9.9,9.825,Georgia (SEC),5000.0
+32371,holly snyder,Georgia,UB,,9.825,9.875,9.775,9.65,9.85,9.825,9.875,9.810714285714285,9.875,9.65,Georgia (SEC),3000.0
+32372,anya turner,Georgia,BB,,9.8,9.825,9.85,9.9,9.825,9.925,9.975,9.87142857142857,9.975,9.8,Georgia (SEC),5000.0
+32373,ady wahl,Georgia,BB,,,,9.7,,,,,9.7,9.7,9.7,Georgia (SEC),3000.0
+32373,ady wahl,Georgia,FX,,9.825,9.9,9.825,9.8,9.9,9.825,9.75,9.832142857142857,9.9,9.75,Georgia (SEC),3000.0
+32373,ady wahl,Georgia,UB,,9.875,9.85,9.9,9.875,9.875,9.95,9.875,9.885714285714286,9.95,9.85,Georgia (SEC),5000.0
+32373,ady wahl,Georgia,VT,,9.925,9.825,9.85,9.7,9.775,9.775,9.9,9.821428571428571,9.925,9.7,Georgia (SEC),3000.0
+31907,eryn williams,Georgia,FX,,9.825,9.85,9.7,9.875,9.775,9.85,9.85,9.817857142857141,9.875,9.7,Georgia (SEC),3000.0
+33010,kennedy brown,Illinois,FX,,,,,,,9.725,9.775,9.75,9.775,9.725,Illinois (Big Ten),1000.0
+33010,kennedy brown,Illinois,UB,,9.725,8.95,,9.775,9.3875,9.575,9.7,9.518749999999999,9.775,8.95,Illinois (Big Ten),1000.0
+33010,kennedy brown,Illinois,VT,,9.75,9.675,,8.25,,9.75,,9.35625,9.75,8.25,Illinois (Big Ten),4000.0
+33011,chloe cho,Illinois,BB,,9.775,9.825,9.925,9.925,9.8125,9.875,9.7,9.833928571428572,9.925,9.7,Illinois (Big Ten),5000.0
+33011,chloe cho,Illinois,FX,,9.625,9.925,9.7,9.85,9.925,9.8875,9.875,9.826785714285714,9.925,9.625,Illinois (Big Ten),5000.0
+33011,chloe cho,Illinois,UB,,9.45,9.85,9.85,9.85,9.8,9.837499999999999,9.85,9.783928571428572,9.85,9.45,Illinois (Big Ten),4000.0
+33011,chloe cho,Illinois,VT,,9.85,9.8,9.875,9.775,9.8125,9.8625,9.775,9.821428571428571,9.875,9.775,Illinois (Big Ten),4000.0
+33013,marly esteves,Illinois,FX,,,,,,,9.925,9.3,9.6125,9.925,9.3,Illinois (Big Ten),2000.0
+33013,marly esteves,Illinois,VT,,9.525,,,,,9.675,,9.600000000000001,9.675,9.525,Illinois (Big Ten),1000.0
+33014,mya gordon,Illinois,FX,,8.9,,,,,,,8.9,8.9,8.9,Illinois (Big Ten),2000.0
+33014,mya gordon,Illinois,VT,,,,7.6,,9.775,9.425,9.65,9.1125,9.775,7.6,Illinois (Big Ten),1000.0
+31343,makayla green,Illinois,UB,,9.8,9.9,9.825,9.925,9.8875,9.8125,9.8,9.85,9.925,9.8,Illinois (Big Ten),4000.0
+33015,eden king,Illinois,BB,,9.225,9.825,9.05,9.7,9.7875,9.775,9.725,9.583928571428572,9.825,9.05,Illinois (Big Ten),1000.0
+33015,eden king,Illinois,FX,,9.7,9.9,9.55,9.775,9.85,9.8,9.825,9.771428571428572,9.9,9.55,Illinois (Big Ten),2000.0
+33015,eden king,Illinois,VT,,9.775,9.75,9.75,9.675,9.712499999999999,9.775,9.65,9.726785714285715,9.775,9.65,Illinois (Big Ten),1000.0
+31420,emmalise nock,Illinois,BB,,9.6,,,,,,,9.6,9.6,9.6,Illinois (Big Ten),1000.0
+31420,emmalise nock,Illinois,FX,,9.7,9.8,9.825,9.85,9.425,9.8875,9.9,9.769642857142857,9.9,9.425,Illinois (Big Ten),4000.0
+31420,emmalise nock,Illinois,UB,,,,,,,,8.65,8.65,8.65,8.65,Illinois (Big Ten),1000.0
+33258,megan sapp,Illinois,BB,,,,,9.775,9.6125,9.725000000000001,9.175,9.571875000000002,9.775,9.175,Illinois (Big Ten),1000.0
+31916,arielle ward,Illinois,FX,,,9.725,9.75,9.75,9.875,9.412500000000001,,9.7025,9.875,9.412500000000001,Illinois (Big Ten),2000.0
+31916,arielle ward,Illinois,UB,,9.775,9.775,9.75,9.775,9.8125,9.7625,9.8,9.778571428571427,9.8125,9.75,Illinois (Big Ten),2000.0
+31916,arielle ward,Illinois,VT,,,9.85,9.8,9.775,9.9375,9.575,9.8,9.789583333333333,9.9375,9.575,Illinois (Big Ten),4000.0
+31350,jaye mack,Illinois State,BB,9.65,9.7,9.825,9.85,9.7625,9.85,9.8,9.725,9.7703125,9.85,9.65,Illinois State (MIC),2000.0
+31350,jaye mack,Illinois State,FX,9.825,9.825,9.9,9.85,9.8125,9.775,9.85,9.85,9.8359375,9.9,9.775,Illinois State (MIC),3000.0
+31350,jaye mack,Illinois State,VT,9.825,9.825,9.775,9.85,9.850000000000001,9.725,9.775,9.85,9.809375,9.850000000000001,9.725,Illinois State (MIC),3000.0
+31777,ilka juk,Iowa,BB,,9.85,9.025,9.85,9.05,9.8,9.675,9.8,9.578571428571431,9.85,9.025,Iowa (Big Ten),1000.0
+31777,ilka juk,Iowa,UB,,9.7,9.8,9.725,9.8,9.825,9.7125,9.725,9.755357142857141,9.825,9.7,Iowa (Big Ten),1000.0
+30908,adeline kenlin,Iowa,BB,,,,,9.875,9.825,9.85,9.875,9.85625,9.875,9.825,Iowa (Big Ten),6250.0
+30908,adeline kenlin,Iowa,UB,,,,,,,9.725,9.7,9.712499999999999,9.725,9.7,Iowa (Big Ten),5000.0
+33022,cassie lee,Iowa,BB,,9.675,9.85,9.4,9.875,9.725,9.850000000000001,9.5,9.696428571428571,9.875,9.4,Iowa (Big Ten),2000.0
+32260,karina munoz,Iowa,BB,,,8.95,,9.875,9.85,9.075,9.875,9.525,9.875,8.95,Iowa (Big Ten),1000.0
+32260,karina munoz,Iowa,FX,,,,8.975,,9.9,9.8625,9.775,9.628125,9.9,8.975,Iowa (Big Ten),3000.0
+32260,karina munoz,Iowa,UB,,9.625,9.725,9.825,9.725,9.8,9.825,9.8,9.760714285714284,9.825,9.625,Iowa (Big Ten),2000.0
+32260,karina munoz,Iowa,VT,,9.75,9.875,9.875,9.925,9.8,9.85,9.875,9.85,9.925,9.75,Iowa (Big Ten),5000.0
+33024,sydney turner,Iowa,BB,,9.05,,8.675,,,,,8.8625,9.05,8.675,Iowa (Big Ten),1000.0
+33024,sydney turner,Iowa,FX,,9.45,,,9.65,9.65,9.8,,9.6375,9.8,9.45,Iowa (Big Ten),1000.0
+33024,sydney turner,Iowa,UB,,9.8,9.8,9.725,9.825,9.925,9.325,,9.733333333333333,9.925,9.325,Iowa (Big Ten),1000.0
+33024,sydney turner,Iowa,VT,,9.775,,,9.725,9.575,9.725,,9.7,9.775,9.575,Iowa (Big Ten),1000.0
+33025,reese wilson,Iowa,VT,,,,,,,9.775,,9.775,9.775,9.775,Iowa (Big Ten),1000.0
+32428,noelle adams,Iowa State,BB,9.775,9.825,9.825,9.775,9.675,9.625,9.7,9.775,9.746875000000001,9.825,9.625,Iowa State (Big 12),1000.0
+32428,noelle adams,Iowa State,FX,9.85,9.825,9.85,9.85,9.875,9.825,9.675,9.65,9.8,9.875,9.65,Iowa State (Big 12),3000.0
+32428,noelle adams,Iowa State,VT,9.85,9.9,9.8,,9.775,,9.7,9.775,9.799999999999999,9.9,9.7,Iowa State (Big 12),2000.0
+33029,haylee hardin,Iowa State,FX,,9.825,9.875,9.875,9.95,9.925,9.85,9.875,9.882142857142856,9.95,9.825,Iowa State (Big 12),5000.0
+33029,haylee hardin,Iowa State,VT,9.75,9.8,9.725,9.850000000000001,9.8,9.825,9.65,9.775,9.771875,9.850000000000001,9.65,Iowa State (Big 12),2000.0
+31104,lauren thomas,Iowa State,BB,9.8,9.85,9.85,9.8,9.825,9.8,9.35,9.15,9.678125,9.85,9.15,Iowa State (Big 12),3000.0
+31104,lauren thomas,Iowa State,UB,9.7,9.525,9.6,9.712499999999999,9.85,9.825,9.75,9.525,9.6859375,9.85,9.525,Iowa State (Big 12),1000.0
+31362,alyssa guns,Kent State,BB,,9.85,9.775,9.575,9.875,9.725,9.6,9.8,9.742857142857144,9.875,9.575,Kent State (MAC),1000.0
+31362,alyssa guns,Kent State,FX,,9.825,9.6,9.925,9.9,9.9,,9.825,9.829166666666666,9.925,9.6,Kent State (MAC),3000.0
+33042,chesney bennett,Kentucky,BB,,8.975,,,9.75,9.75,9.775,9.75,9.6,9.775,8.975,Kentucky (SEC),2000.0
+32441,creslyn brose,Kentucky,BB,,9.8,9.825,9.8,9.825,9.8,9.775,9.925,9.821428571428571,9.925,9.775,Kentucky (SEC),3000.0
+32441,creslyn brose,Kentucky,FX,,9.825,,,9.9,9.85,9.9,9.95,9.885,9.95,9.825,Kentucky (SEC),6250.0
+33043,carly busch,Kentucky,BB,,9.7,,,,,,,9.7,9.7,9.7,Kentucky (SEC),1000.0
+33044,anna flynn cashion,Kentucky,FX,,,9.825,,,,,,9.825,9.825,9.825,Kentucky (SEC),2000.0
+33044,anna flynn cashion,Kentucky,VT,,9.95,,,9.525,,,,9.7375,9.95,9.525,Kentucky (SEC),5000.0
+30921,hailey davis,Kentucky,FX,,9.925,9.9,9.9,9.925,9.95,9.925,9.925,9.921428571428573,9.95,9.9,Kentucky (SEC),6250.0
+30921,hailey davis,Kentucky,UB,,9.775,9.8,9.75,9.75,9.875,9.8,9.85,9.799999999999999,9.875,9.75,Kentucky (SEC),2000.0
+31101,skylar killough-wilhelm,Kentucky,BB,,9.8,9.825,9.9,9.875,9.875,9.85,9.9,9.860714285714286,9.9,9.8,Kentucky (SEC),4000.0
+31101,skylar killough-wilhelm,Kentucky,FX,,9.175,9.85,9.875,9.825,9.825,9.9,9.85,9.757142857142856,9.9,9.175,Kentucky (SEC),1000.0
+31101,skylar killough-wilhelm,Kentucky,UB,,9.75,9.925,9.8,9.95,9.875,9.925,9.85,9.867857142857142,9.95,9.75,Kentucky (SEC),4000.0
+31101,skylar killough-wilhelm,Kentucky,VT,,,9.775,9.9,9.75,9.925,9.875,9.825,9.841666666666667,9.925,9.75,Kentucky (SEC),4000.0
+32444,sharon lee,Kentucky,BB,,,9.9,9.725,9.875,9.85,9.075,9.75,9.695833333333333,9.9,9.075,Kentucky (SEC),1000.0
+30922,isabella magnelli,Kentucky,BB,,9.925,9.925,9.9,9.925,9.95,9.925,9.95,9.928571428571429,9.95,9.9,Kentucky (SEC),6250.0
+30922,isabella magnelli,Kentucky,FX,,9.8,9.85,9.875,9.775,9.825,9.875,9.875,9.839285714285714,9.875,9.775,Kentucky (SEC),3000.0
+30922,isabella magnelli,Kentucky,VT,,9.925,9.925,9.875,9.825,9.95,9.85,9.925,9.896428571428572,9.95,9.825,Kentucky (SEC),6250.0
+33045,ryan noonan,Kentucky,UB,,9.85,9.85,9.775,9.8,9.8,,,9.815000000000001,9.85,9.775,Kentucky (SEC),2000.0
+33045,ryan noonan,Kentucky,VT,,9.8,9.85,9.775,9.775,9.775,9.8,9.725,9.785714285714286,9.85,9.725,Kentucky (SEC),2000.0
+31358,jillian procasky,Kentucky,BB,,,9.85,9.775,,,,,9.8125,9.85,9.775,Kentucky (SEC),1000.0
+31358,jillian procasky,Kentucky,FX,,9.825,9.625,9.825,,,9.85,9.775,9.78,9.85,9.625,Kentucky (SEC),5000.0
+31358,jillian procasky,Kentucky,UB,,9.9,9.85,9.825,9.875,,9.55,9.8,9.799999999999999,9.9,9.55,Kentucky (SEC),5000.0
+31845,isabella rivelli,Kentucky,UB,,9.75,9.8,9.35,9.875,9.825,9.85,9.75,9.742857142857142,9.875,9.35,Kentucky (SEC),1000.0
+32445,cecily rizo,Kentucky,FX,,,,9.85,9.8,9.7,,,9.783333333333333,9.85,9.7,Kentucky (SEC),1000.0
+32445,cecily rizo,Kentucky,UB,,,,,,,,9.775,9.775,9.775,9.775,Kentucky (SEC),4000.0
+32445,cecily rizo,Kentucky,VT,,9.8,9.825,9.8,9.8,9.85,9.85,9.725,9.807142857142855,9.85,9.725,Kentucky (SEC),3000.0
+32446,delaynee rodriguez,Kentucky,BB,,9.6,9.9,9.875,9.875,9.85,9.875,9.8,9.825000000000001,9.9,9.6,Kentucky (SEC),3000.0
+32446,delaynee rodriguez,Kentucky,FX,,9.85,9.85,9.85,9.85,9.825,9.875,9.825,9.846428571428572,9.875,9.825,Kentucky (SEC),3000.0
+32446,delaynee rodriguez,Kentucky,UB,,9.75,9.9,9.875,9.8,9.85,9.825,9.875,9.839285714285714,9.9,9.75,Kentucky (SEC),4000.0
+32446,delaynee rodriguez,Kentucky,VT,,9.625,9.8,9.775,,9.725,9.775,9.8,9.750000000000002,9.8,9.625,Kentucky (SEC),1000.0
+31361,makenzie wilson,Kentucky,VT,,9.95,9.9,9.825,9.925,9.85,9.9,9.9,9.892857142857142,9.95,9.825,Kentucky (SEC),5000.0
+30950,sierra ballard,LSU,BB,9.25,9.85,9.875,9.8,9.875,9.55,9.95,9.85,9.75,9.95,9.25,LSU (SEC),4000.0
+30950,sierra ballard,LSU,FX,9.85,9.825,9.825,,9.85,9.775,9.925,9.825,9.839285714285714,9.925,9.775,LSU (SEC),3000.0
+30951,chase brock,LSU,FX,9.875,9.825,,9.825,9.875,,,,9.85,9.875,9.825,LSU (SEC),1000.0
+30951,chase brock,LSU,VT,9.825,9.925,9.825,9.9,9.925,9.775,,,9.8625,9.925,9.775,LSU (SEC),4000.0
+30952,haleigh bryant,LSU,BB,,9.75,9.95,9.8,9.875,9.85,9.825,9.85,9.842857142857143,9.95,9.75,LSU (SEC),4000.0
+30952,haleigh bryant,LSU,FX,,,9.9,9.875,9.95,9.875,9.95,9.9,9.908333333333333,9.95,9.875,LSU (SEC),6250.0
+30952,haleigh bryant,LSU,UB,,,,,,,,9.85,9.85,9.85,9.85,LSU (SEC),6250.0
+30952,haleigh bryant,LSU,VT,,,,,,9.925,9.95,9.9,9.925,9.95,9.9,LSU (SEC),6250.0
+33047,kailin chio,LSU,BB,9.925,9.85,9.925,9.85,9.95,9.925,9.925,9.925,9.909375,9.95,9.85,LSU (SEC),6250.0
+33047,kailin chio,LSU,FX,9.925,9.925,9.825,9.15,9.9,9.9,9.95,9.85,9.803125,9.95,9.15,LSU (SEC),6250.0
+33047,kailin chio,LSU,UB,9.9,9.9,9.225,9.725,9.925,9.85,9.9,9.875,9.7875,9.925,9.225,LSU (SEC),6250.0
+33047,kailin chio,LSU,VT,9.825,9.95,9.925,9.95,9.875,9.975,9.95,9.925,9.921875,9.975,9.825,LSU (SEC),6250.0
+32452,kylie coen,LSU,BB,,,9.875,9.65,9.9,9.825,9.875,9.775,9.816666666666666,9.9,9.65,LSU (SEC),2000.0
+31947,ashley cowan,LSU,UB,9.85,9.95,9.825,9.875,9.85,9.9,9.825,9.875,9.86875,9.95,9.825,LSU (SEC),5000.0
+32453,amari drayton,LSU,BB,9.675,,,,,,,,9.675,9.675,9.675,LSU (SEC),1000.0
+32453,amari drayton,LSU,FX,9.875,9.95,9.75,9.875,9.9,9.9,9.95,9.875,9.884375,9.95,9.75,LSU (SEC),6250.0
+32453,amari drayton,LSU,VT,9.925,9.825,9.875,9.85,9.75,9.9,9.875,9.725,9.840625,9.925,9.725,LSU (SEC),5000.0
+30953,olivia dunne,LSU,BB,9.825,9.775,,,,,,,9.8,9.825,9.775,LSU (SEC),1000.0
+30953,olivia dunne,LSU,FX,9.875,9.85,9.875,9.7,,,,,9.825,9.875,9.7,LSU (SEC),5000.0
+30953,olivia dunne,LSU,UB,,9.725,,,,,,,9.725,9.725,9.725,LSU (SEC),4000.0
+31367,aleah finnegan,LSU,BB,9.925,9.925,9.775,9.925,9.85,9.875,9.7,9.9,9.859375,9.925,9.7,LSU (SEC),6250.0
+31367,aleah finnegan,LSU,FX,9.95,9.975,9.95,9.575,9.75,9.675,9.8,9.775,9.806249999999999,9.975,9.575,LSU (SEC),3000.0
+31367,aleah finnegan,LSU,UB,9.9,9.825,9.825,9.85,9.8,9.825,9.85,,9.839285714285714,9.9,9.8,LSU (SEC),4000.0
+31367,aleah finnegan,LSU,VT,9.95,9.9,9.95,9.75,9.925,9.825,9.875,9.85,9.878125,9.95,9.75,LSU (SEC),6250.0
+31793,alexis jeffrey,LSU,UB,9.825,,9.9,9.875,9.925,9.8,9.8,9.825,9.85,9.925,9.8,LSU (SEC),4000.0
+31368,kj johnson,LSU,VT,9.825,,,,9.9,9.825,9.875,9.725,9.830000000000002,9.9,9.725,LSU (SEC),5000.0
+33048,kaliya lincoln,LSU,FX,,,,,,9.875,9.925,9.875,9.891666666666667,9.925,9.875,LSU (SEC),1000.0
+33048,kaliya lincoln,LSU,VT,9.825,9.825,9.725,9.85,9.925,,9.95,9.8,9.842857142857142,9.95,9.725,LSU (SEC),4000.0
+32454,konnor mcclain,LSU,BB,9.825,9.85,9.9,9.575,9.95,9.775,9.925,9.825,9.828125,9.95,9.575,LSU (SEC),4000.0
+32454,konnor mcclain,LSU,UB,9.8,9.925,9.925,9.925,9.875,9.9,9.8,9.85,9.875,9.925,9.8,LSU (SEC),6250.0
+33051,lexi zeiss,LSU,UB,9.8,9.825,9.825,9.85,9.85,9.75,9.875,9.875,9.83125,9.875,9.75,LSU (SEC),4000.0
+33051,lexi zeiss,LSU,VT,,9.85,9.775,9.8,,,,,9.808333333333335,9.85,9.775,LSU (SEC),1000.0
+32459,lauren brendlinger,Maryland,BB,,9.6,9.8,9.85,9.8,9.675,9.7,9.725,9.735714285714286,9.85,9.6,Maryland (Big Ten),1000.0
+32459,lauren brendlinger,Maryland,FX,,9.8,9.65,9.65,9.725,9.65,9.775,9.775,9.717857142857143,9.8,9.65,Maryland (Big Ten),1000.0
+31371,tasha brozowski,Maryland,UB,,,,,,9.7,,9.675,9.6875,9.7,9.675,Maryland (Big Ten),3000.0
+32460,logan buckmon,Maryland,VT,,9.6,9.75,9.725,9.675,9.75,9.85,9.725,9.725,9.85,9.6,Maryland (Big Ten),1000.0
+33053,rayna engelmayer,Maryland,BB,,,,,,9.525,9.0,9.45,9.325000000000001,9.525,9.0,Maryland (Big Ten),1000.0
+33053,rayna engelmayer,Maryland,VT,,,,,,9.675,9.825,9.725,9.741666666666665,9.825,9.675,Maryland (Big Ten),2000.0
+32162,victoria gatzendorfer,Maryland,BB,,9.8,8.725,9.875,9.125,9.75,9.725,9.75,9.535714285714286,9.875,8.725,Maryland (Big Ten),1000.0
+32162,victoria gatzendorfer,Maryland,UB,,9.75,9.8,9.75,9.575,9.75,9.775,9.65,9.721428571428572,9.8,9.575,Maryland (Big Ten),1000.0
+32462,layla hammer,Maryland,BB,,9.8,9.475,9.825,9.125,,,,9.556249999999999,9.825,9.125,Maryland (Big Ten),1000.0
+32462,layla hammer,Maryland,VT,,9.675,9.75,9.7,9.25,,,,9.59375,9.75,9.25,Maryland (Big Ten),1000.0
+31374,sierra kondo,Maryland,UB,,9.775,9.95,9.875,9.75,9.85,8.5,,9.616666666666667,9.95,8.5,Maryland (Big Ten),1000.0
+31375,rhea leblanc,Maryland,FX,,9.85,9.85,9.825,9.85,9.825,9.7,9.9,9.828571428571427,9.9,9.7,Maryland (Big Ten),3000.0
+31375,rhea leblanc,Maryland,UB,,9.7,9.85,9.775,9.75,9.775,9.85,9.775,9.782142857142857,9.85,9.7,Maryland (Big Ten),2000.0
+31375,rhea leblanc,Maryland,VT,,9.625,9.825,9.75,9.85,9.65,9.75,9.85,9.757142857142856,9.85,9.625,Maryland (Big Ten),2000.0
+32463,natalie martin,Maryland,BB,,9.775,8.95,9.875,9.425,9.8,9.7,9.8,9.617857142857144,9.875,8.95,Maryland (Big Ten),1000.0
+32463,natalie martin,Maryland,FX,,9.825,9.8,9.825,9.875,9.8,9.825,8.925,9.696428571428571,9.875,8.925,Maryland (Big Ten),3000.0
+32463,natalie martin,Maryland,VT,,9.8,9.875,9.8,9.875,9.85,9.925,9.925,9.864285714285716,9.925,9.8,Maryland (Big Ten),5000.0
+31414,hailey merchant,Maryland,UB,,9.8,9.55,9.675,9.775,9.875,9.65,9.8,9.732142857142858,9.875,9.55,Maryland (Big Ten),1000.0
+32165,taylor rech,Maryland,FX,,9.725,9.875,9.7,9.825,9.825,9.8,9.85,9.799999999999999,9.875,9.7,Maryland (Big Ten),2000.0
+32165,taylor rech,Maryland,VT,,9.775,9.75,9.725,9.825,9.8,9.775,9.85,9.785714285714286,9.85,9.725,Maryland (Big Ten),2000.0
+30958,alexa rothenbuescher,Maryland,BB,,9.575,9.6,9.9,9.825,9.025,9.8,9.6,9.617857142857144,9.9,9.025,Maryland (Big Ten),1000.0
+30958,alexa rothenbuescher,Maryland,FX,,9.9,7.25,9.85,9.875,9.775,9.875,9.75,9.467857142857143,9.9,7.25,Maryland (Big Ten),3000.0
+30958,alexa rothenbuescher,Maryland,UB,,9.75,9.775,8.1,8.775,,9.775,9.725,9.316666666666666,9.775,8.1,Maryland (Big Ten),1000.0
+30958,alexa rothenbuescher,Maryland,VT,,9.675,,9.725,9.725,9.625,9.7,9.625,9.679166666666665,9.725,9.625,Maryland (Big Ten),1000.0
+33056,sarah saville,Maryland,UB,,9.825,9.875,9.85,9.6,9.725,9.8,9.775,9.778571428571428,9.875,9.6,Maryland (Big Ten),2000.0
+30961,carly bauman,Michigan,BB,9.85,9.8,9.875,9.9,9.875,9.975,9.2,9.9,9.796875,9.975,9.2,Michigan (Big Ten),5000.0
+30961,carly bauman,Michigan,FX,9.85,9.875,9.9,9.85,9.925,9.9,9.9,9.925,9.890625,9.925,9.85,Michigan (Big Ten),6250.0
+30961,carly bauman,Michigan,UB,9.85,9.9,9.9,9.85,9.85,9.95,9.85,9.975,9.890625,9.975,9.85,Michigan (Big Ten),6250.0
+32465,kayli boozer,Michigan,BB,9.875,9.175,9.85,9.9,9.95,9.85,9.9,9.425,9.740625,9.95,9.175,Michigan (Big Ten),5000.0
+32465,kayli boozer,Michigan,FX,9.725,9.775,9.875,9.85,9.9,9.9,9.85,9.875,9.84375,9.9,9.725,Michigan (Big Ten),4000.0
+33057,peyton davis,Michigan,FX,,,,,9.825,9.825,9.85,9.85,9.837499999999999,9.85,9.825,Michigan (Big Ten),2000.0
+33057,peyton davis,Michigan,VT,9.65,9.725,9.775,9.725,9.8,9.8,9.775,9.825,9.759375,9.825,9.65,Michigan (Big Ten),2000.0
+33058,sophia diaz,Michigan,FX,,,,9.825,9.85,9.85,9.9,9.8,9.845000000000002,9.9,9.8,Michigan (Big Ten),3000.0
+33058,sophia diaz,Michigan,UB,9.775,9.775,9.9,9.8,9.85,9.9,9.85,9.9,9.84375,9.9,9.775,Michigan (Big Ten),4000.0
+33058,sophia diaz,Michigan,VT,9.775,9.85,9.8,9.9,9.725,9.825,9.825,9.85,9.81875,9.9,9.725,Michigan (Big Ten),4000.0
+30962,reyna guggino,Michigan,VT,9.525,,,,,,,,9.525,9.525,9.525,Michigan (Big Ten),5000.0
+32466,ava jordan,Michigan,UB,9.825,9.825,9.825,9.825,8.975,9.875,9.8,9.8,9.71875,9.875,8.975,Michigan (Big Ten),3000.0
+32466,ava jordan,Michigan,VT,9.725,9.75,9.875,9.775,9.7,9.75,9.875,9.825,9.784375,9.875,9.7,Michigan (Big Ten),2000.0
+30964,jenna mulligan,Michigan,BB,9.575,9.825,9.75,9.775,9.825,9.85,9.9,9.775,9.784374999999999,9.9,9.575,Michigan (Big Ten),3000.0
+30964,jenna mulligan,Michigan,FX,,9.725,,9.775,9.775,,,,9.758333333333333,9.775,9.725,Michigan (Big Ten),4000.0
+30964,jenna mulligan,Michigan,VT,9.725,9.825,9.825,9.775,9.85,9.825,9.9,9.95,9.834375,9.95,9.725,Michigan (Big Ten),4000.0
+33061,sophie parenti,Michigan,BB,9.7,9.85,9.85,9.775,9.75,9.775,9.85,9.825,9.796875,9.85,9.7,Michigan (Big Ten),3000.0
+33061,sophie parenti,Michigan,FX,9.7,9.825,9.8,9.6,,9.85,9.825,9.85,9.778571428571427,9.85,9.6,Michigan (Big Ten),2000.0
+33061,sophie parenti,Michigan,UB,,9.675,9.8,9.8,9.825,9.825,9.8,9.825,9.792857142857143,9.825,9.675,Michigan (Big Ten),3000.0
+33062,jahzara ranger,Michigan,BB,9.9,9.8,9.9,9.725,9.875,9.85,9.85,9.875,9.846875,9.9,9.725,Michigan (Big Ten),5000.0
+33062,jahzara ranger,Michigan,FX,9.8,9.9,9.8,9.775,9.85,9.85,9.85,9.9,9.840625000000001,9.9,9.775,Michigan (Big Ten),4000.0
+33062,jahzara ranger,Michigan,UB,9.0,9.2,9.775,9.825,9.7,,,,9.5,9.825,9.0,Michigan (Big Ten),2000.0
+33062,jahzara ranger,Michigan,VT,9.8,9.8,9.85,9.825,9.55,9.625,9.75,9.85,9.756250000000001,9.85,9.55,Michigan (Big Ten),3000.0
+33063,audrey sanger,Michigan,UB,,,,,,,9.825,8.9,9.3625,9.825,8.9,Michigan (Big Ten),2000.0
+31952,paige thaxton,Michigan,FX,9.55,9.85,9.775,,,,,,9.725,9.85,9.55,Michigan (Big Ten),4000.0
+31952,paige thaxton,Michigan,VT,,9.625,9.825,9.825,9.725,9.8,9.75,9.675,9.74642857142857,9.825,9.625,Michigan (Big Ten),2000.0
+31378,jacey vore,Michigan,BB,9.775,9.5,9.9,9.9,9.825,9.825,9.775,9.325,9.728125,9.9,9.325,Michigan (Big Ten),3000.0
+31378,jacey vore,Michigan,UB,9.8,9.8,9.85,9.775,9.875,9.85,9.825,9.85,9.828125,9.875,9.775,Michigan (Big Ten),4000.0
+32467,haylen zabrowski,Michigan,FX,8.775,,9.775,,,,,,9.275,9.775,8.775,Michigan (Big Ten),1000.0
+32467,haylen zabrowski,Michigan,UB,9.325,,,,,9.75,,,9.5375,9.75,9.325,Michigan (Big Ten),3000.0
+31953,elle beaufait,Michigan State,FX,,9.7,9.9,9.825,9.775,9.825,9.75,,9.795833333333334,9.9,9.7,Michigan State (Big Ten),2000.0
+33064,amy doyle,Michigan State,BB,,,,,,,,9.775,9.775,9.775,9.775,Michigan State (Big Ten),2000.0
+33064,amy doyle,Michigan State,UB,9.775,9.85,9.85,9.8,9.85,9.875,9.45,9.875,9.790624999999999,9.875,9.45,Michigan State (Big Ten),4000.0
+33064,amy doyle,Michigan State,VT,,,,9.85,9.9,9.875,9.3,9.85,9.754999999999999,9.9,9.3,Michigan State (Big Ten),2000.0
+33065,cady duplissis,Michigan State,BB,9.85,9.8,9.825,9.725,,9.75,9.775,,9.7875,9.85,9.725,Michigan State (Big Ten),2000.0
+33065,cady duplissis,Michigan State,VT,9.8,9.225,9.825,9.85,,,,,9.674999999999999,9.85,9.225,Michigan State (Big Ten),2000.0
+30968,delanie harkness,Michigan State,FX,9.85,9.775,9.875,9.6,9.85,9.85,9.85,9.9,9.818750000000001,9.9,9.6,Michigan State (Big Ten),3000.0
+30968,delanie harkness,Michigan State,UB,9.825,9.9,9.875,9.8,9.875,9.85,9.85,9.85,9.853125,9.9,9.8,Michigan State (Big Ten),4000.0
+31379,lauren hsu,Michigan State,VT,,9.7,,,,,,,9.7,9.7,9.7,Michigan State (Big Ten),1000.0
+30970,giana kalefe,Michigan State,BB,9.85,9.85,9.875,9.875,9.75,9.825,8.925,9.95,9.7375,9.95,8.925,Michigan State (Big Ten),4000.0
+30970,giana kalefe,Michigan State,FX,9.8,8.3,,,,,,,9.05,9.8,8.3,Michigan State (Big Ten),1000.0
+31954,sage kellerman,Michigan State,UB,9.85,9.925,9.9,9.85,9.925,9.925,9.85,9.95,9.896875,9.95,9.85,Michigan State (Big Ten),6250.0
+31954,sage kellerman,Michigan State,VT,9.925,9.875,9.85,9.9,9.95,9.9,9.825,9.775,9.875,9.95,9.775,Michigan State (Big Ten),6250.0
+32469,emma misenheimer,Michigan State,BB,9.85,9.8,9.775,9.7,,,,,9.78125,9.85,9.7,Michigan State (Big Ten),1000.0
+32469,emma misenheimer,Michigan State,FX,,,,,,,9.825,9.85,9.837499999999999,9.85,9.825,Michigan State (Big Ten),1000.0
+32470,gabi ortiz,Michigan State,FX,,,,,,,,9.575,9.575,9.575,9.575,Michigan State (Big Ten),1000.0
+31382,skyla schulte,Michigan State,BB,,,,9.75,9.8,9.925,9.875,9.925,9.855,9.925,9.75,Michigan State (Big Ten),5000.0
+31382,skyla schulte,Michigan State,FX,,,9.925,9.9,9.825,9.925,9.925,9.925,9.904166666666667,9.925,9.825,Michigan State (Big Ten),6250.0
+31955,nikki smith,Michigan State,BB,9.85,9.825,9.875,9.6,9.875,9.875,9.8,9.85,9.81875,9.875,9.6,Michigan State (Big Ten),4000.0
+31955,nikki smith,Michigan State,FX,9.8,9.75,9.925,9.85,9.9,9.9,9.9,8.975,9.75,9.925,8.975,Michigan State (Big Ten),4000.0
+31955,nikki smith,Michigan State,UB,9.875,9.9,9.775,9.85,9.7,9.925,9.825,9.95,9.85,9.95,9.7,Michigan State (Big Ten),5000.0
+31955,nikki smith,Michigan State,VT,9.95,9.825,9.95,9.95,9.95,9.875,9.9,9.925,9.915625,9.95,9.825,Michigan State (Big Ten),6250.0
+31383,gabrielle stephen,Michigan State,BB,9.325,9.9,9.875,9.9,9.825,9.9,9.825,9.8,9.79375,9.9,9.325,Michigan State (Big Ten),5000.0
+31383,gabrielle stephen,Michigan State,FX,9.875,9.85,9.875,9.9,9.875,9.875,9.9,9.9,9.88125,9.9,9.85,Michigan State (Big Ten),5000.0
+31383,gabrielle stephen,Michigan State,UB,9.8,9.85,9.875,9.775,9.825,9.775,9.75,9.925,9.821875,9.925,9.75,Michigan State (Big Ten),3000.0
+31383,gabrielle stephen,Michigan State,VT,9.875,9.8,9.825,9.8,9.8,9.9,9.9,9.875,9.846875,9.9,9.8,Michigan State (Big Ten),4000.0
+32472,makayla tucker,Michigan State,BB,,,,,9.2,8.7,,,8.95,9.2,8.7,Michigan State (Big Ten),3000.0
+32472,makayla tucker,Michigan State,FX,9.825,,9.875,9.825,9.85,9.775,,,9.83,9.875,9.775,Michigan State (Big Ten),4000.0
+32472,makayla tucker,Michigan State,UB,,,,9.8,,,,,9.8,9.8,9.8,Michigan State (Big Ten),1000.0
+32472,makayla tucker,Michigan State,VT,9.75,,9.9,9.9,9.85,9.8,9.775,9.85,9.832142857142857,9.9,9.75,Michigan State (Big Ten),4000.0
+31956,olivia zsarmani,Michigan State,BB,9.7,9.925,9.875,,9.75,,9.7,9.3,9.708333333333334,9.925,9.3,Michigan State (Big Ten),1000.0
+31956,olivia zsarmani,Michigan State,FX,9.85,9.825,,,,,,,9.837499999999999,9.85,9.825,Michigan State (Big Ten),1000.0
+31956,olivia zsarmani,Michigan State,UB,9.8,9.85,9.825,,9.825,9.825,9.775,9.875,9.825,9.875,9.775,Michigan State (Big Ten),3000.0
+31956,olivia zsarmani,Michigan State,VT,9.85,9.825,9.825,,9.95,9.875,9.9,9.95,9.882142857142856,9.95,9.825,Michigan State (Big Ten),5000.0
+33066,teryn crump,Minnesota,FX,9.6,9.75,,,,,,,9.675,9.75,9.6,Minnesota (Big Ten),2000.0
+33066,teryn crump,Minnesota,UB,9.75,9.775,9.625,9.875,9.875,,9.8,9.85,9.792857142857143,9.875,9.625,Minnesota (Big Ten),3000.0
+33066,teryn crump,Minnesota,VT,7.825,9.825,9.8,9.9,9.8,9.8,9.85,9.85,9.58125,9.9,7.825,Minnesota (Big Ten),3000.0
+32475,leah gonsiorowski,Minnesota,FX,,9.65,9.85,,,9.875,9.9,9.8,9.815000000000001,9.9,9.65,Minnesota (Big Ten),2000.0
+33067,mccauley harrington,Minnesota,UB,,,,9.75,9.85,9.725,9.675,9.825,9.765,9.85,9.675,Minnesota (Big Ten),3000.0
+30973,mya hooten,Minnesota,FX,9.825,9.9,9.925,,9.925,9.925,9.925,9.925,9.907142857142858,9.925,9.825,Minnesota (Big Ten),6250.0
+30973,mya hooten,Minnesota,UB,9.8,9.825,9.825,9.675,9.7,9.9,9.9,9.95,9.821875,9.95,9.675,Minnesota (Big Ten),4000.0
+30973,mya hooten,Minnesota,VT,9.9,9.95,9.85,9.85,9.85,9.85,9.95,9.85,9.88125,9.95,9.85,Minnesota (Big Ten),5000.0
+31385,marissa jencks,Minnesota,FX,9.775,9.825,9.8,9.825,9.825,9.825,9.8,9.825,9.8125,9.825,9.775,Minnesota (Big Ten),3000.0
+31385,marissa jencks,Minnesota,UB,9.725,9.7,9.725,9.8,9.825,9.725,9.75,9.775,9.753124999999999,9.825,9.7,Minnesota (Big Ten),1000.0
+31958,seria johnson,Minnesota,FX,4.95,,,9.925,9.8,,,,8.225,9.925,4.95,Minnesota (Big Ten),4000.0
+31958,seria johnson,Minnesota,UB,9.75,,,9.8,,9.825,,,9.791666666666666,9.825,9.75,Minnesota (Big Ten),4000.0
+30975,emily koch,Minnesota,BB,9.8,9.725,9.8,9.75,9.775,9.85,9.15,9.85,9.7125,9.85,9.15,Minnesota (Big Ten),2000.0
+30975,emily koch,Minnesota,FX,,,9.875,9.9,9.85,9.825,9.9,9.9,9.874999999999998,9.9,9.825,Minnesota (Big Ten),4000.0
+32477,jordyn lyden,Minnesota,BB,9.775,9.825,9.85,9.9,9.875,9.85,9.875,9.9,9.85625,9.9,9.775,Minnesota (Big Ten),5000.0
+32477,jordyn lyden,Minnesota,FX,,,,9.85,,,,,9.85,9.85,9.85,Minnesota (Big Ten),1000.0
+32477,jordyn lyden,Minnesota,UB,9.85,9.875,9.875,9.85,9.85,9.9,9.9,9.875,9.871875,9.9,9.85,Minnesota (Big Ten),5000.0
+31959,sarah moraw,Minnesota,BB,9.775,9.775,9.85,9.85,9.775,9.825,9.925,9.875,9.83125,9.925,9.775,Minnesota (Big Ten),4000.0
+31959,sarah moraw,Minnesota,VT,9.775,9.875,9.825,9.9,9.75,9.825,9.9,9.75,9.825,9.9,9.75,Minnesota (Big Ten),4000.0
+32478,sophia nguyen,Minnesota,UB,9.75,9.75,7.7,,,,,,9.066666666666666,9.75,7.7,Minnesota (Big Ten),1000.0
+32478,sophia nguyen,Minnesota,VT,9.65,,,,,,,,9.65,9.65,9.65,Minnesota (Big Ten),3000.0
+31386,lauren pearl,Minnesota,BB,9.775,9.75,9.7,9.85,9.875,9.2,9.8,9.8,9.71875,9.875,9.2,Minnesota (Big Ten),2000.0
+31386,lauren pearl,Minnesota,FX,9.7,9.85,9.8,9.9,9.825,9.85,9.875,9.875,9.834375,9.9,9.7,Minnesota (Big Ten),4000.0
+31386,lauren pearl,Minnesota,VT,9.5,9.65,9.75,9.825,9.775,9.775,9.775,9.75,9.725,9.825,9.5,Minnesota (Big Ten),2000.0
+31960,brooklyn rowray,Minnesota,BB,9.25,9.775,9.875,9.925,9.55,9.85,9.95,9.65,9.728125,9.95,9.25,Minnesota (Big Ten),3000.0
+31960,brooklyn rowray,Minnesota,FX,9.15,,,,,,,,9.15,9.15,9.15,Minnesota (Big Ten),1000.0
+31961,megan steensland,Minnesota,FX,,9.825,9.725,9.9,9.875,9.825,9.85,9.8,9.828571428571427,9.9,9.725,Minnesota (Big Ten),3000.0
+31961,megan steensland,Minnesota,VT,9.675,9.775,9.775,9.85,9.8,9.8,9.75,9.8,9.778125000000001,9.85,9.675,Minnesota (Big Ten),2000.0
+33070,ava stewart,Minnesota,BB,9.875,9.8,9.825,9.85,9.875,9.825,9.825,9.9,9.846874999999999,9.9,9.8,Minnesota (Big Ten),4000.0
+33070,ava stewart,Minnesota,UB,,9.825,9.65,,9.85,9.9,9.825,9.925,9.829166666666667,9.925,9.65,Minnesota (Big Ten),3000.0
+33070,ava stewart,Minnesota,VT,,9.825,9.925,9.9,9.875,9.675,9.9,9.675,9.825000000000001,9.925,9.675,Minnesota (Big Ten),4000.0
+30977,kyra burns,Missouri,UB,9.875,9.825,9.875,,9.85,9.85,9.825,9.775,9.839285714285714,9.875,9.775,Missouri (SEC),4000.0
+30977,kyra burns,Missouri,VT,,9.775,9.775,,,9.625,,,9.725,9.775,9.625,Missouri (SEC),6250.0
+31389,amari celestine,Missouri,BB,9.825,9.2,9.725,,9.85,9.85,9.875,,9.720833333333333,9.875,9.2,Missouri (SEC),1000.0
+31389,amari celestine,Missouri,FX,9.85,,8.975,9.925,9.825,9.925,9.95,9.95,9.771428571428572,9.95,8.975,Missouri (SEC),5000.0
+31389,amari celestine,Missouri,UB,9.9,9.85,9.8,9.9,9.9,9.925,9.95,9.925,9.89375,9.95,9.8,Missouri (SEC),6250.0
+31389,amari celestine,Missouri,VT,9.775,9.825,9.85,9.825,9.9,9.8,9.85,9.9,9.840625,9.9,9.775,Missouri (SEC),4000.0
+32481,jessa conedera,Missouri,BB,9.15,9.5,,,,,,,9.325,9.5,9.15,Missouri (SEC),1000.0
+32482,kennedy griffin,Missouri,BB,,,9.675,,,,,,9.675,9.675,9.675,Missouri (SEC),4000.0
+32482,kennedy griffin,Missouri,FX,9.825,9.925,9.75,9.85,9.875,9.875,10.0,9.925,9.878125,10.0,9.75,Missouri (SEC),5000.0
+32482,kennedy griffin,Missouri,VT,9.65,,,9.85,9.7,,9.8,9.85,9.77,9.85,9.65,Missouri (SEC),4000.0
+32483,hannah horton,Missouri,FX,9.85,9.9,9.875,9.85,9.825,9.85,,9.85,9.857142857142858,9.9,9.825,Missouri (SEC),4000.0
+32483,hannah horton,Missouri,UB,9.925,9.8,9.375,9.85,9.825,9.9,9.25,9.85,9.721875,9.925,9.25,Missouri (SEC),4000.0
+32483,hannah horton,Missouri,VT,9.8,9.8,9.875,9.725,9.925,9.85,9.675,9.925,9.821875,9.925,9.675,Missouri (SEC),4000.0
+33259,helen hu,Missouri,BB,9.8,9.875,10.0,9.975,9.975,9.825,9.875,9.975,9.912500000000001,10.0,9.8,Missouri (SEC),6250.0
+33074,railey jackson,Missouri,BB,9.8,9.75,9.875,9.8,9.8,9.85,9.85,9.75,9.809375,9.875,9.75,Missouri (SEC),3000.0
+33074,railey jackson,Missouri,FX,9.825,9.825,9.875,,,,9.925,9.85,9.86,9.925,9.825,Missouri (SEC),1000.0
+33074,railey jackson,Missouri,VT,,,,,,,,9.65,9.65,9.65,9.65,Missouri (SEC),3000.0
+33075,olivia kelly,Missouri,BB,,,,9.9,9.875,9.85,9.825,9.7,9.83,9.9,9.7,Missouri (SEC),4000.0
+33075,olivia kelly,Missouri,UB,,,,9.825,,,9.825,9.85,9.833333333333332,9.85,9.825,Missouri (SEC),4000.0
+33075,olivia kelly,Missouri,VT,,,,,,,9.75,9.7,9.725,9.75,9.7,Missouri (SEC),3000.0
+31964,addison lawrence,Missouri,BB,9.9,9.775,9.825,9.2,,9.8,,9.875,9.729166666666666,9.9,9.2,Missouri (SEC),1000.0
+31964,addison lawrence,Missouri,UB,9.825,9.75,9.75,,,,,9.9,9.80625,9.9,9.75,Missouri (SEC),1000.0
+32484,rayna light,Missouri,FX,9.8,9.825,,9.85,9.85,9.85,9.85,,9.8375,9.85,9.8,Missouri (SEC),3000.0
+32484,rayna light,Missouri,UB,,,,9.825,9.825,9.775,,,9.808333333333334,9.825,9.775,Missouri (SEC),4000.0
+31393,jocelyn moore,Missouri,FX,9.85,9.925,9.775,9.925,9.9,9.95,9.95,,9.896428571428572,9.95,9.775,Missouri (SEC),6250.0
+31393,jocelyn moore,Missouri,UB,9.875,9.725,9.775,9.825,9.85,9.875,9.8,,9.817857142857145,9.875,9.725,Missouri (SEC),3000.0
+31393,jocelyn moore,Missouri,VT,9.85,9.8,9.975,9.9,9.8,9.775,9.775,9.75,9.828125,9.975,9.75,Missouri (SEC),3000.0
+30905,abby mueller,Missouri,BB,,,,9.875,9.825,,9.825,9.85,9.84375,9.875,9.825,Missouri (SEC),1000.0
+30905,abby mueller,Missouri,VT,9.8,9.775,9.725,,,9.775,,,9.76875,9.8,9.725,Missouri (SEC),4000.0
+33077,kaia tanskanen,Missouri,FX,,,,,,,,9.9,9.9,9.9,9.9,Missouri (SEC),1000.0
+33077,kaia tanskanen,Missouri,VT,9.75,9.775,9.825,9.775,9.725,,,,9.77,9.825,9.725,Missouri (SEC),1000.0
+31512,elise tisler,Missouri,FX,,9.875,9.825,9.875,9.875,9.875,9.9,9.925,9.87857142857143,9.925,9.825,Missouri (SEC),5000.0
+31512,elise tisler,Missouri,VT,,,,9.85,9.825,9.775,9.175,,9.65625,9.85,9.175,Missouri (SEC),5000.0
+30948,mara titarsolej,Missouri,UB,9.85,9.9,9.9,9.825,9.925,9.925,9.875,9.9,9.8875,9.925,9.825,Missouri (SEC),6250.0
+31434,amy wier,Missouri,BB,9.775,9.675,9.825,9.8,9.775,9.9,9.875,9.875,9.8125,9.9,9.675,Missouri (SEC),3000.0
+32752,reese baechle,Nebraska,FX,,,9.75,9.75,9.8,9.725,9.675,9.75,9.741666666666667,9.8,9.675,Nebraska (Big Ten),1000.0
+32125,nya kraus,Nebraska,BB,9.425,9.825,9.625,9.35,,,,,9.55625,9.825,9.35,Nebraska (Big Ten),3000.0
+32125,nya kraus,Nebraska,FX,,9.75,,,,,,,9.75,9.75,9.75,Nebraska (Big Ten),3000.0
+32125,nya kraus,Nebraska,UB,8.35,,,,,,,,8.35,8.35,8.35,Nebraska (Big Ten),3000.0
+32125,nya kraus,Nebraska,VT,9.6,,,,,,,,9.6,9.6,9.6,Nebraska (Big Ten),1000.0
+30856,sophia mcclelland,Nebraska,BB,9.85,9.875,9.85,9.825,9.875,9.95,9.85,9.875,9.868749999999999,9.95,9.825,Nebraska (Big Ten),5000.0
+30856,sophia mcclelland,Nebraska,FX,9.775,9.775,9.925,9.875,9.825,9.925,9.85,9.925,9.859375,9.925,9.775,Nebraska (Big Ten),5000.0
+30856,sophia mcclelland,Nebraska,UB,9.775,9.8,9.775,9.8,9.825,9.85,9.8,9.775,9.8,9.85,9.775,Nebraska (Big Ten),2000.0
+30856,sophia mcclelland,Nebraska,VT,9.6,9.6,9.55,9.725,9.55,9.65,9.8,9.75,9.653125,9.8,9.55,Nebraska (Big Ten),1000.0
+31400,emma spence,Nebraska,BB,9.8,9.85,9.325,9.9,9.65,9.85,9.8,9.825,9.75,9.9,9.325,Nebraska (Big Ten),3000.0
+31400,emma spence,Nebraska,FX,9.8,9.75,9.875,9.9,9.85,9.9,9.875,9.875,9.853125,9.9,9.75,Nebraska (Big Ten),5000.0
+31400,emma spence,Nebraska,UB,9.825,9.9,9.9,9.85,9.9,9.85,9.9,9.9,9.878125,9.9,9.825,Nebraska (Big Ten),6250.0
+31400,emma spence,Nebraska,VT,9.75,9.8,9.8,9.825,9.85,9.75,9.85,9.85,9.809375,9.85,9.75,Nebraska (Big Ten),3000.0
+31406,lali dekanoidze,North Carolina,UB,,9.85,9.9,9.975,,9.825,9.875,9.9375,9.893749999999999,9.975,9.825,North Carolina (ACC),6250.0
+31406,lali dekanoidze,North Carolina,VT,,9.8,9.825,9.75,,9.8,9.8,9.85,9.804166666666667,9.85,9.75,North Carolina (ACC),3000.0
+31407,julia knower,North Carolina,BB,,9.825,9.625,9.7,9.775,9.75,9.775,9.825,9.75357142857143,9.825,9.625,North Carolina (ACC),2000.0
+31407,julia knower,North Carolina,FX,,9.725,9.825,9.75,9.85,9.9,9.875,9.825,9.821428571428571,9.9,9.725,North Carolina (ACC),3000.0
+31407,julia knower,North Carolina,UB,,9.45,9.725,9.675,9.75,9.875,9.75,9.825,9.721428571428572,9.875,9.45,North Carolina (ACC),1000.0
+31407,julia knower,North Carolina,VT,,9.75,9.775,9.775,9.675,9.75,9.8,9.787500000000001,9.758928571428571,9.8,9.675,North Carolina (ACC),2000.0
+33089,regan mcbride,North Carolina,BB,,9.85,9.8,9.575,9.725,9.125,9.9,9.425,9.62857142857143,9.9,9.125,North Carolina (ACC),1000.0
+32488,jessica naranjo,North Carolina,BB,,9.825,9.85,9.75,9.925,9.875,9.8,9.75,9.825000000000001,9.925,9.75,North Carolina (ACC),3000.0
+32488,jessica naranjo,North Carolina,FX,,9.725,9.775,9.85,9.825,9.85,9.7,9.7875,9.787499999999998,9.85,9.7,North Carolina (ACC),1000.0
+32296,claire stippich,North Carolina,FX,,,,,,,9.8,9.725,9.7625,9.8,9.725,North Carolina (ACC),1000.0
+32296,claire stippich,North Carolina,UB,,9.2,,,,,,9.837499999999999,9.518749999999999,9.837499999999999,9.2,North Carolina (ACC),4000.0
+33102,kerrington baham,Ohio State,VT,,,,,9.65,9.675,,,9.662500000000001,9.675,9.65,Ohio State (Big Ten),1000.0
+32679,samara buchanan,Ohio State,BB,,9.725,9.4,,,,,,9.5625,9.725,9.4,Ohio State (Big Ten),1000.0
+32679,samara buchanan,Ohio State,UB,,8.9,9.75,9.75,9.825,9.725,,,9.59,9.825,8.9,Ohio State (Big Ten),1000.0
+33103,jj coleman,Ohio State,BB,,,,,,,9.725,9.85,9.7875,9.85,9.725,Ohio State (Big Ten),2000.0
+33103,jj coleman,Ohio State,FX,,9.725,9.875,9.85,9.7,9.875,9.9,9.925,9.835714285714287,9.925,9.7,Ohio State (Big Ten),3000.0
+33103,jj coleman,Ohio State,UB,,,,,,,,9.275,9.275,9.275,9.275,Ohio State (Big Ten),2000.0
+33103,jj coleman,Ohio State,VT,,9.775,9.9,9.25,9.85,9.85,9.8,9.875,9.757142857142856,9.9,9.25,Ohio State (Big Ten),4000.0
+32160,mallory gregory,Ohio State,FX,,,,,,,9.775,9.775,9.775,9.775,9.775,Ohio State (Big Ten),1000.0
+31424,kaitlyn grimes,Ohio State,FX,,9.825,9.85,9.8,9.825,9.825,9.8,9.85,9.825,9.85,9.8,Ohio State (Big Ten),3000.0
+31424,kaitlyn grimes,Ohio State,VT,,9.85,9.825,9.825,9.7,9.825,9.775,9.825,9.803571428571429,9.85,9.7,Ohio State (Big Ten),3000.0
+33105,rylee guevara,Ohio State,BB,,9.525,9.8,9.675,9.825,9.2,9.775,9.825,9.660714285714286,9.825,9.2,Ohio State (Big Ten),1000.0
+33105,rylee guevara,Ohio State,FX,,9.9,9.9,9.9,9.875,9.925,9.875,9.875,9.892857142857142,9.925,9.875,Ohio State (Big Ten),5000.0
+33105,rylee guevara,Ohio State,VT,,9.875,9.725,9.65,,,,,9.75,9.875,9.65,Ohio State (Big Ten),5000.0
+32261,payton harris,Ohio State,BB,,,9.875,9.825,,,,,9.85,9.875,9.825,Ohio State (Big Ten),5000.0
+32261,payton harris,Ohio State,FX,,,,9.8,,,,,9.8,9.8,9.8,Ohio State (Big Ten),6250.0
+32261,payton harris,Ohio State,UB,,,9.775,9.725,,,,,9.75,9.775,9.725,Ohio State (Big Ten),5000.0
+32677,courtney mccann,Ohio State,BB,,9.875,,9.9,8.875,9.8,9.85,,9.66,9.9,8.875,Ohio State (Big Ten),1000.0
+32677,courtney mccann,Ohio State,UB,,9.725,,,9.425,,9.775,,9.641666666666667,9.775,9.425,Ohio State (Big Ten),3000.0
+32449,kate parks,Ohio State,UB,,9.725,9.65,9.7,9.775,9.75,8.775,,9.5625,9.775,8.775,Ohio State (Big Ten),1000.0
+32676,maisyn rader,Ohio State,BB,,,,,9.8,9.05,,,9.425,9.8,9.05,Ohio State (Big Ten),3000.0
+32676,maisyn rader,Ohio State,FX,,9.675,9.8,,9.625,9.475,,,9.64375,9.8,9.475,Ohio State (Big Ten),1000.0
+32676,maisyn rader,Ohio State,UB,,9.75,9.4,9.65,9.825,9.7,9.35,9.6,9.610714285714284,9.825,9.35,Ohio State (Big Ten),1000.0
+33107,karleigh reutzel,Ohio State,UB,,,,,,,,9.825,9.825,9.825,9.825,Ohio State (Big Ten),1000.0
+33107,karleigh reutzel,Ohio State,VT,,,,,,,9.775,9.85,9.8125,9.85,9.775,Ohio State (Big Ten),1000.0
+33109,cameron smith,Ohio State,BB,,9.8,9.85,9.65,9.825,9.6,9.775,9.825,9.760714285714286,9.85,9.6,Ohio State (Big Ten),2000.0
+33109,cameron smith,Ohio State,VT,,9.85,9.85,9.825,9.825,9.85,9.85,9.85,9.842857142857143,9.85,9.825,Ohio State (Big Ten),4000.0
+31427,tory vetter,Ohio State,BB,,9.85,9.875,9.1,9.825,9.775,9.05,9.875,9.621428571428572,9.875,9.05,Ohio State (Big Ten),1000.0
+31427,tory vetter,Ohio State,FX,,9.875,9.925,9.85,9.9,9.95,9.875,9.875,9.892857142857142,9.95,9.85,Ohio State (Big Ten),5000.0
+31427,tory vetter,Ohio State,UB,,9.85,9.925,9.825,9.75,9.85,9.85,9.8,9.835714285714285,9.925,9.75,Ohio State (Big Ten),4000.0
+31427,tory vetter,Ohio State,VT,,9.9,9.85,9.8,9.85,9.85,9.8,9.9,9.85,9.9,9.8,Ohio State (Big Ten),4000.0
+32675,grace walker,Ohio State,BB,,,,,,,,9.625,9.625,9.625,9.625,Ohio State (Big Ten),1000.0
+32675,grace walker,Ohio State,UB,,,,,,8.975,9.825,9.675,9.491666666666667,9.825,8.975,Ohio State (Big Ten),1000.0
+31008,jojo warga,Ohio State,BB,,9.825,9.025,9.775,9.775,9.7,9.7,9.725,9.646428571428572,9.825,9.025,Ohio State (Big Ten),1000.0
+31466,sidney washington,Ohio State,FX,,9.85,9.825,9.8,9.75,9.85,9.85,9.8,9.817857142857141,9.85,9.75,Ohio State (Big Ten),3000.0
+31466,sidney washington,Ohio State,UB,,9.825,9.75,9.775,9.75,9.75,9.825,9.675,9.764285714285714,9.825,9.675,Ohio State (Big Ten),1000.0
+31466,sidney washington,Ohio State,VT,,9.825,9.825,9.85,9.775,9.825,9.825,9.775,9.814285714285715,9.85,9.775,Ohio State (Big Ten),3000.0
+31428,jordan bowers,Oklahoma,BB,9.825,9.9,9.925,9.925,9.95,9.9,9.85,9.875,9.89375,9.95,9.825,Oklahoma (SEC),6250.0
+31428,jordan bowers,Oklahoma,FX,9.775,9.95,9.975,9.95,9.95,9.9,9.95,9.975,9.928125,9.975,9.775,Oklahoma (SEC),6250.0
+31428,jordan bowers,Oklahoma,UB,9.925,9.925,9.85,9.95,9.925,9.85,9.9,9.9,9.903125,9.95,9.85,Oklahoma (SEC),6250.0
+31428,jordan bowers,Oklahoma,VT,9.75,9.9,9.825,9.8,9.9,9.95,9.875,9.9,9.8625,9.95,9.75,Oklahoma (SEC),6250.0
+31009,audrey davis,Oklahoma,BB,9.75,9.875,9.925,9.9,9.825,9.9,9.825,9.8875,9.8609375,9.925,9.75,Oklahoma (SEC),6250.0
+31009,audrey davis,Oklahoma,FX,9.875,9.875,9.925,9.8,9.875,9.875,9.9,9.9,9.878125,9.925,9.8,Oklahoma (SEC),5000.0
+31009,audrey davis,Oklahoma,UB,9.95,9.975,9.95,9.925,9.95,9.95,9.875,9.9,9.934375,9.975,9.875,Oklahoma (SEC),6250.0
+31009,audrey davis,Oklahoma,VT,9.85,9.875,9.925,9.85,9.85,,,9.8375,9.864583333333334,9.925,9.8375,Oklahoma (SEC),5000.0
+33111,addison fatta,Oklahoma,BB,9.9,9.875,9.775,9.9,9.775,9.85,9.9,9.8625,9.8546875,9.9,9.775,Oklahoma (SEC),5000.0
+33111,addison fatta,Oklahoma,FX,9.8,9.875,9.8,9.75,9.8,9.9,9.825,9.912500000000001,9.8328125,9.912500000000001,9.75,Oklahoma (SEC),4000.0
+33111,addison fatta,Oklahoma,UB,9.825,9.875,9.9,9.85,9.925,9.875,9.875,9.9,9.878125,9.925,9.825,Oklahoma (SEC),6250.0
+33111,addison fatta,Oklahoma,VT,9.8,9.175,9.8,9.825,9.825,9.875,9.75,,9.721428571428572,9.875,9.175,Oklahoma (SEC),2000.0
+33112,elle mueller,Oklahoma,FX,,,9.875,9.875,9.85,9.8,9.9,9.8875,9.864583333333334,9.9,9.8,Oklahoma (SEC),4000.0
+33112,elle mueller,Oklahoma,UB,9.9,,9.85,9.65,,,,,9.799999999999999,9.9,9.65,Oklahoma (SEC),4000.0
+33112,elle mueller,Oklahoma,VT,,,,,,9.825,9.85,9.85,9.841666666666667,9.85,9.825,Oklahoma (SEC),4000.0
+33113,lily pederson,Oklahoma,BB,9.95,9.9,9.9,9.9,9.75,9.725,9.775,9.9125,9.8515625,9.95,9.725,Oklahoma (SEC),6250.0
+33113,lily pederson,Oklahoma,FX,9.8,9.875,9.9,9.825,9.875,9.9,9.875,9.912500000000001,9.8703125,9.912500000000001,9.8,Oklahoma (SEC),5000.0
+33113,lily pederson,Oklahoma,UB,9.875,9.95,9.85,9.8,9.925,9.925,9.925,9.825,9.884374999999999,9.95,9.8,Oklahoma (SEC),6250.0
+33113,lily pederson,Oklahoma,VT,9.925,9.825,9.925,9.875,9.825,9.9,9.85,9.85,9.871875,9.925,9.825,Oklahoma (SEC),5000.0
+31432,danielle sievers,Oklahoma,FX,9.8,9.85,,,,,,,9.825,9.85,9.8,Oklahoma (SEC),1000.0
+31432,danielle sievers,Oklahoma,UB,,9.9,,,,9.85,9.85,9.850000000000001,9.8625,9.9,9.85,Oklahoma (SEC),5000.0
+33114,kelsey slade,Oklahoma,UB,,,,,9.825,,,,9.825,9.825,9.825,Oklahoma (SEC),2000.0
+31989,faith torrez,Oklahoma,BB,9.925,9.975,9.8,9.95,9.925,9.825,9.9,9.95,9.90625,9.975,9.8,Oklahoma (SEC),6250.0
+31989,faith torrez,Oklahoma,FX,9.875,9.95,9.975,9.95,9.9,9.95,9.95,9.9625,9.9390625,9.975,9.875,Oklahoma (SEC),6250.0
+31989,faith torrez,Oklahoma,UB,9.9,9.95,9.825,9.75,9.95,9.875,9.85,9.850000000000001,9.86875,9.95,9.75,Oklahoma (SEC),6250.0
+31989,faith torrez,Oklahoma,VT,9.925,9.75,9.85,9.95,9.95,9.975,9.975,9.8125,9.8984375,9.975,9.75,Oklahoma (SEC),6250.0
+32715,keira wells,Oklahoma,BB,9.8,9.75,9.825,9.8,9.825,9.8,9.575,9.8875,9.782812499999999,9.8875,9.575,Oklahoma (SEC),3000.0
+32715,keira wells,Oklahoma,VT,9.95,9.85,9.825,9.775,9.875,9.85,9.875,9.925,9.865625000000001,9.95,9.775,Oklahoma (SEC),6250.0
+31435,carley beeman,Oregon State,UB,,9.75,,,,,,,9.75,9.75,9.75,Oregon State (Pac-12),3000.0
+31436,natalie briones,Oregon State,UB,9.675,9.85,9.825,9.75,,9.775,9.825,9.85,9.792857142857141,9.85,9.675,Oregon State (Pac-12),3000.0
+31436,natalie briones,Oregon State,VT,9.675,9.75,9.85,9.8,,9.75,9.8,9.825,9.778571428571428,9.85,9.675,Oregon State (Pac-12),2000.0
+32502,olivia buckner,Oregon State,BB,9.75,9.8,9.85,9.9,,9.75,9.825,9.8,9.810714285714285,9.9,9.75,Oregon State (Pac-12),3000.0
+32502,olivia buckner,Oregon State,VT,,9.7,,,,,9.75,9.775,9.741666666666665,9.775,9.7,Oregon State (Pac-12),1000.0
+31018,jade carey,Oregon State,BB,9.95,9.925,9.975,9.975,,9.975,9.9375,9.95,9.955357142857142,9.975,9.925,Oregon State (Pac-12),6250.0
+31018,jade carey,Oregon State,FX,9.9,9.95,9.95,9.9,,9.95,9.912500000000001,9.925,9.926785714285716,9.95,9.9,Oregon State (Pac-12),6250.0
+31018,jade carey,Oregon State,UB,9.9,9.95,9.975,9.9,,9.85,9.9,9.925,9.914285714285715,9.975,9.85,Oregon State (Pac-12),6250.0
+31018,jade carey,Oregon State,VT,9.875,9.9,9.9,9.85,,9.9,9.9,9.875,9.885714285714284,9.9,9.85,Oregon State (Pac-12),6250.0
+32127,francesca caso,Oregon State,UB,9.6,,9.825,,,9.825,9.85,9.775,9.775,9.85,9.6,Oregon State (Pac-12),1000.0
+31437,karlie chavez,Oregon State,FX,9.7,9.8,9.875,9.75,,9.825,,,9.790000000000001,9.875,9.7,Oregon State (Pac-12),4000.0
+31437,karlie chavez,Oregon State,VT,9.675,,9.825,9.9,,9.7,9.025,,9.625,9.9,9.025,Oregon State (Pac-12),3000.0
+32501,taylor devries,Oregon State,FX,9.65,,,,,,9.6625,9.675,9.6625,9.675,9.65,Oregon State (Pac-12),1000.0
+32501,taylor devries,Oregon State,UB,9.65,9.725,9.85,9.8,,9.7,9.825,9.725,9.753571428571428,9.85,9.65,Oregon State (Pac-12),1000.0
+32500,sophia esposito,Oregon State,BB,9.7,9.85,9.825,9.875,,9.875,9.8625,9.775,9.823214285714286,9.875,9.7,Oregon State (Pac-12),4000.0
+32500,sophia esposito,Oregon State,FX,,9.85,9.85,9.85,,9.9,9.899999999999999,9.8,9.858333333333333,9.9,9.8,Oregon State (Pac-12),4000.0
+32500,sophia esposito,Oregon State,VT,,9.775,9.925,9.7,,9.825,9.775,9.675,9.779166666666667,9.925,9.675,Oregon State (Pac-12),2000.0
+31438,kaitlin garcia,Oregon State,FX,9.85,9.625,9.95,9.875,,9.925,9.425,9.8,9.778571428571428,9.95,9.425,Oregon State (Pac-12),4000.0
+31438,kaitlin garcia,Oregon State,VT,9.75,9.675,9.775,9.775,,9.775,9.875,9.925,9.792857142857144,9.925,9.675,Oregon State (Pac-12),3000.0
+31019,sydney gonzales,Oregon State,BB,9.775,9.775,9.8,9.925,,9.925,9.8,8.875,9.696428571428571,9.925,8.875,Oregon State (Pac-12),3000.0
+31440,lauren letzsch,Oregon State,BB,9.825,9.85,9.9,9.9,,9.7,9.837499999999999,9.775,9.826785714285714,9.9,9.7,Oregon State (Pac-12),4000.0
+32128,jennifer mcmillan,Oregon State,BB,9.75,9.6,9.9,9.85,,9.85,9.8625,9.25,9.723214285714286,9.9,9.25,Oregon State (Pac-12),4000.0
+32128,jennifer mcmillan,Oregon State,UB,9.925,9.275,9.85,9.75,,9.8,9.825,9.8,9.746428571428572,9.925,9.275,Oregon State (Pac-12),3000.0
+32128,jennifer mcmillan,Oregon State,VT,9.775,,,,,,,,9.775,9.775,9.775,Oregon State (Pac-12),1000.0
+32129,savannah miller,Oregon State,FX,9.675,9.85,9.525,9.85,,9.875,9.8625,9.575,9.744642857142859,9.875,9.525,Oregon State (Pac-12),3000.0
+32129,savannah miller,Oregon State,UB,,,,9.7,,,9.775,,9.7375,9.775,9.7,Oregon State (Pac-12),1000.0
+31531,sage thompson,Oregon State,FX,9.8,9.8,9.9,9.85,,9.9,9.8875,9.825,9.851785714285715,9.9,9.8,Oregon State (Pac-12),4000.0
+31531,sage thompson,Oregon State,UB,9.825,9.8,9.85,9.75,,9.9,9.8875,9.875,9.841071428571428,9.9,9.75,Oregon State (Pac-12),4000.0
+31531,sage thompson,Oregon State,VT,9.75,9.75,9.775,9.8,,9.85,9.775,9.825,9.789285714285715,9.85,9.75,Oregon State (Pac-12),2000.0
+30823,cassi barbanente,Penn State,UB,9.825,9.725,9.85,9.85,9.875,9.725,9.525,9.875,9.78125,9.875,9.525,Penn State (Big Ten),2000.0
+31991,amani herring,Penn State,BB,9.75,9.9,9.75,9.725,9.875,,,,9.8,9.9,9.725,Penn State (Big Ten),2000.0
+31991,amani herring,Penn State,FX,,9.825,9.85,9.825,,,,,9.833333333333332,9.85,9.825,Penn State (Big Ten),4000.0
+31991,amani herring,Penn State,VT,,,,,9.775,,,,9.775,9.775,9.775,Penn State (Big Ten),2000.0
+31446,jessica johanson,Penn State,FX,9.85,9.875,9.75,9.725,,,,,9.8,9.875,9.725,Penn State (Big Ten),1000.0
+31446,jessica johanson,Penn State,UB,9.825,9.75,9.8,9.85,,,,,9.806249999999999,9.85,9.75,Penn State (Big Ten),1000.0
+31446,jessica johanson,Penn State,VT,9.7,9.8,9.8,9.675,,,,,9.74375,9.8,9.675,Penn State (Big Ten),3000.0
+31027,maddie johnston,Penn State,BB,9.775,9.85,9.725,9.05,9.85,9.85,9.725,9.875,9.712499999999999,9.875,9.05,Penn State (Big Ten),3000.0
+31027,maddie johnston,Penn State,UB,9.85,9.8,9.825,9.725,9.775,9.8,9.85,9.8,9.803125,9.85,9.725,Penn State (Big Ten),3000.0
+31027,maddie johnston,Penn State,VT,9.8,9.775,9.75,9.75,9.825,9.85,9.85,9.9,9.8125,9.9,9.75,Penn State (Big Ten),3000.0
+33120,allison kaempfer,Penn State,FX,9.6,,8.95,,,9.8,9.7,,9.5125,9.8,8.95,Penn State (Big Ten),2000.0
+33120,allison kaempfer,Penn State,VT,9.7,9.075,9.725,9.65,9.725,9.575,9.725,9.825,9.625,9.825,9.075,Penn State (Big Ten),1000.0
+32503,alyssa kramer,Penn State,FX,9.8,9.1,,,9.9,9.725,9.075,9.875,9.579166666666667,9.9,9.075,Penn State (Big Ten),1000.0
+33122,elizabeth leary,Penn State,BB,9.7,9.575,,,9.8,9.7,9.65,9.7,9.6875,9.8,9.575,Penn State (Big Ten),1000.0
+33122,elizabeth leary,Penn State,FX,9.8,9.8,9.65,9.775,9.8,9.775,9.7,9.775,9.759375000000002,9.8,9.65,Penn State (Big Ten),1000.0
+33122,elizabeth leary,Penn State,UB,9.8,9.85,9.725,9.825,9.775,9.8,9.55,9.775,9.7625,9.85,9.55,Penn State (Big Ten),2000.0
+33122,elizabeth leary,Penn State,VT,9.75,9.775,9.825,9.75,9.8,9.775,9.825,9.85,9.79375,9.85,9.75,Penn State (Big Ten),2000.0
+32504,ashley maul,Penn State,BB,9.85,9.8,9.8,9.775,9.675,9.65,9.8,9.8,9.76875,9.85,9.65,Penn State (Big Ten),2000.0
+32504,ashley maul,Penn State,FX,9.775,9.825,9.65,9.675,9.75,9.75,9.775,9.725,9.740625000000001,9.825,9.65,Penn State (Big Ten),1000.0
+32505,kalea mcelligott,Penn State,BB,9.825,9.775,9.8,9.775,9.875,9.325,9.875,9.8,9.756250000000001,9.875,9.325,Penn State (Big Ten),3000.0
+32505,kalea mcelligott,Penn State,FX,9.85,9.85,9.825,9.875,9.9,9.85,9.875,9.825,9.85625,9.9,9.825,Penn State (Big Ten),4000.0
+32505,kalea mcelligott,Penn State,UB,9.725,,,,9.775,9.8,9.75,9.225,9.655000000000001,9.8,9.225,Penn State (Big Ten),3000.0
+32505,kalea mcelligott,Penn State,VT,9.75,9.8,9.825,9.7,9.725,9.75,9.775,9.75,9.759375,9.825,9.7,Penn State (Big Ten),2000.0
+33124,ellie monahan,Penn State,BB,9.775,,,,,9.75,9.75,,9.758333333333333,9.775,9.75,Penn State (Big Ten),2000.0
+33124,ellie monahan,Penn State,FX,,,,,,,,9.7,9.7,9.7,9.7,Penn State (Big Ten),2000.0
+33124,ellie monahan,Penn State,VT,,,,,,9.725,9.55,9.8,9.691666666666668,9.8,9.55,Penn State (Big Ten),2000.0
+31448,elina vihrova,Penn State,FX,,,,,9.0,9.75,9.775,9.475,9.5,9.775,9.0,Penn State (Big Ten),1000.0
+31448,elina vihrova,Penn State,VT,9.55,9.7,9.75,9.725,9.675,9.75,9.675,9.85,9.709375000000001,9.85,9.55,Penn State (Big Ten),1000.0
+31460,hallie copperwheat,Pittsburgh,BB,,9.75,9.875,9.825,,,,,9.816666666666666,9.875,9.75,Pitt (ACC),3000.0
+31460,hallie copperwheat,Pittsburgh,FX,,9.75,9.8,,,,,,9.775,9.8,9.75,Pitt (ACC),1000.0
+31460,hallie copperwheat,Pittsburgh,UB,,9.8,9.75,9.825,,,,,9.791666666666666,9.825,9.75,Pitt (ACC),1000.0
+31461,jordyn ewing,Pittsburgh,FX,,9.9,9.75,9.875,9.825,9.7,9.875,9.9,9.832142857142856,9.9,9.7,Pittsburgh (ACC),3000.0
+31461,jordyn ewing,Pittsburgh,UB,,,,,9.725,,,8.975,9.35,9.725,8.975,Pittsburgh (ACC),4000.0
+33134,meika lee,Pittsburgh,BB,,9.75,9.7,9.65,9.75,9.675,9.85,9.8,9.739285714285716,9.85,9.65,Pittsburgh (ACC),1000.0
+33134,meika lee,Pittsburgh,FX,,9.725,9.725,9.825,9.775,9.6,9.875,9.825,9.764285714285714,9.875,9.6,Pittsburgh (ACC),2000.0
+33134,meika lee,Pittsburgh,UB,,9.2,,,,,,,9.2,9.2,9.2,Pittsburgh (ACC),2000.0
+33134,meika lee,Pittsburgh,VT,,9.725,,,,9.65,,,9.6875,9.725,9.65,Pittsburgh (ACC),2000.0
+31821,jaime pratt,Pittsburgh,BB,,,,,,9.025,9.2,,9.1125,9.2,9.025,Pittsburgh (ACC),1000.0
+31821,jaime pratt,Pittsburgh,FX,,,,,,9.5,,,9.5,9.5,9.5,Pittsburgh (ACC),1000.0
+31821,jaime pratt,Pittsburgh,UB,,9.825,9.725,9.7,9.775,9.85,9.75,9.8,9.775,9.85,9.7,Pittsburgh (ACC),1000.0
+31821,jaime pratt,Pittsburgh,VT,,,9.8,9.7,9.625,9.7,9.725,9.825,9.729166666666666,9.825,9.625,Pittsburgh (ACC),1000.0
+33137,delaney adrian,Rutgers,BB,,9.825,9.787500000000001,,9.725,9.7,9.625,9.3,9.660416666666665,9.825,9.3,Rutgers (Big Ten),1000.0
+33137,delaney adrian,Rutgers,FX,9.5,,9.7625,9.825,9.8,9.8,9.775,9.875,9.762500000000001,9.875,9.5,Rutgers (Big Ten),3000.0
+33137,delaney adrian,Rutgers,UB,9.75,9.7,9.775,9.825,9.8,9.85,9.8,9.85,9.79375,9.85,9.7,Rutgers (Big Ten),3000.0
+33137,delaney adrian,Rutgers,VT,9.75,9.55,9.537500000000001,9.625,9.5,9.5,9.575,9.75,9.598437500000001,9.75,9.5,Rutgers (Big Ten),1000.0
+33143,keeley smith,Rutgers,BB,9.825,,,9.6,,,,,9.712499999999999,9.825,9.6,Rutgers (Big Ten),2000.0
+33143,keeley smith,Rutgers,UB,9.775,9.725,9.8,9.85,9.675,9.775,9.775,9.8,9.771875000000001,9.85,9.675,Rutgers (Big Ten),2000.0
+33143,keeley smith,Rutgers,VT,,9.575,,,,,,,9.575,9.575,9.575,Rutgers (Big Ten),1000.0
+32539,elliot bringhurst,Southern Utah,BB,9.75,9.925,9.6,9.85,9.05,8.975,9.75,,9.557142857142859,9.925,8.975,Southern Utah (WAC),1000.0
+31482,ellie cacciola,Southern Utah,BB,9.425,9.9,9.375,9.9,9.875,9.85,9.649999999999999,,9.710714285714285,9.9,9.375,Southern Utah (WAC),2000.0
+31482,ellie cacciola,Southern Utah,FX,9.65,9.775,9.875,9.925,9.825,9.875,9.8375,,9.823214285714286,9.925,9.65,Southern Utah (WAC),4000.0
+31482,ellie cacciola,Southern Utah,VT,9.8,9.85,9.75,9.8,9.725,9.775,9.875,,9.796428571428573,9.875,9.725,Southern Utah (WAC),3000.0
+32540,brinlee christensen,Southern Utah,BB,9.875,8.95,,9.125,9.625,9.775,9.8,,9.525,9.875,8.95,Southern Utah (WAC),1000.0
+32540,brinlee christensen,Southern Utah,FX,9.725,9.7,9.6,9.875,9.825,9.85,9.925,,9.785714285714286,9.925,9.6,Southern Utah (WAC),2000.0
+32540,brinlee christensen,Southern Utah,UB,9.7,9.875,9.65,9.85,9.8,9.85,9.4,,9.732142857142858,9.875,9.4,Southern Utah (WAC),2000.0
+32540,brinlee christensen,Southern Utah,VT,9.7,9.8,9.525,9.85,9.7,9.775,9.837499999999999,,9.741071428571429,9.85,9.525,Southern Utah (WAC),2000.0
+32542,maria ferguson,Southern Utah,BB,,,,,9.675,9.8,9.6,,9.691666666666668,9.8,9.6,Southern Utah (WAC),1000.0
+32542,maria ferguson,Southern Utah,UB,,8.875,9.825,9.775,9.8,9.2,9.7625,,9.539583333333333,9.825,8.875,Southern Utah (WAC),1000.0
+32543,alyssa fernandez,Southern Utah,BB,9.325,9.725,9.7,9.225,,,9.1,,9.415,9.725,9.1,Southern Utah (WAC),3000.0
+32543,alyssa fernandez,Southern Utah,FX,8.9,9.7,9.65,9.825,9.8,9.85,9.825,,9.65,9.85,8.9,Southern Utah (WAC),2000.0
+32043,trista goodman,Southern Utah,UB,9.85,9.8,9.85,9.825,9.775,9.85,9.8125,,9.823214285714284,9.85,9.775,Southern Utah (WAC),3000.0
+32043,trista goodman,Southern Utah,VT,9.75,9.7,9.75,9.775,9.775,9.725,9.7625,,9.748214285714285,9.775,9.7,Southern Utah (WAC),2000.0
+31483,taylor gull,Southern Utah,FX,9.7,9.75,9.725,9.85,9.9,9.85,9.875,,9.807142857142859,9.9,9.7,Southern Utah (WAC),3000.0
+33175,mia hampton,Southern Utah,BB,,,9.575,,,,,,9.575,9.575,9.575,Southern Utah (WAC),2000.0
+33175,mia hampton,Southern Utah,FX,9.5,9.8,9.725,9.9,9.9,9.875,9.8625,,9.794642857142858,9.9,9.5,Southern Utah (WAC),4000.0
+33175,mia hampton,Southern Utah,UB,9.775,8.975,9.875,9.05,9.825,9.8,9.775,,9.582142857142856,9.875,8.975,Southern Utah (WAC),2000.0
+33175,mia hampton,Southern Utah,VT,9.8,9.7,9.7,9.725,9.775,9.725,9.8,,9.74642857142857,9.8,9.7,Southern Utah (WAC),2000.0
+32544,mackenzie kelly,Southern Utah,VT,9.65,9.775,9.825,9.85,9.75,9.65,9.825,,9.760714285714284,9.85,9.65,Southern Utah (WAC),2000.0
+32548,rylee miller,Southern Utah,BB,9.75,9.675,9.75,9.85,9.75,9.875,9.8625,,9.7875,9.875,9.675,Southern Utah (WAC),3000.0
+32548,rylee miller,Southern Utah,FX,,,,,,,9.85,,9.85,9.85,9.85,Southern Utah (WAC),1000.0
+31485,isabella neff,Southern Utah,UB,9.9,9.85,9.725,9.8,9.85,9.775,9.774999999999999,,9.810714285714285,9.9,9.725,Southern Utah (WAC),3000.0
+32549,niya randolph,Southern Utah,BB,9.775,9.75,9.7,9.825,9.775,9.75,9.787500000000001,,9.766071428571427,9.825,9.7,Southern Utah (WAC),2000.0
+32549,niya randolph,Southern Utah,FX,9.7,9.7,9.625,9.825,9.8,9.825,9.85,,9.760714285714284,9.85,9.625,Southern Utah (WAC),2000.0
+32549,niya randolph,Southern Utah,UB,9.85,9.85,9.775,9.8,9.175,9.825,9.825,,9.72857142857143,9.85,9.175,Southern Utah (WAC),3000.0
+32549,niya randolph,Southern Utah,VT,9.775,9.825,9.75,9.825,9.8,9.7,9.8125,,9.783928571428572,9.825,9.7,Southern Utah (WAC),3000.0
+32550,alex routsis,Southern Utah,UB,9.675,,,,,,,,9.675,9.675,9.675,Southern Utah (WAC),1000.0
+32051,ashley carter,Stanford,BB,,,,9.8,,9.9,9.85,9.8,9.837499999999999,9.9,9.8,Stanford (ACC),3000.0
+32051,ashley carter,Stanford,FX,,,,,9.875,,,,9.875,9.875,9.875,Stanford (ACC),1000.0
+33179,kendra chang,Stanford,UB,,8.85,,9.8,9.875,9.9,9.825,,9.65,9.9,8.85,Stanford (ACC),3000.0
+33179,kendra chang,Stanford,VT,,9.5,9.7,9.65,9.75,9.775,9.775,9.725,9.696428571428571,9.775,9.5,Stanford (ACC),1000.0
+32551,victoria cluck,Stanford,FX,,9.825,9.65,9.625,,,,,9.7,9.825,9.625,Stanford (ACC),3000.0
+32052,claire dean,Stanford,BB,,9.9,9.775,9.75,9.85,9.95,9.825,9.825,9.839285714285714,9.95,9.75,Stanford (ACC),4000.0
+32052,claire dean,Stanford,FX,,9.85,9.85,9.8,9.85,9.8,9.85,9.875,9.839285714285714,9.875,9.8,Stanford (ACC),3000.0
+32052,claire dean,Stanford,UB,,,,9.75,,,,9.75,9.75,9.75,9.75,Stanford (ACC),1000.0
+31489,anapaula gutierrez,Stanford,UB,,9.75,9.825,9.75,9.875,9.875,9.875,9.875,9.832142857142857,9.875,9.75,Stanford (ACC),4000.0
+31489,anapaula gutierrez,Stanford,VT,,9.85,9.85,9.825,9.825,9.875,9.825,9.55,9.799999999999999,9.875,9.55,Stanford (ACC),4000.0
+32552,temple landry,Stanford,BB,,9.875,9.775,9.9,9.85,9.9,9.75,9.875,9.846428571428572,9.9,9.75,Stanford (ACC),4000.0
+31491,brenna neault,Stanford,BB,,9.875,9.95,9.85,9.25,9.95,9.85,9.725,9.778571428571427,9.95,9.25,Stanford (ACC),4000.0
+31491,brenna neault,Stanford,FX,,9.8,9.8,9.825,9.825,9.875,9.85,9.875,9.835714285714285,9.875,9.8,Stanford (ACC),3000.0
+31491,brenna neault,Stanford,UB,,9.8,9.85,9.725,9.775,9.85,9.9,9.85,9.821428571428571,9.9,9.725,Stanford (ACC),3000.0
+31491,brenna neault,Stanford,VT,,9.625,9.8,9.7,9.825,9.9,9.825,9.8,9.782142857142857,9.9,9.625,Stanford (ACC),2000.0
+32053,taralyn nguyen,Stanford,BB,,9.175,,,,,,,9.175,9.175,9.175,Stanford (ACC),3000.0
+32053,taralyn nguyen,Stanford,FX,,,,,,9.875,9.75,8.95,9.525,9.875,8.95,Stanford (ACC),4000.0
+32053,taralyn nguyen,Stanford,VT,,9.55,9.8,9.775,9.875,9.7,9.7,,9.733333333333334,9.875,9.55,Stanford (ACC),1000.0
+32054,anna roberts,Stanford,BB,,9.3,9.925,9.675,9.75,,,,9.662500000000001,9.925,9.3,Stanford (ACC),1000.0
+32054,anna roberts,Stanford,FX,,9.925,9.925,9.825,9.725,9.925,9.875,9.925,9.875,9.925,9.725,Stanford (ACC),5000.0
+32054,anna roberts,Stanford,UB,,9.825,9.925,9.875,9.95,9.85,9.05,9.9,9.767857142857142,9.95,9.05,Stanford (ACC),5000.0
+32054,anna roberts,Stanford,VT,,9.9,9.875,9.8,9.95,9.775,9.9,9.925,9.875,9.95,9.775,Stanford (ACC),5000.0
+32554,sienna robinson,Stanford,BB,,9.825,9.9,9.875,9.95,9.925,9.85,9.925,9.892857142857142,9.95,9.825,Stanford (ACC),6250.0
+32554,sienna robinson,Stanford,FX,,9.85,9.925,9.825,9.9,9.75,9.825,9.875,9.849999999999998,9.925,9.75,Stanford (ACC),4000.0
+33182,ui soma,Stanford,BB,,,9.825,,9.8,9.825,9.275,9.75,9.694999999999999,9.825,9.275,Stanford (ACC),1000.0
+33182,ui soma,Stanford,UB,,,9.75,,9.925,9.9,9.825,9.95,9.870000000000001,9.95,9.75,Stanford (ACC),1000.0
+33182,ui soma,Stanford,VT,,,,,,,,9.85,9.85,9.85,9.85,Stanford (ACC),1000.0
+32056,ava sorrento,Stanford,UB,,9.775,9.825,9.85,9.875,9.825,9.8,9.775,9.817857142857141,9.875,9.775,Stanford (ACC),3000.0
+33183,alana walker,Stanford,FX,,9.85,9.875,9.85,9.85,9.85,9.875,9.85,9.857142857142858,9.875,9.85,Stanford (ACC),4000.0
+33183,alana walker,Stanford,VT,,9.825,9.775,9.75,9.775,9.75,9.825,9.7,9.77142857142857,9.825,9.7,Stanford (ACC),2000.0
+32071,isabella minervini,Towson,BB,9.725,9.8,9.75,,9.575,9.85,9.65,9.775,9.732142857142858,9.85,9.575,Towson (CAA),1000.0
+32071,isabella minervini,Towson,FX,9.775,9.875,9.75,,9.7375,9.725,9.725,9.75,9.762500000000001,9.875,9.725,Towson (CAA),1000.0
+32071,isabella minervini,Towson,UB,9.925,9.0,9.875,,9.837499999999999,9.85,9.925,9.9,9.758928571428571,9.925,9.0,Towson (CAA),5000.0
+32071,isabella minervini,Towson,VT,,,9.625,,9.8,9.85,9.725,9.875,9.775,9.875,9.625,Towson (CAA),1000.0
+32073,ciena alipio,UCLA,BB,9.85,9.875,9.9,9.8,9.05,9.95,9.875,9.9,9.775,9.95,9.05,UCLA (Big Ten),5000.0
+32835,sydney barros,UCLA,UB,9.55,,,,,,,,9.55,9.55,9.55,UCLA (Big Ten),1000.0
+31085,chae campbell,UCLA,BB,9.625,9.875,9.9,9.85,9.675,9.925,9.9,9.875,9.828125,9.925,9.625,UCLA (Big Ten),5000.0
+31085,chae campbell,UCLA,FX,,9.9,9.875,9.85,9.975,9.925,9.85,,9.895833333333334,9.975,9.85,UCLA (Big Ten),5000.0
+31085,chae campbell,UCLA,UB,8.95,9.8,9.775,9.775,9.85,9.85,9.875,9.875,9.71875,9.875,8.95,UCLA (Big Ten),3000.0
+31085,chae campbell,UCLA,VT,9.85,9.775,9.9,9.925,9.875,9.925,9.825,,9.867857142857144,9.925,9.775,UCLA (Big Ten),5000.0
+33384,jordan chiles,UCLA,BB,,,9.775,,9.85,9.9,9.85,9.85,9.845,9.9,9.775,UCLA (Big Ten),6250.0
+33384,jordan chiles,UCLA,FX,9.775,9.975,9.95,9.95,10.0,9.95,9.95,9.975,9.940625,10.0,9.775,UCLA (Big Ten),6250.0
+33384,jordan chiles,UCLA,UB,9.9,9.85,10.0,9.75,9.25,9.875,9.975,9.15,9.71875,10.0,9.15,UCLA (Big Ten),5000.0
+33384,jordan chiles,UCLA,VT,9.9,9.925,9.775,9.925,9.925,9.85,9.825,9.95,9.884375,9.95,9.775,UCLA (Big Ten),6250.0
+31086,frida esparza,UCLA,UB,9.8,9.925,9.9,9.925,9.85,9.95,9.975,9.8,9.890625,9.975,9.8,UCLA (Big Ten),6250.0
+33290,riley jenkins,UCLA,VT,,,,,9.85,,9.8,9.625,9.758333333333333,9.85,9.625,UCLA (Big Ten),5000.0
+31515,emily lee,UCLA,BB,9.85,9.9,9.925,9.725,9.85,9.9,9.925,9.9,9.871875,9.925,9.725,UCLA (Big Ten),6250.0
+31515,emily lee,UCLA,FX,,,,,9.875,9.85,,9.85,9.858333333333334,9.875,9.85,UCLA (Big Ten),4000.0
+31515,emily lee,UCLA,VT,9.725,9.85,9.85,9.9,9.8,9.8,,9.775,9.814285714285715,9.9,9.725,UCLA (Big Ten),3000.0
+31516,emma malabuyo,UCLA,BB,9.9,9.925,9.975,9.9,9.925,9.95,9.825,9.9,9.912500000000001,9.975,9.825,UCLA (Big Ten),6250.0
+31516,emma malabuyo,UCLA,FX,8.8,9.925,9.85,9.925,9.9,9.9,9.9,9.85,9.75625,9.925,8.8,UCLA (Big Ten),5000.0
+31516,emma malabuyo,UCLA,UB,9.15,,,9.85,9.85,9.85,9.9,9.925,9.754166666666668,9.925,9.15,UCLA (Big Ten),1000.0
+33291,macy mcgowan,UCLA,FX,9.775,9.85,9.9,9.875,9.95,9.85,9.825,9.9,9.865625,9.95,9.775,UCLA (Big Ten),5000.0
+33291,macy mcgowan,UCLA,UB,9.8,9.875,9.85,9.875,9.75,9.85,9.85,9.875,9.840625000000001,9.875,9.75,UCLA (Big Ten),4000.0
+33291,macy mcgowan,UCLA,VT,9.85,9.75,9.75,9.8,9.9,9.85,9.8,9.8,9.8125,9.9,9.75,UCLA (Big Ten),3000.0
+31087,brooklyn moors,UCLA,BB,9.825,9.775,9.85,9.875,9.7,9.9,9.9,9.675,9.8125,9.9,9.675,UCLA (Big Ten),4000.0
+31087,brooklyn moors,UCLA,FX,9.9,9.95,9.95,9.9,9.975,9.95,9.95,9.975,9.94375,9.975,9.9,UCLA (Big Ten),6250.0
+31087,brooklyn moors,UCLA,VT,9.6,9.8,9.875,9.775,9.8,9.9,9.8,9.8,9.79375,9.9,9.6,UCLA (Big Ten),3000.0
+32578,katelyn rosen,UCLA,BB,9.575,9.9,,8.875,,,,,9.450000000000001,9.9,8.875,UCLA (Big Ten),4000.0
+32578,katelyn rosen,UCLA,FX,9.8,9.825,9.15,,,,,,9.591666666666667,9.825,9.15,UCLA (Big Ten),5000.0
+32578,katelyn rosen,UCLA,UB,,9.9,9.8,9.8,,,,,9.833333333333334,9.9,9.8,UCLA (Big Ten),5000.0
+33292,mika webster-longin,UCLA,FX,9.825,,,9.75,,,9.9,9.625,9.774999999999999,9.9,9.625,UCLA (Big Ten),2000.0
+33292,mika webster-longin,UCLA,UB,,9.825,9.75,,9.85,9.9,9.825,9.85,9.833333333333334,9.9,9.75,UCLA (Big Ten),3000.0
+33292,mika webster-longin,UCLA,VT,9.4,9.75,9.2,,,9.775,9.85,9.925,9.649999999999999,9.925,9.2,UCLA (Big Ten),1000.0
+32579,elizabeth gantner,Utah,BB,,,,9.837499999999999,9.85,9.9,9.7,9.875,9.8325,9.9,9.7,Utah (Big 12),3000.0
+31089,jaylene gilstrap,Utah,FX,9.7,9.85,9.9,9.825,9.875,9.925,9.9,9.95,9.865625000000001,9.95,9.7,Utah (Big 12),5000.0
+31089,jaylene gilstrap,Utah,VT,,,,,9.8,,,9.825,9.8125,9.825,9.8,Utah (Big 12),3000.0
+32061,ashley glynn,Utah,FX,9.8,9.85,9.85,9.850000000000001,9.85,9.9,9.725,9.85,9.834375000000001,9.9,9.725,Utah (Big 12),4000.0
+32061,ashley glynn,Utah,UB,,,9.9,9.8375,9.825,,9.9,9.95,9.8825,9.95,9.825,Utah (Big 12),4000.0
+32061,ashley glynn,Utah,VT,9.925,9.725,9.875,9.825,9.8,9.725,9.95,9.825,9.831249999999999,9.95,9.725,Utah (Big 12),5000.0
+33212,zoe johnson,Utah,FX,,,,,,,9.9,9.525,9.7125,9.9,9.525,Utah (Big 12),5000.0
+32082,sarah krump,Utah,FX,9.825,,,9.837499999999999,,,,,9.831249999999999,9.837499999999999,9.825,Utah (Big 12),1000.0
+31529,grace mccallum,Utah,BB,9.9,9.8,9.85,9.912500000000001,9.925,9.925,9.4,9.975,9.8359375,9.975,9.4,Utah (Big 12),6250.0
+31529,grace mccallum,Utah,FX,9.8,9.825,9.9,9.912500000000001,9.925,9.925,,9.975,9.894642857142857,9.975,9.8,Utah (Big 12),6250.0
+31529,grace mccallum,Utah,UB,9.9,9.975,9.975,9.925,9.875,9.9,10.0,9.975,9.940625,10.0,9.875,Utah (Big 12),6250.0
+31529,grace mccallum,Utah,VT,9.625,,9.75,9.7625,9.85,9.9,9.8,9.875,9.794642857142858,9.9,9.625,Utah (Big 12),3000.0
+31530,amelie morgan,Utah,BB,9.85,9.8,9.8,9.875,9.9,9.875,9.85,9.925,9.859375,9.925,9.8,Utah (Big 12),5000.0
+31530,amelie morgan,Utah,UB,9.9,9.775,9.825,9.875,9.875,9.9,9.9,9.875,9.865625,9.9,9.775,Utah (Big 12),6250.0
+31530,amelie morgan,Utah,VT,,9.825,,9.825,9.825,9.775,9.775,,9.805,9.825,9.775,Utah (Big 12),2000.0
+33213,avery neff,Utah,BB,9.875,9.9,9.925,,,,,9.9,9.9,9.925,9.875,Utah (Big 12),5000.0
+33213,avery neff,Utah,FX,9.225,9.9,9.35,,,,,,9.491666666666667,9.9,9.225,Utah (Big 12),5000.0
+33213,avery neff,Utah,UB,9.85,9.875,9.85,,,9.825,9.8,9.85,9.841666666666667,9.875,9.8,Utah (Big 12),4000.0
+33213,avery neff,Utah,VT,9.775,9.925,9.9,,,,,,9.866666666666667,9.925,9.775,Utah (Big 12),5000.0
+33386,ana padurariu,Utah,BB,9.85,9.75,9.875,9.837499999999999,9.925,9.8,8.9,,9.705357142857142,9.925,8.9,Utah (Big 12),4000.0
+33386,ana padurariu,Utah,UB,9.85,9.8,,9.850000000000001,9.85,9.775,,,9.825,9.850000000000001,9.775,Utah (Big 12),3000.0
+33214,clara raposo,Utah,UB,,,9.775,,,,,,9.775,9.775,9.775,Utah (Big 12),1000.0
+32083,makenna smith,Utah,BB,9.9,9.6,9.7,9.9125,9.875,9.925,9.85,9.9,9.8328125,9.925,9.6,Utah (Big 12),6250.0
+32083,makenna smith,Utah,FX,9.875,9.825,9.9,9.8875,9.9,9.95,9.925,9.925,9.8984375,9.95,9.825,Utah (Big 12),6250.0
+32083,makenna smith,Utah,UB,9.875,9.85,9.825,9.850000000000001,9.75,9.775,9.875,9.9,9.8375,9.9,9.75,Utah (Big 12),4000.0
+32083,makenna smith,Utah,VT,9.85,9.85,9.85,9.925,9.95,9.975,9.85,9.85,9.8875,9.975,9.85,Utah (Big 12),6250.0
+32581,camie winger,Utah,BB,9.95,9.825,9.9,9.8875,9.9,9.85,9.4,9.675,9.7984375,9.95,9.4,Utah (Big 12),6250.0
+32581,camie winger,Utah,FX,,,,9.8625,9.675,9.875,9.875,,9.821875,9.875,9.675,Utah (Big 12),4000.0
+32581,camie winger,Utah,UB,,,,9.8,,,,,9.8,9.8,9.8,Utah (Big 12),5000.0
+32581,camie winger,Utah,VT,9.575,9.725,9.875,9.8625,,9.825,9.8,9.875,9.791071428571428,9.875,9.575,Utah (Big 12),4000.0
+32582,ella zirbes,Utah,FX,,9.725,9.725,,9.825,9.875,9.925,9.9,9.829166666666667,9.925,9.725,Utah (Big 12),3000.0
+32582,ella zirbes,Utah,UB,9.775,9.65,,9.875,9.875,9.95,9.925,9.775,9.832142857142857,9.95,9.65,Utah (Big 12),4000.0
+32582,ella zirbes,Utah,VT,9.75,9.875,9.8,9.85,9.775,9.8,9.875,9.925,9.83125,9.925,9.75,Utah (Big 12),4000.0
+32595,kira bolden,Washington,FX,,9.8,9.225,9.6,9.65,9.7,9.7625,9.75,9.641071428571427,9.8,9.225,Washington (Big Ten),1000.0
+32595,kira bolden,Washington,UB,,,,,,9.8,9.774999999999999,9.45,9.674999999999999,9.8,9.45,Washington (Big Ten),1000.0
+32595,kira bolden,Washington,VT,,9.475,9.725,9.7,9.775,9.675,9.75,9.475,9.653571428571428,9.775,9.475,Washington (Big Ten),1000.0
+32597,chelsea hallinan,Washington,BB,,9.85,9.775,9.85,9.85,9.9,9.774999999999999,9.225,9.74642857142857,9.9,9.225,Washington (Big Ten),3000.0
+32084,emily innes,Washington,BB,,9.875,9.8,9.75,9.8,9.85,9.825,9.7,9.799999999999999,9.875,9.7,Washington (Big Ten),3000.0
+32084,emily innes,Washington,FX,,9.925,9.85,9.9,9.7,9.9,9.8125,9.925,9.858928571428573,9.925,9.7,Washington (Big Ten),6250.0
+32084,emily innes,Washington,VT,,9.7,9.8,9.8,9.675,9.7,9.7375,9.8,9.744642857142859,9.8,9.675,Washington (Big Ten),2000.0
+32598,kristin lin,Washington,BB,,,,9.125,,9.7,9.325,9.75,9.475,9.75,9.125,Washington (Big Ten),1000.0
+32598,kristin lin,Washington,FX,,,,,,,9.5,,9.5,9.5,9.5,Washington (Big Ten),1000.0
+32598,kristin lin,Washington,UB,,,9.7,8.525,9.75,9.775,9.75,9.675,9.529166666666667,9.775,8.525,Washington (Big Ten),1000.0
+32598,kristin lin,Washington,VT,,,,9.65,9.775,9.7,9.775,9.65,9.71,9.775,9.65,Washington (Big Ten),1000.0
+32599,mary mcdonough,Washington,BB,,8.6,9.1,9.8,9.775,9.85,9.35,9.6,9.439285714285715,9.85,8.6,Washington (Big Ten),1000.0
+32599,mary mcdonough,Washington,FX,,9.075,9.8,9.9,9.55,9.625,9.875,9.925,9.678571428571429,9.925,9.075,Washington (Big Ten),1000.0
+32599,mary mcdonough,Washington,UB,,9.8,8.65,9.05,9.825,9.875,9.8125,9.85,9.551785714285714,9.875,8.65,Washington (Big Ten),3000.0
+32599,mary mcdonough,Washington,VT,,9.75,9.775,9.85,9.8,9.75,9.75,9.8,9.782142857142857,9.85,9.75,Washington (Big Ten),2000.0
+32085,caitlin mcwilliams,Washington,FX,,9.825,9.05,9.85,9.8,9.85,9.837499999999999,9.825,9.719642857142857,9.85,9.05,Washington (Big Ten),3000.0
+32085,caitlin mcwilliams,Washington,UB,,9.575,9.75,9.675,9.725,9.825,9.675,8.75,9.567857142857141,9.825,8.75,Washington (Big Ten),1000.0
+32085,caitlin mcwilliams,Washington,VT,,9.6,,9.7,9.75,9.55,9.675,9.75,9.670833333333333,9.75,9.55,Washington (Big Ten),1000.0
+31541,lana navarro,Washington,BB,,9.825,9.85,,9.75,,,,9.808333333333332,9.85,9.75,Washington (Big Ten),1000.0
+31541,lana navarro,Washington,UB,,9.725,9.525,,9.75,,,,9.666666666666666,9.75,9.525,Washington (Big Ten),1000.0
+31541,lana navarro,Washington,VT,,9.775,9.625,,,,,,9.7,9.775,9.625,Washington (Big Ten),4000.0
+32087,olivia oppegard,Washington,BB,,9.375,9.8,9.775,9.85,9.825,9.3625,9.85,9.69107142857143,9.85,9.3625,Washington (Big Ten),1000.0
+32087,olivia oppegard,Washington,FX,,9.65,9.725,9.725,9.675,9.775,9.7625,9.125,9.633928571428571,9.775,9.125,Washington (Big Ten),1000.0
+32087,olivia oppegard,Washington,UB,,9.75,9.8,9.775,9.15,9.875,9.775,9.65,9.682142857142859,9.875,9.15,Washington (Big Ten),1000.0
+31103,taylor russon,Washington,BB,,9.775,9.875,9.85,9.875,9.875,9.8625,9.6,9.81607142857143,9.875,9.6,Washington (Big Ten),4000.0
+31103,taylor russon,Washington,FX,,9.775,9.6,9.8,9.75,9.75,9.7625,9.75,9.741071428571429,9.8,9.6,Washington (Big Ten),1000.0
+31103,taylor russon,Washington,UB,,9.8,9.3,9.85,9.8,9.925,9.837499999999999,9.9,9.773214285714285,9.925,9.3,Washington (Big Ten),4000.0
+33222,karleigh dicello,West Virginia,BB,9.35,9.8,9.075,9.65,9.725,9.7,9.775,9.7,9.596875,9.8,9.075,West Virginia (Big 12),1000.0
+33222,karleigh dicello,West Virginia,VT,9.625,9.75,9.675,9.725,9.775,9.85,9.7,9.85,9.743749999999999,9.85,9.625,West Virginia (Big 12),2000.0
+31553,anna leigh,West Virginia,BB,,,,9.8,9.7,9.65,9.75,9.775,9.735,9.8,9.65,West Virginia (Big 12),1000.0
+31553,anna leigh,West Virginia,FX,9.8,9.95,9.825,8.6,9.925,9.85,9.925,9.75,9.703125,9.95,8.6,West Virginia (Big 12),4000.0
+31553,anna leigh,West Virginia,UB,9.775,8.9,9.825,9.475,9.75,9.7,9.725,9.8,9.618749999999999,9.825,8.9,West Virginia (Big 12),1000.0
+33223,riley maness,West Virginia,FX,9.675,9.65,9.65,9.75,9.8,9.8,9.8,9.8,9.740625000000001,9.8,9.65,West Virginia (Big 12),1000.0
+33224,sophia rice,West Virginia,VT,9.85,9.65,9.675,9.625,9.7,9.8,,9.775,9.724999999999998,9.85,9.625,West Virginia (Big 12),1000.0
+33225,kaelyn skeel,West Virginia,UB,,,,,,8.65,,,8.65,8.65,8.65,West Virginia (Big 12),1000.0
+33226,emerson smith,West Virginia,BB,,,,9.25,,,,9.675,9.4625,9.675,9.25,West Virginia (Big 12),1000.0
+33226,emerson smith,West Virginia,FX,9.625,9.85,9.7,9.75,9.825,9.825,9.75,9.85,9.771875,9.85,9.625,West Virginia (Big 12),2000.0
+33226,emerson smith,West Virginia,VT,,9.5,9.55,9.675,,9.775,9.825,9.8,9.6875,9.825,9.5,West Virginia (Big 12),1000.0
+33227,taylor tuohy,West Virginia,FX,,,,,9.75,9.65,9.775,9.675,9.7125,9.775,9.65,West Virginia (Big 12),2000.0
+33227,taylor tuohy,West Virginia,VT,9.55,9.475,9.625,9.675,9.65,9.775,9.775,9.725,9.65625,9.775,9.475,West Virginia (Big 12),1000.0
+32726,ella tashjian,Yale,BB,,9.675,9.55,9.675,9.875,9.65,9.35,9.85,9.660714285714286,9.875,9.35,Yale (Ivy),1000.0
+32726,ella tashjian,Yale,FX,,9.875,9.8,9.875,9.875,9.725,9.9,9.775,9.832142857142857,9.9,9.725,Yale (Ivy),3000.0
+32726,ella tashjian,Yale,VT,,9.75,9.625,9.75,9.675,9.675,9.725,9.6,9.685714285714285,9.75,9.6,Yale (Ivy),1000.0
