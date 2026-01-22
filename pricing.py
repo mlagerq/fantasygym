@@ -7,6 +7,11 @@ from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
 import time
 import re
+import getpass
+
+# Prompt for credentials
+email = input("Enter your Fantasizr email: ")
+password = getpass.getpass("Enter your Fantasizr password: ")
 
 # 🚀 Setup Selenium WebDriver
 options = webdriver.ChromeOptions()
@@ -34,7 +39,7 @@ try:
     email_field = WebDriverWait(driver, 5).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, ".firebaseui-id-email"))
     )
-    email_field.send_keys("EMAIL_REMOVED")  # Replace with your actual email
+    email_field.send_keys(email)
 
     # Click the "Next" button
     next_button = driver.find_element(By.CSS_SELECTOR, "button.firebaseui-id-submit")
@@ -49,7 +54,7 @@ try:
     password_field = WebDriverWait(driver, 5).until(
         EC.presence_of_element_located((By.CSS_SELECTOR, ".firebaseui-id-password"))
     )
-    password_field.send_keys("PASSWORD_REMOVED")  # Replace with your actual password
+    password_field.send_keys(password)
 
     # Click the "Sign In" button
     sign_in_button = driver.find_element(By.CSS_SELECTOR, "button.firebaseui-id-submit")
