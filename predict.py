@@ -8,7 +8,7 @@ import joblib
 from train_models import create_weekly_format, compute_compete_features, compute_rolling_features
 
 
-def run_predictions(scores_csv="scores_long_adjusted.csv", output_csv="team_opt_input_linear.csv"):
+def run_predictions(scores_csv="Files/scores_long_adjusted.csv", output_csv="Files/team_opt_input_linear.csv"):
     """
     Run score and likelihood predictions for the next week.
 
@@ -73,7 +73,7 @@ def run_predictions(scores_csv="scores_long_adjusted.csv", output_csv="team_opt_
 
     print(f"Score predictions made for {len(pred_df_2026)} gymnast-events for week {next_week}")
 
-    pred_df_2026.to_csv(f'predictions_week_{next_week}.csv', index=False)
+    pred_df_2026.to_csv(f'Files/predictions_week_{next_week}.csv', index=False)
 
     # =========================================================================
     # PART 2: Likelihood to Compete Predictions
@@ -81,7 +81,7 @@ def run_predictions(scores_csv="scores_long_adjusted.csv", output_csv="team_opt_
 
     # Create weekly format for current data
     df = pd.read_csv(scores_csv)
-    info = pd.read_csv("player_info.csv")
+    info = pd.read_csv("Files/player_info.csv")
 
     weekly_full = create_weekly_format(df)
     weekly_full = compute_compete_features(weekly_full, info)
@@ -132,8 +132,8 @@ def run_predictions(scores_csv="scores_long_adjusted.csv", output_csv="team_opt_
     # PART 3: Combine with Pricing
     # =========================================================================
 
-    pricing = pd.read_csv("fantasizr_player_pricing.csv")
-    info = pd.read_csv("player_info.csv")
+    pricing = pd.read_csv("Files/fantasizr_player_pricing.csv")
+    info = pd.read_csv("Files/player_info.csv")
 
     pricing = pricing.join(
         info.set_index('Name'),

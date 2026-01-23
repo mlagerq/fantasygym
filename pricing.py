@@ -8,6 +8,25 @@ import pandas as pd
 import time
 import re
 import getpass
+import unicodedata
+
+
+def normalize_name(name):
+    """Remove accents and special characters from a name."""
+    # Replace special characters that don't decompose properly
+    replacements = {
+        'ø': 'o', 'Ø': 'O',
+        'æ': 'ae', 'Æ': 'AE',
+        'ß': 'ss',
+        ''': "'", ''': "'",
+        '–': '-', '—': '-',
+    }
+    for char, replacement in replacements.items():
+        name = name.replace(char, replacement)
+    # Normalize to decomposed form (separate base chars from combining marks)
+    normalized = unicodedata.normalize('NFKD', name)
+    # Encode to ASCII, ignoring non-ASCII (removes accents), then decode back
+    return normalized.encode('ascii', 'ignore').decode('ascii')
 
 # Prompt for credentials
 email = input("Enter your Fantasizr email: ")
@@ -134,8 +153,11 @@ df = pd.DataFrame(player_data)
 # 🔢 Convert 'Price' column to numeric by removing $ and ,
 df['Price'] = df['Price'].str.replace('$', '', regex=False).str.replace(',', '', regex=False).astype(float)
 
+# Clean player names (remove accents and special characters)
+df['Player Name'] = df['Player Name'].apply(normalize_name)
+
 # 🔽 Save to CSV (optional)
-df.to_csv("fantasizr_player_pricing_2026.csv", index=False)
+df.to_csv("Files/fantasizr_player_pricing.csv", index=False)
 
 # 🖥️ Display the DataFrame
 print(df.head())

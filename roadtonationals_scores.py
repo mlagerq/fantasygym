@@ -9,8 +9,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 import pandas as pd
 import re
 
-
-def scrape_scores(fantasizr_csv="fantasizr_player_pricing.csv", output_csv="road_to_nationals.csv"):
+#%%
+def scrape_scores(fantasizr_csv="Files/fantasizr_player_pricing.csv", output_csv="Files/road_to_nationals.csv"):
     """
     Scrape gymnast scores from Road to Nationals website.
 
@@ -153,7 +153,59 @@ def scrape_scores(fantasizr_csv="fantasizr_player_pricing.csv", output_csv="road
         # Close the browser
         driver.quit()
 
+#%%
+def scrape_schedule(fantasizr_csv="Files/fantasizr_player_pricing.csv", output_csv="Files/schedule.csv"):
+    """
+    Scrape meet schedule from Road to Nationals website.
 
+    Args:
+        fantasizr_csv: Path to Fantasizr pricing CSV (used to filter teams)
+        output_csv: Path to save schedule
+
+    Returns:
+        DataFrame with schedule
+    """
+    # Set up Selenium WebDriver
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless")  # Run without UI
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=options)
+    all_data = []
+    try:
+        # Open the website 
+        url = "https://roadtonationals.com/results/schedule/4"
+        driver.get(url)
+
+        # Wait for the team dropdown to load
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.ID, "team_filter"))
+        )
+
+        # Find the updated gymnast dropdown menu
+        #tables = Select(driver.find_element(By.CSS_SELECTOR, ".schedule-table"))
+        
+        # Scrape row data
+
+        #for table in tables:
+            #date = Select(driver.find_element(By.CLASS_NAME, "header-row"))
+            #print(date.text.strip())
+        rows = driver.find_elements(By.CSS_SELECTOR, ".schedule-link")
+        for row in rows:
+            row_data = row.text.strip()
+            print(row_data)
+            all_data.append(row_data)
+        
+        # Convert to Pandas DataFrame
+        df = pd.DataFrame(all_data)
+
+        return df
+
+    finally:
+        # Close the browser
+        driver.quit()
+
+#%%
 if __name__ == "__main__":
     scrape_scores()
 # %%
+scrape_schedule()

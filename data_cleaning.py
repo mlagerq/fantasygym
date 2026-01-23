@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 
 
-def clean_data(input_csv="road_to_nationals.csv", week_1_start="2025-12-30"):
+def clean_data(input_csv="Files/road_to_nationals.csv", week_1_start="2025-12-30"):
     """
     Clean and transform scraped Road to Nationals data.
 
@@ -15,17 +15,17 @@ def clean_data(input_csv="road_to_nationals.csv", week_1_start="2025-12-30"):
         DataFrame with cleaned, adjusted scores in long format
 
     Outputs:
-        - player_info.csv
-        - road_to_nationals_long.csv
-        - scores_long_adjusted.csv
+        - Files/player_info.csv
+        - Files/road_to_nationals_long.csv
+        - Files/scores_long_adjusted.csv
     """
     # Load the scraped data
     df = pd.read_csv(input_csv)
 
     ## Create dataframe player_info
     player_info = df[['GymnastID', 'Name', 'Team']].drop_duplicates()
-    player_info.to_csv("player_info.csv", index=False)
-    print(f"Saved player_info.csv with {len(player_info)} gymnasts")
+    player_info.to_csv("Files/player_info.csv", index=False)
+    print(f"Saved Files/player_info.csv with {len(player_info)} gymnasts")
 
     ## Use date to infer week of competition
     # Convert 'Date' column to datetime format
@@ -82,11 +82,11 @@ def clean_data(input_csv="road_to_nationals.csv", week_1_start="2025-12-30"):
                          value_name='Score')
 
     # Save the reformatted DataFrame
-    df_melted.to_csv("road_to_nationals_long.csv", index=False)
-    print(f"Saved road_to_nationals_long.csv with {len(df_melted)} rows")
+    df_melted.to_csv("Files/road_to_nationals_long.csv", index=False)
+    print(f"Saved Files/road_to_nationals_long.csv with {len(df_melted)} rows")
 
     # Load the league homeaway factor from saved 2025 calculation
-    league_homeaway_factor = pd.read_csv("league_homeaway_factor_2025.csv")
+    league_homeaway_factor = pd.read_csv("Files/league_homeaway_factor_2025.csv")
 
     # Apply homeaway adjustment to scores
     df_adj = df_melted.dropna().copy()
@@ -103,8 +103,8 @@ def clean_data(input_csv="road_to_nationals.csv", week_1_start="2025-12-30"):
         df_adj['Score']
     )
 
-    df_adj.to_csv("scores_long_adjusted.csv", index=False)
-    print(f"Saved scores_long_adjusted.csv with {len(df_adj)} rows")
+    df_adj.to_csv("Files/scores_long_adjusted.csv", index=False)
+    print(f"Saved Files/scores_long_adjusted.csv with {len(df_adj)} rows")
 
     return df_adj
 
@@ -113,7 +113,7 @@ def clean_data(input_csv="road_to_nationals.csv", week_1_start="2025-12-30"):
 # ONE-TIME SETUP FUNCTIONS (run once to generate league_homeaway_factor_2025.csv)
 # ==============================================================================
 
-def calculate_homeaway_factor(input_csv="2025 files/road_to_nationals_long.csv", output_csv="league_homeaway_factor_2025.csv"):
+def calculate_homeaway_factor(input_csv="2025 files/road_to_nationals_long.csv", output_csv="Files/league_homeaway_factor_2025.csv"):
     """
     Calculate league-wide home/away factor from historical data.
     Only needs to be run once per season with prior year's data.

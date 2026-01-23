@@ -2,6 +2,8 @@
 # substitute gymnasts of the least score loss until you get to < 90k
 #%%
 import pandas as pd
+import os
+from beta import get_var_coefficients, simulate_double_header_boost
 
 
 # Function to calculate the total cost of the lineup
@@ -119,7 +121,7 @@ def add_best_cheap_gymnast(final_df, full_df, price=1500):
     return updated_df
 
 
-def optimize_team(input_csv="team_opt_input_linear.csv", output_csv="lineup.csv", target_cost=92500, min_prob=0.7):
+def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files/lineup.csv", target_cost=92500, min_prob=0.7, bye_teams=None, double_header_teams=None):
     """
     Optimize team selection based on predictions.
 
@@ -128,10 +130,17 @@ def optimize_team(input_csv="team_opt_input_linear.csv", output_csv="lineup.csv"
         output_csv: Path to save optimized lineup
         target_cost: Budget constraint
         min_prob: Minimum likelihood to compete threshold
+        bye_teams: List of team names with byes (gymnasts excluded from selection)
+        double_header_teams: List of team names with double headers
 
     Returns:
         DataFrame with optimized lineup
     """
+    if bye_teams is None:
+        bye_teams = []
+    if double_header_teams is None:
+        double_header_teams = []
+
     df = pd.read_csv(input_csv)
     df.rename(columns={"Player Name": "Name"}, inplace=True)
 
@@ -142,6 +151,30 @@ def optimize_team(input_csv="team_opt_input_linear.csv", output_csv="lineup.csv"
         'Name': 'first',
         'Team': 'first'
     })
+
+    # Filter out gymnasts on bye teams
+    if bye_teams:
+        excluded_count = df[df['Team'].isin(bye_teams)].shape[0]
+        df = df[~df['Team'].isin(bye_teams)]
+        print(f"Excluded {excluded_count} gymnast-events from bye teams: {bye_teams}")
+
+    # Apply double header boost using personalized beta distribution simulation
+    # (gymnasts compete twice, use higher score, so we estimate E[max of 2])
+    if double_header_teams:
+        var_coefficients = get_var_coefficients()
+        print(f"Double header teams: {double_header_teams}")
+
+        double_header_mask = df['Team'].isin(double_header_teams)
+        boosted_count = double_header_mask.sum()
+
+        # Calculate personalized boost for each gymnast based on their predicted score
+        for idx in df[double_header_mask].index:
+            pred_score = df.loc[idx, 'pred_score']
+            event = df.loc[idx, 'Event']
+            boost = simulate_double_header_boost(pred_score, event, var_coefficients, n_sims=5000)
+            df.loc[idx, 'pred_score'] = pred_score + boost
+
+        print(f"Boosted {boosted_count} gymnast-events from double header teams (personalized beta simulation)")
 
     # Filter out gymnasts with low likelihood to compete
     df = df[df['pred_prob'] >= min_prob]
