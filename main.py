@@ -8,19 +8,23 @@ Run this script each week to:
 4. Optimize team selection
 """
 
-from roadtonationals_scores import scrape_scores
+from roadtonationals_scores import scrape_scores, scrape_schedule, parse_schedule
 from data_cleaning import clean_data
 from predict import run_predictions
 from team_optimizer import optimize_team
+import pandas as pd
+import os
 
 
-def run_weekly_pipeline(bye_teams=None, double_header_teams=None):
+def run_weekly_pipeline(bye_teams=None, double_header_teams=None, home_teams=None, home_counts=None):
     """
     Run the complete weekly fantasy gymnastics pipeline.
 
     Args:
         bye_teams: List of team names with byes (gymnasts excluded from selection)
         double_header_teams: List of team names with double headers
+        home_teams: List of team names competing at home
+        home_counts: Dict of {team: number of home meets this week}
     """
     print("=" * 60)
     print("STEP 1: Scraping scores from Road to Nationals")
@@ -40,7 +44,12 @@ def run_weekly_pipeline(bye_teams=None, double_header_teams=None):
     print("\n" + "=" * 60)
     print("STEP 4: Optimizing team selection")
     print("=" * 60)
-    optimize_team(bye_teams=bye_teams, double_header_teams=double_header_teams)
+    optimize_team(
+        bye_teams=bye_teams,
+        double_header_teams=double_header_teams,
+        home_teams=home_teams,
+        home_counts=home_counts
+    )
 
     print("\n" + "=" * 60)
     print("PIPELINE COMPLETE!")
@@ -50,12 +59,39 @@ def run_weekly_pipeline(bye_teams=None, double_header_teams=None):
 
 def get_valid_teams():
     """Load valid team names from player_info.csv if it exists."""
-    import os
     if os.path.exists("Files/player_info.csv"):
-        import pandas as pd
         df = pd.read_csv("Files/player_info.csv")
         return set(df["Team"].unique())
     return None
+
+
+def get_current_week():
+    """Get the current week number from scores data."""
+    if os.path.exists("Files/scores_long_adjusted.csv"):
+        df = pd.read_csv("Files/scores_long_adjusted.csv")
+        return int(df["Week"].max())
+    return None
+
+
+def get_schedule_info(next_week, valid_teams):
+    """
+    Scrape and parse schedule to get team status for next week.
+
+    Args:
+        next_week: Week number to scrape schedule for
+        valid_teams: Set of valid team names
+
+    Returns:
+        dict with home_teams, double_header_teams, bye_teams, home_counts
+    """
+    print(f"\nScraping schedule for week {next_week}...")
+    matchups = scrape_schedule(next_week)
+
+    if not matchups:
+        print("No matchups found in schedule. Using manual input.")
+        return None
+
+    return parse_schedule(matchups, valid_teams)
 
 
 def prompt_for_team_list(prompt_text, valid_teams):
@@ -84,7 +120,7 @@ def prompt_for_team_list(prompt_text, valid_teams):
 
 
 def prompt_for_teams():
-    """Prompt user to enter bye teams and double header teams."""
+    """Prompt user to enter bye teams and double header teams (manual fallback)."""
     valid_teams = get_valid_teams()
 
     if valid_teams:
@@ -103,10 +139,49 @@ def prompt_for_teams():
         valid_teams
     )
 
-    return bye_teams, double_header_teams
+    return {
+        'bye_teams': bye_teams,
+        'double_header_teams': double_header_teams,
+        'home_teams': [],
+        'home_counts': {}
+    }
 
 
 if __name__ == "__main__":
-    bye_teams, double_header_teams = prompt_for_teams()
-    print()
-    run_weekly_pipeline(bye_teams=bye_teams, double_header_teams=double_header_teams)
+    valid_teams = get_valid_teams()
+    current_week = get_current_week()
+
+    if current_week is not None:
+        next_week = current_week + 1
+        print(f"Current week in data: {current_week}")
+        print(f"Fetching schedule for week {next_week}...\n")
+
+        schedule_info = get_schedule_info(next_week, valid_teams)
+
+        if schedule_info:
+            print(f"\nSchedule detected:")
+            print(f"  Bye teams: {schedule_info['bye_teams']}")
+            print(f"  Double header teams: {schedule_info['double_header_teams']}")
+            print(f"  Home teams: {schedule_info['home_teams']}")
+
+            confirm = input("\nUse this schedule info? (y/n, default: y): ").strip().lower()
+            if confirm != 'n':
+                print()
+                run_weekly_pipeline(
+                    bye_teams=schedule_info['bye_teams'],
+                    double_header_teams=schedule_info['double_header_teams'],
+                    home_teams=schedule_info['home_teams'],
+                    home_counts=schedule_info['home_counts']
+                )
+            else:
+                print("\nUsing manual input instead...\n")
+                info = prompt_for_teams()
+                run_weekly_pipeline(**info)
+        else:
+            print("\nCould not parse schedule, using manual input...\n")
+            info = prompt_for_teams()
+            run_weekly_pipeline(**info)
+    else:
+        print("No existing scores data found. Running initial pipeline...\n")
+        info = prompt_for_teams()
+        run_weekly_pipeline(**info)

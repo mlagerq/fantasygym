@@ -154,16 +154,16 @@ def scrape_scores(fantasizr_csv="Files/fantasizr_player_pricing.csv", output_csv
         driver.quit()
 
 #%%
-def scrape_schedule(fantasizr_csv="Files/fantasizr_player_pricing.csv", output_csv="Files/schedule.csv"):
+def scrape_schedule(week, fantasizr_csv="Files/fantasizr_player_pricing.csv"):
     """
     Scrape meet schedule from Road to Nationals website.
 
     Args:
+        week: Week number to scrape schedule for
         fantasizr_csv: Path to Fantasizr pricing CSV (used to filter teams)
-        output_csv: Path to save schedule
 
     Returns:
-        DataFrame with schedule
+        List of matchup strings (e.g., "Team A @ Team B")
     """
     # Set up Selenium WebDriver
     options = webdriver.ChromeOptions()
@@ -172,40 +172,114 @@ def scrape_schedule(fantasizr_csv="Files/fantasizr_player_pricing.csv", output_c
     driver = webdriver.Chrome(service=service, options=options)
     all_data = []
     try:
-        # Open the website 
-        url = "https://roadtonationals.com/results/schedule/4"
+        # Open the website with dynamic week number
+        url = f"https://roadtonationals.com/results/schedule/{week}"
         driver.get(url)
+        print(f"Scraping schedule for week {week}: {url}")
 
-        # Wait for the team dropdown to load
+        # Wait for the page to load
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.ID, "team_filter"))
         )
 
-        # Find the updated gymnast dropdown menu
-        #tables = Select(driver.find_element(By.CSS_SELECTOR, ".schedule-table"))
-        
-        # Scrape row data
-
-        #for table in tables:
-            #date = Select(driver.find_element(By.CLASS_NAME, "header-row"))
-            #print(date.text.strip())
+        # Scrape matchup data
         rows = driver.find_elements(By.CSS_SELECTOR, ".schedule-link")
         for row in rows:
             row_data = row.text.strip()
-            print(row_data)
-            all_data.append(row_data)
-        
-        # Convert to Pandas DataFrame
-        df = pd.DataFrame(all_data)
+            if row_data:
+                all_data.append(row_data)
+                print(f"  {row_data}")
 
-        return df
+        return all_data
 
     finally:
         # Close the browser
         driver.quit()
 
+
+def parse_schedule(matchups, valid_teams):
+    """
+    Parse schedule matchups to determine home teams, double headers, and byes.
+
+    Args:
+        matchups: List of matchup strings (e.g., "Team A @ Team B")
+        valid_teams: Set of valid team names from player_info.csv
+
+    Returns:
+        dict with keys: 'home_teams', 'double_header_teams', 'bye_teams', 'home_counts'
+              home_counts is a dict of {team: number of home meets this week}
+    """
+    from collections import defaultdict
+
+    team_appearances = defaultdict(int)  # How many times each team appears
+    home_counts = defaultdict(int)  # How many home meets each team has
+
+    for matchup in matchups:
+        # Parse "Team A @ Team B" format - Team B is home
+        if " @ " in matchup:
+            parts = matchup.split(" @ ")
+            if len(parts) == 2:
+                away_team = parts[0].strip()
+                home_team = parts[1].strip()
+
+                # Match to valid teams (handle slight naming differences)
+                away_matched = match_team_name(away_team, valid_teams)
+                home_matched = match_team_name(home_team, valid_teams)
+
+                if away_matched:
+                    team_appearances[away_matched] += 1
+                if home_matched:
+                    team_appearances[home_matched] += 1
+                    home_counts[home_matched] += 1
+        else:
+            # Handle other formats (e.g., neutral site meets listed differently)
+            # Try to extract team names
+            team_matched = match_team_name(matchup, valid_teams)
+            if team_matched:
+                team_appearances[team_matched] += 1
+
+    # Determine categories
+    home_teams = [team for team, count in home_counts.items() if count > 0]
+    double_header_teams = [team for team, count in team_appearances.items() if count >= 2]
+    bye_teams = [team for team in valid_teams if team not in team_appearances]
+
+    print(f"\nSchedule Analysis:")
+    print(f"  Home teams: {home_teams}")
+    print(f"  Double header teams: {double_header_teams}")
+    print(f"  Bye teams: {bye_teams}")
+
+    return {
+        'home_teams': home_teams,
+        'double_header_teams': double_header_teams,
+        'bye_teams': bye_teams,
+        'home_counts': dict(home_counts)
+    }
+
+
+def match_team_name(name, valid_teams):
+    """
+    Match a team name from schedule to valid team names.
+    Handles slight naming differences.
+    """
+    name = name.strip()
+
+    # Direct match
+    if name in valid_teams:
+        return name
+
+    # Try case-insensitive match
+    name_lower = name.lower()
+    for team in valid_teams:
+        if team.lower() == name_lower:
+            return team
+
+    # Try partial match (schedule might have abbreviated names)
+    for team in valid_teams:
+        if name_lower in team.lower() or team.lower() in name_lower:
+            return team
+
+    return None
+
 #%%
 if __name__ == "__main__":
     scrape_scores()
-# %%
-scrape_schedule()

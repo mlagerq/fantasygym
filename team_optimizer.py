@@ -121,7 +121,7 @@ def add_best_cheap_gymnast(final_df, full_df, price=1500):
     return updated_df
 
 
-def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files/lineup.csv", target_cost=92500, min_prob=0.7, bye_teams=None, double_header_teams=None):
+def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files/lineup.csv", target_cost=92500, min_prob=0.7, bye_teams=None, double_header_teams=None, home_teams=None, home_counts=None):
     """
     Optimize team selection based on predictions.
 
@@ -132,6 +132,8 @@ def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files
         min_prob: Minimum likelihood to compete threshold
         bye_teams: List of team names with byes (gymnasts excluded from selection)
         double_header_teams: List of team names with double headers
+        home_teams: List of team names competing at home
+        home_counts: Dict of {team: number of home meets this week}
 
     Returns:
         DataFrame with optimized lineup
@@ -140,6 +142,10 @@ def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files
         bye_teams = []
     if double_header_teams is None:
         double_header_teams = []
+    if home_teams is None:
+        home_teams = []
+    if home_counts is None:
+        home_counts = {}
 
     df = pd.read_csv(input_csv)
     df.rename(columns={"Player Name": "Name"}, inplace=True)
@@ -158,23 +164,71 @@ def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files
         df = df[~df['Team'].isin(bye_teams)]
         print(f"Excluded {excluded_count} gymnast-events from bye teams: {bye_teams}")
 
-    # Apply double header boost using personalized beta distribution simulation
-    # (gymnasts compete twice, use higher score, so we estimate E[max of 2])
+    # Load home/away factor for adjustments
+    homeaway_factor = None
+    if home_teams or double_header_teams:
+        try:
+            homeaway_factor = pd.read_csv("Files/league_homeaway_factor_2025.csv")
+            homeaway_dict = dict(zip(homeaway_factor['Event'], homeaway_factor['homeaway_factor']))
+            print(f"Loaded home/away factors: {homeaway_dict}")
+        except FileNotFoundError:
+            print("Warning: league_homeaway_factor_2025.csv not found, skipping home adjustment")
+            homeaway_dict = {}
+
+    # Apply home advantage and double header adjustments
+    # Logic:
+    # - Double header with BOTH meets at home: full home adjustment first, then double header boost
+    # - Double header with ONE meet at home: half home adjustment, then double header boost
+    # - Double header with NO home meets: just double header boost
+    # - Single meet at home (no double header): full home adjustment
+
+    var_coefficients = None
     if double_header_teams:
         var_coefficients = get_var_coefficients()
         print(f"Double header teams: {double_header_teams}")
 
-        double_header_mask = df['Team'].isin(double_header_teams)
-        boosted_count = double_header_mask.sum()
+    # Track adjustments
+    home_adjusted_count = 0
+    double_header_boosted_count = 0
 
-        # Calculate personalized boost for each gymnast based on their predicted score
-        for idx in df[double_header_mask].index:
-            pred_score = df.loc[idx, 'pred_score']
-            event = df.loc[idx, 'Event']
+    for idx in df.index:
+        team = df.loc[idx, 'Team']
+        event = df.loc[idx, 'Event']
+        pred_score = df.loc[idx, 'pred_score']
+
+        is_double_header = team in double_header_teams
+        is_home = team in home_teams
+        team_home_count = home_counts.get(team, 0)
+
+        # Get home factor for this event
+        home_factor = homeaway_dict.get(event, 0) if homeaway_dict else 0
+
+        if is_double_header:
+            # Determine home adjustment based on how many meets are at home
+            if team_home_count >= 2:
+                # Both meets at home: full home adjustment first
+                pred_score = pred_score + home_factor
+                home_adjusted_count += 1
+            elif team_home_count == 1:
+                # One meet at home: half home adjustment
+                pred_score = pred_score + (home_factor / 2)
+                home_adjusted_count += 1
+            # else: no home meets, no home adjustment
+
+            # Then apply double header boost
             boost = simulate_double_header_boost(pred_score, event, var_coefficients, n_sims=5000)
             df.loc[idx, 'pred_score'] = pred_score + boost
+            double_header_boosted_count += 1
 
-        print(f"Boosted {boosted_count} gymnast-events from double header teams (personalized beta simulation)")
+        elif is_home:
+            # Single meet at home: full home adjustment
+            df.loc[idx, 'pred_score'] = pred_score + home_factor
+            home_adjusted_count += 1
+
+    if home_adjusted_count > 0:
+        print(f"Applied home adjustment to {home_adjusted_count} gymnast-events")
+    if double_header_boosted_count > 0:
+        print(f"Applied double header boost to {double_header_boosted_count} gymnast-events")
 
     # Filter out gymnasts with low likelihood to compete
     df = df[df['pred_prob'] >= min_prob]
