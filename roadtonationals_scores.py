@@ -211,26 +211,35 @@ def parse_schedule(matchups, valid_teams):
     """
     from collections import defaultdict
 
+    # Normalize valid_teams to remove duplicate aliases
+    valid_teams = normalize_valid_teams(valid_teams)
+
     team_appearances = defaultdict(int)  # How many times each team appears
     home_counts = defaultdict(int)  # How many home meets each team has
 
     for matchup in matchups:
         # Parse "Team A @ Team B" format - Team B is home
+        # Also handles "Team A, Team B, Team C @ Team D" (multiple away teams)
         if " @ " in matchup:
             parts = matchup.split(" @ ")
             if len(parts) == 2:
-                away_team = parts[0].strip()
+                away_part = parts[0].strip()
                 home_team = parts[1].strip()
 
-                # Match to valid teams (handle slight naming differences)
-                away_matched = match_team_name(away_team, valid_teams)
-                home_matched = match_team_name(home_team, valid_teams)
+                # Handle multiple away teams separated by commas
+                away_teams = [t.strip() for t in away_part.split(",")]
 
-                if away_matched:
-                    team_appearances[away_matched] += 1
+                # Match home team to valid teams
+                home_matched = match_team_name(home_team, valid_teams)
                 if home_matched:
                     team_appearances[home_matched] += 1
                     home_counts[home_matched] += 1
+
+                # Match each away team
+                for away_team in away_teams:
+                    away_matched = match_team_name(away_team, valid_teams)
+                    if away_matched:
+                        team_appearances[away_matched] += 1
         else:
             # Handle other formats (e.g., neutral site meets listed differently)
             # Try to extract team names
@@ -256,28 +265,56 @@ def parse_schedule(matchups, valid_teams):
     }
 
 
+# Mapping from Road to Nationals schedule names to Fantasizr team names
+SCHEDULE_TO_FANTASIZR = {
+    'North Carolina State': 'NC State',
+    'Pittsburgh': 'Pitt',
+    'Ithaca College': 'Ithaca',
+}
+
+# Teams that are duplicated in Fantasizr data under different names
+# Maps alternate name -> canonical name
+TEAM_ALIASES = {
+    'North Carolina State': 'NC State',
+}
+
+
+def normalize_valid_teams(valid_teams):
+    """
+    Remove duplicate team entries that are aliases of each other.
+    Returns a set with only canonical team names.
+    """
+    return {TEAM_ALIASES.get(team, team) for team in valid_teams}
+
+
 def match_team_name(name, valid_teams):
     """
     Match a team name from schedule to valid team names.
-    Handles slight naming differences.
+    Uses hardcoded mapping for known differences, then falls back to exact match.
     """
+    import re
     name = name.strip()
+
+    # Remove trailing scores (e.g., "Cornell 191.6500" -> "Cornell")
+    name = re.sub(r'\s+\d+\.\d+$', '', name)
+
+    # Check hardcoded mapping first
+    if name in SCHEDULE_TO_FANTASIZR:
+        mapped = SCHEDULE_TO_FANTASIZR[name]
+        if mapped in valid_teams:
+            return mapped
 
     # Direct match
     if name in valid_teams:
         return name
 
-    # Try case-insensitive match
+    # Case-insensitive match
     name_lower = name.lower()
     for team in valid_teams:
         if team.lower() == name_lower:
             return team
 
-    # Try partial match (schedule might have abbreviated names)
-    for team in valid_teams:
-        if name_lower in team.lower() or team.lower() in name_lower:
-            return team
-
+    # Not a team we track in Fantasizr
     return None
 
 #%%

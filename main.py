@@ -16,30 +16,58 @@ import pandas as pd
 import os
 
 
-def run_weekly_pipeline(bye_teams=None, double_header_teams=None, home_teams=None, home_counts=None):
+def run_weekly_pipeline(target_week, bye_teams=None, double_header_teams=None, home_teams=None, home_counts=None):
     """
     Run the complete weekly fantasy gymnastics pipeline.
 
     Args:
+        target_week: Week number to predict
         bye_teams: List of team names with byes (gymnasts excluded from selection)
         double_header_teams: List of team names with double headers
         home_teams: List of team names competing at home
         home_counts: Dict of {team: number of home meets this week}
     """
-    print("=" * 60)
-    print("STEP 1: Scraping scores from Road to Nationals")
-    print("=" * 60)
-    scrape_scores()
+    scores_file = "Files/scores_long_adjusted.csv"
+
+    # Check if we already have score data
+    skip_scrape = False
+    if os.path.exists(scores_file):
+        existing_df = pd.read_csv(scores_file)
+        max_week = existing_df["Week"].max()
+        if max_week >= target_week - 1:
+            print(f"Score data already exists through week {int(max_week)}")
+            response = input("Skip scraping and use existing data? (y/n, default: y): ").strip().lower()
+            skip_scrape = response != 'n'
+
+    if not skip_scrape:
+        print("=" * 60)
+        print("STEP 1: Scraping scores from Road to Nationals")
+        print("=" * 60)
+        scrape_scores()
+
+        print("\n" + "=" * 60)
+        print("STEP 2: Cleaning and transforming data")
+        print("=" * 60)
+        clean_data()
+    else:
+        print("\nSkipping scrape and clean steps, using existing data.")
+
+    # Filter out any scores from target_week or later
+    print(f"\nFiltering data to only include weeks before {target_week}...")
+    df = pd.read_csv(scores_file)
+    rows_before = len(df)
+    df = df[df["Week"] < target_week]
+    rows_after = len(df)
+    if rows_before != rows_after:
+        print(f"  Dropped {rows_before - rows_after} rows from week {target_week}+")
+        df.to_csv(scores_file, index=False)
+    else:
+        print("  No rows to filter.")
 
     print("\n" + "=" * 60)
-    print("STEP 2: Cleaning and transforming data")
+    print(f"STEP 3: Running predictions for week {target_week}")
     print("=" * 60)
-    clean_data()
-
-    print("\n" + "=" * 60)
-    print("STEP 3: Running predictions")
-    print("=" * 60)
-    run_predictions()
+    run_predictions(target_week=target_week)
 
     print("\n" + "=" * 60)
     print("STEP 4: Optimizing team selection")
@@ -149,39 +177,46 @@ def prompt_for_teams():
 
 if __name__ == "__main__":
     valid_teams = get_valid_teams()
-    current_week = get_current_week()
 
-    if current_week is not None:
-        next_week = current_week + 1
-        print(f"Current week in data: {current_week}")
-        print(f"Fetching schedule for week {next_week}...\n")
+    # Prompt user for the current week number
+    while True:
+        week_input = input("Enter the current week number to predict: ").strip()
+        try:
+            current_week = int(week_input)
+            if current_week < 1:
+                print("Week number must be positive. Please try again.")
+                continue
+            break
+        except ValueError:
+            print("Invalid input. Please enter a number.")
 
-        schedule_info = get_schedule_info(next_week, valid_teams)
+    print(f"\nWill scrape scores through week {current_week - 1}")
+    print(f"Will scrape schedule for week {current_week}")
+    print(f"Will predict scores for week {current_week}\n")
 
-        if schedule_info:
-            print(f"\nSchedule detected:")
-            print(f"  Bye teams: {schedule_info['bye_teams']}")
-            print(f"  Double header teams: {schedule_info['double_header_teams']}")
-            print(f"  Home teams: {schedule_info['home_teams']}")
+    schedule_info = get_schedule_info(current_week, valid_teams)
 
-            confirm = input("\nUse this schedule info? (y/n, default: y): ").strip().lower()
-            if confirm != 'n':
-                print()
-                run_weekly_pipeline(
-                    bye_teams=schedule_info['bye_teams'],
-                    double_header_teams=schedule_info['double_header_teams'],
-                    home_teams=schedule_info['home_teams'],
-                    home_counts=schedule_info['home_counts']
-                )
-            else:
-                print("\nUsing manual input instead...\n")
-                info = prompt_for_teams()
-                run_weekly_pipeline(**info)
+    if schedule_info:
+        print(f"\nSchedule detected:")
+        print(f"  Bye teams: {schedule_info['bye_teams']}")
+        print(f"  Double header teams: {schedule_info['double_header_teams']}")
+        print(f"  Home teams: {schedule_info['home_teams']}")
+
+        confirm = input("\nUse this schedule info? (y/n, default: y): ").strip().lower()
+        if confirm != 'n':
+            print()
+            run_weekly_pipeline(
+                target_week=current_week,
+                bye_teams=schedule_info['bye_teams'],
+                double_header_teams=schedule_info['double_header_teams'],
+                home_teams=schedule_info['home_teams'],
+                home_counts=schedule_info['home_counts']
+            )
         else:
-            print("\nCould not parse schedule, using manual input...\n")
+            print("\nUsing manual input instead...\n")
             info = prompt_for_teams()
-            run_weekly_pipeline(**info)
+            run_weekly_pipeline(target_week=current_week, **info)
     else:
-        print("No existing scores data found. Running initial pipeline...\n")
+        print("\nCould not parse schedule, using manual input...\n")
         info = prompt_for_teams()
-        run_weekly_pipeline(**info)
+        run_weekly_pipeline(target_week=current_week, **info)

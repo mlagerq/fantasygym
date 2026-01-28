@@ -8,13 +8,14 @@ import joblib
 from train_models import create_weekly_format, compute_compete_features, compute_rolling_features
 
 
-def run_predictions(scores_csv="Files/scores_long_adjusted.csv", output_csv="Files/team_opt_input_linear.csv"):
+def run_predictions(scores_csv="Files/scores_long_adjusted.csv", output_csv="Files/team_opt_input_linear.csv", target_week=None):
     """
-    Run score and likelihood predictions for the next week.
+    Run score and likelihood predictions for a target week.
 
     Args:
         scores_csv: Path to adjusted scores data
         output_csv: Path to save combined predictions with pricing
+        target_week: Week number to predict (if None, uses max week in data + 1)
 
     Returns:
         DataFrame with predictions ready for team optimizer
@@ -35,9 +36,15 @@ def run_predictions(scores_csv="Files/scores_long_adjusted.csv", output_csv="Fil
     # Load current season data
     df_2026 = pd.read_csv(scores_csv)
 
+    # Filter to only weeks before target week (if specified)
+    if target_week is not None:
+        df_2026 = df_2026[df_2026["Week"] < target_week]
+        next_week = target_week
+    else:
+        next_week = df_2026["Week"].max() + 1
+
     # Create blank next week rows for each gymnast/event combination
     gymnast_events = df_2026[["GymnastID", "Event"]].drop_duplicates()
-    next_week = df_2026["Week"].max() + 1
     next_week_rows = gymnast_events.copy()
     next_week_rows["Week"] = next_week
 
@@ -81,13 +88,19 @@ def run_predictions(scores_csv="Files/scores_long_adjusted.csv", output_csv="Fil
 
     # Create weekly format for current data
     df = pd.read_csv(scores_csv)
+
+    # Filter to only weeks before target week (if specified)
+    if target_week is not None:
+        df = df[df["Week"] < target_week]
+
     info = pd.read_csv("Files/player_info.csv")
 
     weekly_full = create_weekly_format(df)
     weekly_full = compute_compete_features(weekly_full, info)
 
-    # Create data for next week prediction
-    next_week = weekly_full["Week"].max() + 1
+    # Use target_week if specified, otherwise max + 1
+    if target_week is None:
+        next_week = weekly_full["Week"].max() + 1
     gymnasts = weekly_full["GymnastID"].unique()
     events = weekly_full["Event"].unique()
 

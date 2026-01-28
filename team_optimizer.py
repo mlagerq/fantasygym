@@ -12,8 +12,8 @@ def calculate_total_cost(df):
 
 
 def select_cheapest_best(event_df):
-    """Select the 5 cheapest gymnasts, with best scores among ties."""
-    event_df = event_df.sort_values(by=['Price', 'pred_score'], ascending=[True, False])
+    """Select the 5 cheapest gymnasts, with best adjusted scores among ties."""
+    event_df = event_df.sort_values(by=['Price', 'adjusted_score'], ascending=[True, False])
     return event_df.head(5)
 
 
@@ -28,17 +28,17 @@ def find_best_replacement_for_event(updated_df, event, full_df):
     # Remove gymnasts who are already in the lineup - now just eligible replacements
     event_df = event_df[~event_df['Name'].isin(gymnasts_in_lineup)]
 
-    # identify the worst team member (lowest weight)
-    worst_gymnast = event_lineup_df.loc[event_lineup_df['pred_score'].idxmin()]
+    # identify the worst team member (lowest adjusted_score)
+    worst_gymnast = event_lineup_df.loc[event_lineup_df['adjusted_score'].idxmin()]
     worst_gymnast_name = worst_gymnast['Name']
-    worst_weight = worst_gymnast['pred_score']
+    worst_weight = worst_gymnast['adjusted_score']
     worst_cost = worst_gymnast['Price']
 
     # remove any gymnasts from full_df of the same or lower price to the worst team member
-    event_df = event_df[(event_df['Price'] > worst_cost) & (event_df['pred_score'] > worst_weight)]
+    event_df = event_df[(event_df['Price'] > worst_cost) & (event_df['adjusted_score'] > worst_weight)]
     # calculate value of all gymnasts compared to the current worst team member
     # value = 1000 * (weight - low_weight) / (price - low_price)
-    event_df['Value'] = 1000 * (event_df['pred_score'] - worst_weight) / (event_df['Price'] - worst_cost)
+    event_df['Value'] = 1000 * (event_df['adjusted_score'] - worst_weight) / (event_df['Price'] - worst_cost)
     event_df = event_df.sort_values(by='Value', ascending=False).reset_index()
     if event_df.empty:
         print('Event_df for ' + event + ' is empty')
@@ -46,11 +46,11 @@ def find_best_replacement_for_event(updated_df, event, full_df):
     else:
         best_replacement = {
             'Name': event_df.loc[0, 'Name'],
-            'pred_score': event_df.loc[0, 'pred_score'],
+            'adjusted_score': event_df.loc[0, 'adjusted_score'],
             'Price': event_df.loc[0, 'Price'],
             'Value': event_df.loc[0, 'Value']
         }
-    best_replacement_for_event = (event, worst_gymnast_name, best_replacement['Name'], best_replacement['pred_score'] - worst_weight, best_replacement['Price'] - worst_cost, best_replacement['Value'])
+    best_replacement_for_event = (event, worst_gymnast_name, best_replacement['Name'], best_replacement['adjusted_score'] - worst_weight, best_replacement['Price'] - worst_cost, best_replacement['Value'])
     return best_replacement_for_event
 
 
@@ -87,7 +87,7 @@ def replace_gymnasts_to_target_cost(base_team_df, full_df, target_cost=92500):
         best_replacement = full_df[(full_df['Name'] == replacement_name) & (full_df['Event'] == event)]
         updated_df = pd.concat([updated_df, best_replacement], ignore_index=True)
         updated_df = updated_df[~((updated_df['Name'] == worst_name) & (updated_df['Event'] == event))]
-        updated_df.sort_values(by=['Event', 'pred_score'], ascending=[True, False]).reset_index(drop=True)
+        updated_df = updated_df.sort_values(by=['Event', 'adjusted_score'], ascending=[True, False]).reset_index(drop=True)
         total_cost = calculate_total_cost(updated_df)
         print(f"Replacement made: {replacement_name} for {worst_name} on {event}, New cost: {total_cost}")
 
@@ -110,11 +110,11 @@ def add_best_cheap_gymnast(final_df, full_df, price=1500):
         ]
 
         if not cheap_gymnasts.empty:
-            # Get the best one by pred_score
-            best_cheap = cheap_gymnasts.loc[cheap_gymnasts['pred_score'].idxmax()]
+            # Get the best one by adjusted_score
+            best_cheap = cheap_gymnasts.loc[cheap_gymnasts['adjusted_score'].idxmax()]
             # Add to team
             updated_df = pd.concat([updated_df, pd.DataFrame([best_cheap])], ignore_index=True)
-            print(f"Added 6th gymnast for {event}: {best_cheap['Name']} (score: {best_cheap['pred_score']:.3f})")
+            print(f"Added 6th gymnast for {event}: {best_cheap['Name']} (adjusted_score: {best_cheap['adjusted_score']:.3f})")
         else:
             print(f"No available gymnast priced at {price} for {event}")
 
@@ -164,6 +164,10 @@ def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files
         df = df[~df['Team'].isin(bye_teams)]
         print(f"Excluded {excluded_count} gymnast-events from bye teams: {bye_teams}")
 
+    # Initialize adjustment tracking columns
+    df['home_boost'] = 0.0
+    df['double_header_boost'] = 0.0
+
     # Load home/away factor for adjustments
     homeaway_factor = None
     if home_teams or double_header_teams:
@@ -194,7 +198,7 @@ def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files
     for idx in df.index:
         team = df.loc[idx, 'Team']
         event = df.loc[idx, 'Event']
-        pred_score = df.loc[idx, 'pred_score']
+        base_score = df.loc[idx, 'pred_score']
 
         is_double_header = team in double_header_teams
         is_home = team in home_teams
@@ -207,23 +211,27 @@ def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files
             # Determine home adjustment based on how many meets are at home
             if team_home_count >= 2:
                 # Both meets at home: full home adjustment first
-                pred_score = pred_score + home_factor
+                df.loc[idx, 'home_boost'] = home_factor
                 home_adjusted_count += 1
             elif team_home_count == 1:
                 # One meet at home: half home adjustment
-                pred_score = pred_score + (home_factor / 2)
+                df.loc[idx, 'home_boost'] = home_factor / 2
                 home_adjusted_count += 1
             # else: no home meets, no home adjustment
 
             # Then apply double header boost
-            boost = simulate_double_header_boost(pred_score, event, var_coefficients, n_sims=5000)
-            df.loc[idx, 'pred_score'] = pred_score + boost
+            score_after_home = base_score + df.loc[idx, 'home_boost']
+            boost = simulate_double_header_boost(score_after_home, event, var_coefficients, n_sims=5000)
+            df.loc[idx, 'double_header_boost'] = boost
             double_header_boosted_count += 1
 
         elif is_home:
             # Single meet at home: full home adjustment
-            df.loc[idx, 'pred_score'] = pred_score + home_factor
+            df.loc[idx, 'home_boost'] = home_factor
             home_adjusted_count += 1
+
+    # Calculate adjusted score as sum of base + boosts
+    df['adjusted_score'] = df['pred_score'] + df['home_boost'] + df['double_header_boost']
 
     if home_adjusted_count > 0:
         print(f"Applied home adjustment to {home_adjusted_count} gymnast-events")
@@ -234,7 +242,7 @@ def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files
     df = df[df['pred_prob'] >= min_prob]
 
     # Create a base team by taking the best of the cheapest
-    base_team = df[['GymnastID', 'Name', 'Team', 'Event', 'Price', 'pred_score', 'pred_prob']].groupby('Event').apply(select_cheapest_best).reset_index(drop=True)
+    base_team = df[['GymnastID', 'Name', 'Team', 'Event', 'Price', 'pred_score', 'pred_prob', 'home_boost', 'double_header_boost', 'adjusted_score']].groupby('Event').apply(select_cheapest_best).reset_index(drop=True)
 
     # Apply the function to replace gymnasts iteratively until cost <= budget
     final_df, final_cost = replace_gymnasts_to_target_cost(base_team, df, target_cost)
@@ -244,10 +252,10 @@ def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files
     final_cost = calculate_total_cost(final_df)
 
     # Output the final dataframe and cost
-    final_df = final_df.sort_values(by=['Event', 'pred_score'], ascending=[True, False]).reset_index(drop=True)
-    print(final_df)
+    final_df = final_df.sort_values(by=['Event', 'adjusted_score'], ascending=[True, False]).reset_index(drop=True)
+    print(final_df[['Name', 'Team', 'Event', 'Price', 'pred_score', 'home_boost', 'double_header_boost', 'adjusted_score']])
     print(f"Total Cost: {final_cost}")
-    print(f"Total Score: {final_df.groupby('Event').apply(lambda x: x.nlargest(5, 'pred_score')).reset_index(drop=True)['pred_score'].sum()}")
+    print(f"Total Adjusted Score: {final_df.groupby('Event').apply(lambda x: x.nlargest(5, 'adjusted_score')).reset_index(drop=True)['adjusted_score'].sum():.3f}")
 
     final_df.to_csv(output_csv, index=False)
     print(f"Saved lineup to {output_csv}")
