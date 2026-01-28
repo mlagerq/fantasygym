@@ -18,3 +18,12 @@ __pycache__/
 .vscode/
 *.swp
 *.swo
+
+# Generated data files (pipeline outputs)
+Files/road_to_nationals.csv
+Files/road_to_nationals_long.csv
+Files/scores_long_adjusted.csv
+Files/team_opt_input_linear.csv
+Files/predictions_week_*.csv
+Files/lineup.csv
+Files/weekly_scores_adjusted.csv
