@@ -204,11 +204,13 @@ if __name__ == "__main__":
 
         confirm = input("\nUse this schedule info? (y/n, default: y): ").strip().lower()
         if confirm != 'n':
+            ignore_dh = input("Ignore double headers? (y/n, default: n): ").strip().lower()
+            double_header_teams = [] if ignore_dh == 'y' else schedule_info['double_header_teams']
             print()
             run_weekly_pipeline(
                 target_week=current_week,
                 bye_teams=schedule_info['bye_teams'],
-                double_header_teams=schedule_info['double_header_teams'],
+                double_header_teams=double_header_teams,
                 home_teams=schedule_info['home_teams'],
                 home_counts=schedule_info['home_counts']
             )
