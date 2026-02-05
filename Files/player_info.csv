@@ -7,6 +7,7 @@ GymnastID,Name,Team
 33324,Anna Kristianson,Air Force
 33325,Elizabeth Lassila,Air Force
 33741,Erin McDermott,Air Force
+33328,Nhi Nguyen,Air Force
 32646,Olivia Raife,Air Force
 32645,Maggie Slife,Air Force
 32644,Clara Wallace,Air Force
@@ -21,6 +22,7 @@ GymnastID,Name,Team
 31248,Jordyn Paradise,Alabama
 32004,Natalia Pawlak,Alabama
 33415,Azaraya Ra-Akbar,Alabama
+31799,Rachel Rybicki,Alabama
 32308,Jamison Sears,Alabama
 32926,Paityn Walker,Alabama
 32927,Maribelle Albert,Alaska
@@ -51,11 +53,13 @@ GymnastID,Name,Team
 31810,Emma Strom,Arizona
 32939,Teagan White,Arizona
 32320,Tirzah Wise,Arizona
+32940,Halle Braaflat,Arizona State
 33858,Kylee Bromley,Arizona State
 33429,Safia El Mammann,Arizona State
 32321,Halle Gregoire,Arizona State
 32683,Reese Grolla,Arizona State
 33430,Delanie Kelly,Arizona State
+31812,Isabella Kowan,Arizona State
 32941,Nina Laurito,Arizona State
 31813,Kayla Lee,Arizona State
 33432,Adele Ossi,Arizona State
@@ -132,6 +136,7 @@ GymnastID,Name,Team
 33458,Addie Tandeski,Bowling Green
 32346,Keira Thornton,Bowling Green
 33406,Landyn Williams,Bowling Green
+33087,Taylor Wurtz,Bowling Green
 31846,Sophia Dewar,Brown
 31847,Umi El Mammann,Brown
 32971,Daisy Fallon,Brown
@@ -171,6 +176,7 @@ GymnastID,Name,Team
 31863,Luciana Alvarado-Reid,Central Michigan
 31301,Avah Bootz,Central Michigan
 32694,Jenna Germond,Central Michigan
+33486,Paige Hasling,Central Michigan
 32695,Gabrielle Johnson,Central Michigan
 31304,Lia Kmieciak,Central Michigan
 32697,Zoie Pelfrey,Central Michigan
@@ -295,6 +301,7 @@ GymnastID,Name,Team
 33002,Nyla Aquino,Georgia
 33004,Csenge Bacskay,Georgia
 32366,Jaydah Battle,Georgia
+33006,Brooke Gleichowski,Georgia
 33519,Avery Moll,Georgia
 33520,Brooke Pierson,Georgia
 33521,Autumn Reingold,Georgia
@@ -326,6 +333,8 @@ GymnastID,Name,Team
 33272,Kate Clairmont,Gustavus Adolphus
 33273,Megan Gille,Gustavus Adolphus
 33274,Rocio Madalena Gora,Gustavus Adolphus
+33796,Taylor Hall,Gustavus Adolphus
+33798,Jenna Huikko,Gustavus Adolphus
 33275,Malia Narciso,Gustavus Adolphus
 32256,Ella Nash,Gustavus Adolphus
 33800,Zara Reboks,Gustavus Adolphus
@@ -342,6 +351,7 @@ GymnastID,Name,Team
 32197,Lizzie Green,Hamline
 33754,Jozlynn Jansen,Hamline
 32615,Anna Johnson,Hamline
+32198,Hannah Lemon,Hamline
 32621,Kaitlyn Morgan,Hamline
 32618,Cailey Price,Hamline
 31792,Lily Ramsdell,Hamline
@@ -362,6 +372,7 @@ GymnastID,Name,Team
 32422,Destiny Denning,Illinois
 33525,Skylar Ray Dixon,Illinois
 33027,Rachel Goldstein,Illinois
+33527,Piper Gow,Illinois
 31915,Tali Joelson,Illinois
 33528,Callie Kauffman,Illinois
 33015,Eden King,Illinois
@@ -416,6 +427,7 @@ GymnastID,Name,Team
 33035,Sophia Balko,Kent State
 32058,Charlie Behner,Kent State
 33036,Jersey Bingman,Kent State
+33037,Allie Call,Kent State
 31931,Avery Compson,Kent State
 32436,Dani Fuertez,Kent State
 33039,Isabella Marques,Kent State
@@ -451,7 +463,7 @@ GymnastID,Name,Team
 33284,Carly Kliewer,LIU
 33286,Camille Lund Rasmussen,LIU
 31942,Annalisa Page,LIU
-33405,RaphaÃ«lle Perreault,LIU
+33405,Raphaelle Perreault,LIU
 31943,Isabella Savino,LIU
 33862,Eden Stippick,LIU
 33569,Nina Ballou,LSU
@@ -463,6 +475,7 @@ GymnastID,Name,Team
 32084,Emily Innes,LSU
 33048,Kaliya Lincoln,LSU
 32454,Konnor McClain,LSU
+33572,Haley Mustari,LSU
 33050,Victoria Roberts,LSU
 32361,Madison Ulrich,LSU
 31285,Kathryn Weilbacher,LSU
@@ -475,6 +488,7 @@ GymnastID,Name,Team
 31373,Josephine Kogler,Maryland
 32163,Madeline Komoroski,Maryland
 31283,Katrina Mendez-Abolnik,Maryland
+33579,Syndey Mullen,Maryland
 33085,Aine Reade,Maryland
 32165,Taylor Rech,Maryland
 32464,Gianna Ruffing,Maryland
@@ -520,6 +534,7 @@ GymnastID,Name,Team
 33070,Ava Stewart,Minnesota
 32480,Sophie Swartzmiller,Minnesota
 33073,Ayla Acevedo,Missouri
+31390,Grace Anne Davis,Missouri
 33600,Kimarra Echols,Missouri
 31343,Makayla Green,Missouri
 32482,Kennedy Griffin,Missouri
@@ -595,6 +610,7 @@ GymnastID,Name,Team
 33631,Alanah Wallace,Northern Illinois
 33101,Drake White,Northern Illinois
 33804,Baylie Belman,Ohio State
+33003,Sadie Jane Berry,Ohio State
 32679,Samara Buchanan,Ohio State
 33103,JJ Coleman,Ohio State
 33104,Mary Green,Ohio State
@@ -678,8 +694,11 @@ GymnastID,Name,Team
 33141,Reagan Schenkel,Rutgers
 33142,Kimmi Shiau,Rutgers
 33143,Keeley Smith,Rutgers
+33144,Donna Uhlenberg,Rutgers
 32596,McKenna Carnesi,Sacramento State
+33149,Chloe Cohen,Sacramento State
 33150,Kaela Copeland,Sacramento State
+33174,Emily Countryman,Sacramento State
 33151,Kaitlyn Driessen,Sacramento State
 33152,Lexi Frank,Sacramento State
 33660,Cadence Gaumont,Sacramento State
@@ -698,6 +717,7 @@ GymnastID,Name,Team
 33666,Victoria Kisch,San Jose State
 32512,Kaylee Larson,San Jose State
 33667,Samantha Macasu,San Jose State
+32527,Mia Nelson,San Jose State
 33668,Sophie Patterson,San Jose State
 33669,Genesis PeBenito,San Jose State
 32020,Mikaela Pitts,San Jose State
@@ -716,6 +736,7 @@ GymnastID,Name,Team
 32546,Carilia Martinez,Southern Utah
 32547,Kendall McGuire,Southern Utah
 32548,Rylee Miller,Southern Utah
+33176,Emma Nipper,Southern Utah
 33178,Sage Paladino,Southern Utah
 32048,Kayla Pardue,Southern Utah
 32549,Niya Randolph,Southern Utah
@@ -735,6 +756,7 @@ GymnastID,Name,Team
 32805,Hailey Best,Temple
 32804,Mariella Brueck,Temple
 32803,Amelia Budd,Temple
+33759,Anjali Buradagunta,Temple
 32059,Reese DeHaan,Temple
 33184,Robyn Dunne,Temple
 33760,Tali Flanigan,Temple
@@ -801,6 +823,7 @@ GymnastID,Name,Team
 33693,Ashlee Sullivan,UCLA
 33694,Tiana Sumanasekera,UCLA
 33292,Mika Webster-Longin,UCLA
+33696,Sage Curtis,Utah
 32579,Elizabeth Gantner,Utah
 32061,Ashley Glynn,Utah
 33212,Zoe Johnson,Utah

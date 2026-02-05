@@ -170,6 +170,7 @@ def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files
 
     # Load home/away factor for adjustments
     homeaway_factor = None
+    homeaway_dict = {}
     if home_teams or double_header_teams:
         try:
             homeaway_factor = pd.read_csv("Files/league_homeaway_factor_2025.csv")
