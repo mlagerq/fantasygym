@@ -3,7 +3,7 @@
 #%%
 import pandas as pd
 import os
-from beta import get_var_coefficients, simulate_double_header_boost
+from beta import get_var_coefficients, simulate_double_header_boost, get_individual_variances, get_individual_maxes
 
 
 # Function to calculate the total cost of the lineup
@@ -121,7 +121,7 @@ def add_best_cheap_gymnast(final_df, full_df, price=1500):
     return updated_df
 
 
-def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files/lineup.csv", target_cost=92500, min_prob=0.7, bye_teams=None, double_header_teams=None, home_teams=None, home_counts=None):
+def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files/lineup.csv", target_cost=92500, min_prob=0.7, bye_teams=None, double_header_teams=None, home_teams=None, home_counts=None, week=None):
     """
     Optimize team selection based on predictions.
 
@@ -134,6 +134,7 @@ def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files
         double_header_teams: List of team names with double headers
         home_teams: List of team names competing at home
         home_counts: Dict of {team: number of home meets this week}
+        week: Current week number (if >= 7, use individual variance for double header boost)
 
     Returns:
         DataFrame with optimized lineup
@@ -188,8 +189,14 @@ def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files
     # - Single meet at home (no double header): full home adjustment
 
     var_coefficients = None
+    individual_variances = None
+    individual_maxes = None
     if double_header_teams:
         var_coefficients = get_var_coefficients()
+        individual_maxes = get_individual_maxes()
+        if week is not None and week >= 7:
+            individual_variances = get_individual_variances()
+            print(f"Week {week}: Using individual variance for double header boost")
         print(f"Double header teams: {double_header_teams}")
 
     # Track adjustments
@@ -222,7 +229,12 @@ def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files
 
             # Then apply double header boost
             score_after_home = base_score + df.loc[idx, 'home_boost']
-            boost = simulate_double_header_boost(score_after_home, event, var_coefficients, n_sims=5000)
+            gymnast_id = df.loc[idx, 'GymnastID']
+            boost = simulate_double_header_boost(
+                score_after_home, event, var_coefficients, n_sims=5000,
+                week=week, gymnast_id=gymnast_id, individual_variances=individual_variances,
+                individual_maxes=individual_maxes
+            )
             df.loc[idx, 'double_header_boost'] = boost
             double_header_boosted_count += 1
 
@@ -238,6 +250,13 @@ def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files
         print(f"Applied home adjustment to {home_adjusted_count} gymnast-events")
     if double_header_boosted_count > 0:
         print(f"Applied double header boost to {double_header_boosted_count} gymnast-events")
+
+    # Save all gymnasts with boosts before filtering
+    all_boosts_df = df[['GymnastID', 'Name', 'Team', 'Event', 'Price', 'pred_score', 'pred_prob', 'home_boost', 'double_header_boost', 'adjusted_score']].copy()
+    all_boosts_df = all_boosts_df.sort_values(by=['Event', 'adjusted_score'], ascending=[True, False])
+    all_boosts_path = output_csv.replace('.csv', '_all_boosts.csv')
+    all_boosts_df.to_csv(all_boosts_path, index=False)
+    print(f"Saved all gymnast boosts to {all_boosts_path}")
 
     # Filter out gymnasts with low likelihood to compete
     df = df[df['pred_prob'] >= min_prob]

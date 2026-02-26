@@ -241,11 +241,15 @@ def parse_schedule(matchups, valid_teams):
                     if away_matched:
                         team_appearances[away_matched] += 1
         else:
-            # Handle other formats (e.g., neutral site meets listed differently)
-            # Try to extract team names
-            team_matched = match_team_name(matchup, valid_teams)
-            if team_matched:
-                team_appearances[team_matched] += 1
+            # Handle neutral site meets (e.g., "Alabama, Arizona, LSU, North Carolina (Purple & Gold)")
+            # Split by comma and try to match each team
+            teams = [t.strip() for t in matchup.split(",")]
+            for team in teams:
+                # Remove event name in parentheses (e.g., "(Purple & Gold)")
+                team_clean = re.sub(r'\s*\([^)]*\)\s*$', '', team).strip()
+                team_matched = match_team_name(team_clean, valid_teams)
+                if team_matched:
+                    team_appearances[team_matched] += 1
 
     # Determine categories
     home_teams = [team for team, count in home_counts.items() if count > 0]

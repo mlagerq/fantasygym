@@ -76,7 +76,8 @@ def run_weekly_pipeline(target_week, bye_teams=None, double_header_teams=None, h
         bye_teams=bye_teams,
         double_header_teams=double_header_teams,
         home_teams=home_teams,
-        home_counts=home_counts
+        home_counts=home_counts,
+        week=target_week
     )
 
     print("\n" + "=" * 60)
@@ -202,10 +203,21 @@ if __name__ == "__main__":
         print(f"  Double header teams: {schedule_info['double_header_teams']}")
         print(f"  Home teams: {schedule_info['home_teams']}")
 
-        confirm = input("\nUse this schedule info? (y/n, default: y): ").strip().lower()
-        if confirm != 'n':
-            ignore_dh = input("Ignore double headers? (y/n, default: n): ").strip().lower()
-            double_header_teams = [] if ignore_dh == 'y' else schedule_info['double_header_teams']
+        confirm = input("\nUse this schedule info? (y/n/q to quit, default: y): ").strip().lower()
+        if confirm == 'q':
+            print("Exiting.")
+            exit(0)
+        elif confirm != 'n':
+            dh_choice = input("Double headers: (u)se parsed, (i)gnore, or (c)ustom input? (u/i/c, default: u): ").strip().lower()
+            if dh_choice == 'i':
+                double_header_teams = []
+            elif dh_choice == 'c':
+                double_header_teams = prompt_for_team_list(
+                    "Enter teams with DOUBLE HEADERS (comma-separated, or press Enter for none):",
+                    valid_teams
+                )
+            else:
+                double_header_teams = schedule_info['double_header_teams']
             print()
             run_weekly_pipeline(
                 target_week=current_week,
@@ -219,6 +231,9 @@ if __name__ == "__main__":
             info = prompt_for_teams()
             run_weekly_pipeline(target_week=current_week, **info)
     else:
-        print("\nCould not parse schedule, using manual input...\n")
+        confirm = input("\nCould not parse schedule. Continue with manual input? (y/q to quit, default: y): ").strip().lower()
+        if confirm == 'q':
+            print("Exiting.")
+            exit(0)
         info = prompt_for_teams()
         run_weekly_pipeline(target_week=current_week, **info)

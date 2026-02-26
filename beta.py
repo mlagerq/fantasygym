@@ -106,23 +106,42 @@ def calculate_beta_params(mean_score, variance, event):
     return a, b
 
 
-def simulate_double_header_boost(mean_score, event, var_coefficients, n_sims=10000):
+def simulate_double_header_boost(mean_score, event, var_coefficients, n_sims=10000,
+                                  week=None, gymnast_id=None, individual_variances=None,
+                                  individual_maxes=None):
     """
     Simulate the expected boost from a double header (max of two performances).
 
     Args:
         mean_score: Gymnast's predicted score
         event: Event name
-        var_coefficients: Dict of variance coefficients
+        var_coefficients: Dict of variance coefficients (group-level)
         n_sims: Number of simulations
+        week: Current week number (if >= 7, use individual variance)
+        gymnast_id: Gymnast's ID (for individual variance lookup)
+        individual_variances: Dict of {(GymnastID, Event): variance}
+        individual_maxes: Dict of {(GymnastID, Event): max_score} for capping
 
     Returns:
         boost: Expected increase in score (E[max] - mean)
     """
     max_score = 40 if event == 'AA' else 10
 
-    # Estimate variance and calculate beta parameters
-    variance = estimate_variance(mean_score, event, var_coefficients)
+    # Determine which variance to use based on week
+    if week is not None and week >= 7:
+        # Week 7+: use individual variance if available
+        if individual_variances is not None and gymnast_id is not None:
+            variance = individual_variances.get((gymnast_id, event))
+            if variance is None:
+                # No individual variance available (< 3 scores) - return 0 boost
+                return 0.0
+        else:
+            # No individual variance data provided - return 0 boost
+            return 0.0
+    else:
+        # Before week 7: use group-level variance model
+        variance = estimate_variance(mean_score, event, var_coefficients)
+
     alpha, beta_param = calculate_beta_params(mean_score, variance, event)
 
     # Sample from beta distribution (on 0-1 scale)
@@ -134,6 +153,14 @@ def simulate_double_header_boost(mean_score, event, var_coefficients, n_sims=100
     expected_max = max_samples.mean()
 
     boost = expected_max - mean_score
+
+    # Cap boost so adjusted score doesn't exceed historical max
+    if individual_maxes is not None and gymnast_id is not None:
+        hist_max = individual_maxes.get((gymnast_id, event))
+        if hist_max is not None:
+            max_boost = max(0, hist_max - mean_score)
+            boost = min(boost, max_boost)
+
     return boost
 
 
@@ -178,6 +205,95 @@ def get_var_coefficients():
                 'VT': 0.5, 'UB': 1.0, 'BB': 0.8, 'FX': 0.6, 'AA': 2.9
             }
     return _var_coefficients
+
+
+def calculate_individual_variances(scores_csv="Files/scores_long_adjusted.csv"):
+    """
+    Calculate variance for each gymnast on each event from their historical scores.
+    Uses MAD-based variance estimation to reduce impact of outliers (e.g., falls).
+
+    Args:
+        scores_csv: Path to scores data with GymnastID, Event, and score_adj columns
+
+    Returns:
+        dict: {(GymnastID, Event): variance} for gymnasts with 3+ scores
+    """
+    if not os.path.exists(scores_csv):
+        return {}
+
+    df = pd.read_csv(scores_csv)
+    variances = {}
+
+    for event in ['VT', 'UB', 'BB', 'FX', 'AA']:
+        event_df = df[df['Event'] == event]
+
+        # Group by gymnast and calculate MAD-based variance
+        for gymnast_id, group in event_df.groupby('GymnastID'):
+            scores = group['score_adj'].values
+            if len(scores) < 3:
+                continue
+
+            # MAD-based variance: more robust to outliers like falls
+            median = np.median(scores)
+            mad = np.median(np.abs(scores - median))
+            # For normal distribution: σ ≈ MAD / 0.6745
+            sigma = mad / 0.6745
+            variance = sigma ** 2
+
+            # Ensure minimum variance to avoid division issues
+            variance = max(variance, 0.0001)
+            variances[(gymnast_id, event)] = variance
+
+    return variances
+
+
+# Cache for individual variances
+_individual_variances = None
+
+
+def get_individual_variances():
+    """Get or compute individual variances (cached)."""
+    global _individual_variances
+    if _individual_variances is None:
+        _individual_variances = calculate_individual_variances()
+    return _individual_variances
+
+
+def calculate_individual_maxes(scores_csv="Files/scores_long_adjusted.csv"):
+    """
+    Calculate historical max score for each gymnast on each event.
+
+    Args:
+        scores_csv: Path to scores data with GymnastID, Event, and score_adj columns
+
+    Returns:
+        dict: {(GymnastID, Event): max_score}
+    """
+    if not os.path.exists(scores_csv):
+        return {}
+
+    df = pd.read_csv(scores_csv)
+    maxes = {}
+
+    for event in ['VT', 'UB', 'BB', 'FX', 'AA']:
+        event_df = df[df['Event'] == event]
+
+        for gymnast_id, group in event_df.groupby('GymnastID'):
+            maxes[(gymnast_id, event)] = group['score_adj'].max()
+
+    return maxes
+
+
+# Cache for individual maxes
+_individual_maxes = None
+
+
+def get_individual_maxes():
+    """Get or compute individual max scores (cached)."""
+    global _individual_maxes
+    if _individual_maxes is None:
+        _individual_maxes = calculate_individual_maxes()
+    return _individual_maxes
 
 
 #%%
