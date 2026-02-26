@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
-from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.ui import WebDriverWait, Select
 from selenium.webdriver.support import expected_conditions as EC
 import pandas as pd
 import time
@@ -106,52 +106,82 @@ except Exception as e:
     driver.quit()
 
 
-# 🔍 Scrape player data
-players = driver.find_elements(By.CSS_SELECTOR, "[x-html='player.player_name']")
-prices = driver.find_elements(By.CSS_SELECTOR, "[x-text*='player.player_price']")
-teams = driver.find_elements(By.CSS_SELECTOR, "[x-text='player.player_bio']")
+# 🔍 Wait for and find the class filter dropdown
+WebDriverWait(driver, 10).until(
+    EC.presence_of_element_located((By.ID, "class_filter"))
+)
+class_filter = Select(driver.find_element(By.ID, "class_filter"))
+all_options = class_filter.options
+print(f"Found {len(all_options)} filter options")
 
-# 📊 Extract data
-# 📊 Extract and clean data
 player_data = []
-for player, price, team in zip(players, prices, teams):
-    full_name = player.text.strip()
-    
-    # Extract event abbreviation using regex (e.g., "First Last (XX)")
-    match = re.match(r"(.*)\s\((\w{2})\)$", full_name)
-    if match:
-        name_only = match.group(1)  # Extracted name without event
-        event_abbr = match.group(2)  # Event abbreviation
-    else:
-        name_only = full_name  # If no event abbreviation found
-        event_abbr = ""
-    
-    team_name = team.text.strip()
 
-    # Parse team_name into year, team, and conference (e.g., "Senior - Stanford - ACC")
-    team_parts = team_name.split(" - ")
-    if len(team_parts) == 3:
-        year = team_parts[0]
-        team_only = team_parts[1]
-        conference = team_parts[2]
-    else:
-        year = ""
-        team_only = team_name
-        conference = ""
+for i in range(len(all_options)):
+    # Re-find the dropdown each iteration (DOM may refresh)
+    class_filter = Select(driver.find_element(By.ID, "class_filter"))
+    option_text = class_filter.options[i].text
+    print(f"Selecting filter option: {option_text}")
+    class_filter.select_by_index(i)
 
-    player_data.append({
-        "Player Name": name_only,
-        "Year": year,
-        "Team": team_only,
-        "Event": event_abbr,
-        "Price": price.text.strip()
-    })
+    # Wait for the page to update after selection
+    time.sleep(1)
+
+    # Scrape player data for this filter option
+    players = driver.find_elements(By.CSS_SELECTOR, "[x-html='player.player_name']")
+    prices = driver.find_elements(By.CSS_SELECTOR, "[x-text*='player.player_price']")
+    teams = driver.find_elements(By.CSS_SELECTOR, "[x-text='player.player_bio']")
+
+    # 📊 Extract and clean data
+    for player, price, team in zip(players, prices, teams):
+        full_name = player.text.strip()
+
+        # Skip empty entries
+        if not full_name:
+            continue
+
+        # Extract event abbreviation using regex (e.g., "First Last (XX)")
+        match = re.match(r"(.*)\s\((\w{2})\)$", full_name)
+        if match:
+            name_only = match.group(1)  # Extracted name without event
+            event_abbr = match.group(2)  # Event abbreviation
+        else:
+            name_only = full_name  # If no event abbreviation found
+            event_abbr = ""
+
+        team_name = team.text.strip()
+
+        # Parse team_name into year, team, and conference (e.g., "Senior - Stanford - ACC")
+        team_parts = team_name.split(" - ")
+        if len(team_parts) == 3:
+            year = team_parts[0]
+            team_only = team_parts[1]
+            conference = team_parts[2]
+        else:
+            year = ""
+            team_only = team_name
+            conference = ""
+
+        player_data.append({
+            "Player Name": name_only,
+            "Year": year,
+            "Team": team_only,
+            "Event": event_abbr,
+            "Price": price.text.strip()
+        })
 
 # 📑 Convert to DataFrame
 df = pd.DataFrame(player_data)
 
 # 🔢 Convert 'Price' column to numeric by removing $ and ,
-df['Price'] = df['Price'].str.replace('$', '', regex=False).str.replace(',', '', regex=False).astype(float)
+df['Price'] = df['Price'].str.replace('$', '', regex=False).str.replace(',', '', regex=False)
+df['Price'] = pd.to_numeric(df['Price'], errors='coerce')
+
+# Remove rows with empty prices
+empty_price_rows = df[df['Price'].isna()]
+if not empty_price_rows.empty:
+    print(f"Dropping {len(empty_price_rows)} rows with empty prices:")
+    print(empty_price_rows[['Player Name', 'Team', 'Event']].to_string())
+df = df.dropna(subset=['Price'])
 
 # Clean player names (remove accents and special characters)
 df['Player Name'] = df['Player Name'].apply(normalize_name)
