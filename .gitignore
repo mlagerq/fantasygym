@@ -26,4 +26,8 @@ Files/scores_long_adjusted.csv
 Files/team_opt_input_linear.csv
 Files/predictions_week_*.csv
 Files/lineup.csv
+Files/lineup_all_boosts.csv
 Files/weekly_scores_adjusted.csv
+
+# Extra folder (analysis artifacts)
+Extra/
