@@ -123,13 +123,15 @@ for i in range(len(all_options)):
     print(f"Selecting filter option: {option_text}")
     class_filter.select_by_index(i)
 
-    # Wait for the page to update after selection
-    time.sleep(1)
+    # Wait for the page to fully load all players
+    time.sleep(3)
 
     # Scrape player data for this filter option
     players = driver.find_elements(By.CSS_SELECTOR, "[x-html='player.player_name']")
     prices = driver.find_elements(By.CSS_SELECTOR, "[x-text*='player.player_price']")
     teams = driver.find_elements(By.CSS_SELECTOR, "[x-text='player.player_bio']")
+
+    print(f"  Found {len(players)} players")
 
     # 📊 Extract and clean data
     for player, price, team in zip(players, prices, teams):
