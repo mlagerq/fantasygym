@@ -123,15 +123,38 @@ for i in range(len(all_options)):
     print(f"Selecting filter option: {option_text}")
     class_filter.select_by_index(i)
 
-    # Wait for the page to fully load all players
-    time.sleep(3)
+    # Wait for filter to be applied - check that player names contain expected event
+    expected_event = option_text
+    for attempt in range(10):  # Max 10 seconds
+        time.sleep(1)
+        players = driver.find_elements(By.CSS_SELECTOR, "[x-html='player.player_name']")
+        if players:
+            sample_names = [p.text.strip() for p in players[:10]]
+            matching = sum(1 for name in sample_names if f"({expected_event})" in name)
+            if matching >= 5:  # At least half should match
+                break
+    else:
+        print(f"  ⚠️  WARNING: Filter may not have applied after 10 seconds")
+
+    # Additional wait for all data to load
+    time.sleep(2)
 
     # Scrape player data for this filter option
     players = driver.find_elements(By.CSS_SELECTOR, "[x-html='player.player_name']")
     prices = driver.find_elements(By.CSS_SELECTOR, "[x-text*='player.player_price']")
     teams = driver.find_elements(By.CSS_SELECTOR, "[x-text='player.player_bio']")
 
-    print(f"  Found {len(players)} players")
+    print(f"  Found {len(players)} players, {len(prices)} prices, {len(teams)} teams")
+    if len(players) != len(prices) or len(players) != len(teams):
+        print(f"  ⚠️  WARNING: Count mismatch! Some data may be lost.")
+
+    # Verify the filter is actually applied by checking first few player names
+    if players:
+        sample_names = [p.text.strip() for p in players[:5]]
+        expected_event = option_text  # The filter option should match event
+        matching = sum(1 for name in sample_names if f"({expected_event})" in name)
+        if matching < 3:
+            print(f"  ⚠️  WARNING: Filter may not be applied! Sample names: {sample_names}")
 
     # 📊 Extract and clean data
     for player, price, team in zip(players, prices, teams):
@@ -194,6 +217,18 @@ df.to_csv("Files/fantasizr_player_pricing.csv", index=False)
 # 🖥️ Display the DataFrame
 print(df.head())
 print(df.tail())
+
+# ✅ Check that every player has 5 rows (VT, UB, BB, FX, AA)
+events_per_player = df.groupby('Player Name')['Event'].nunique()
+incomplete_players = events_per_player[events_per_player < 5]
+if not incomplete_players.empty:
+    print(f"\n⚠️  WARNING: {len(incomplete_players)} players have fewer than 5 events:")
+    for name, count in incomplete_players.items():
+        player_events = df[df['Player Name'] == name]['Event'].tolist()
+        missing = set(['VT', 'UB', 'BB', 'FX', 'AA']) - set(player_events)
+        print(f"  {name}: has {count} events, missing {missing}")
+else:
+    print(f"\n✅ All {len(events_per_player)} players have 5 events")
 
 # 🚪 Close the browser
 driver.quit()
