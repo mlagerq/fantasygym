@@ -4,7 +4,7 @@ cd /Users/megan/Documents/Code\ Projects/fantasygym
 source .venv/bin/activate                                                                          
 python main.py 
 
-Description:
+-------
 
 Problem: Create the highest-scoring team of college gymnasts based on expected score for a given week and athlete cost.
 
