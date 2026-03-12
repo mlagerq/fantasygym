@@ -121,10 +121,20 @@ def run_predictions(scores_csv="Files/scores_long_adjusted.csv", output_csv="Fil
         .sum()
         .rename("prior_competitions")
     )
+    # Sum competed_this_week and competed_this_week_team across all weeks per gymnast/event
+    # These give total gymnast meets and total team meets through the last observed week
+    team_counts = (
+        weekly_full
+        .groupby(["GymnastID", "Event"])["competed_this_week_team"]
+        .sum()
+        .rename("team_competitions")
+    )
     next_week_df = next_week_df.merge(prior_counts, on=["GymnastID", "Event"], how="left")
+    next_week_df = next_week_df.merge(team_counts, on=["GymnastID", "Event"], how="left")
     next_week_df["prior_competitions"].fillna(0, inplace=True)
-    next_week_df["prior_competitions_percent"] = next_week_df["prior_competitions"] / (next_week - 1)
-    next_week_df = next_week_df.drop(columns="prior_competitions")
+    next_week_df["team_competitions"].fillna(next_week - 1, inplace=True)
+    next_week_df["prior_competitions_percent"] = next_week_df["prior_competitions"] / next_week_df["team_competitions"]
+    next_week_df = next_week_df.drop(columns=["prior_competitions", "team_competitions"])
 
     # Competed last week
     last_week = weekly_full[weekly_full["Week"] == weekly_full["Week"].max()]

@@ -121,7 +121,7 @@ def add_best_cheap_gymnast(final_df, full_df, price=1500):
     return updated_df
 
 
-def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files/lineup.csv", target_cost=92500, min_prob=0.7, bye_teams=None, double_header_teams=None, home_teams=None, home_counts=None, week=None):
+def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files/lineup.csv", target_cost=92500, min_prob=0.65, bye_teams=None, double_header_teams=None, home_teams=None, home_counts=None, week=None):
     """
     Optimize team selection based on predictions.
 
@@ -169,17 +169,22 @@ def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files
     df['home_boost'] = 0.0
     df['double_header_boost'] = 0.0
 
-    # Load home/away factor for adjustments
-    homeaway_factor = None
+    # Load home/away factor for adjustments (per-team, with league-wide fallback)
     homeaway_dict = {}
+    league_homeaway_dict = {}
     if home_teams or double_header_teams:
         try:
-            homeaway_factor = pd.read_csv("Files/league_homeaway_factor_2025.csv")
-            homeaway_dict = dict(zip(homeaway_factor['Event'], homeaway_factor['homeaway_factor']))
-            print(f"Loaded home/away factors: {homeaway_dict}")
+            team_factors = pd.read_csv("Files/team_homeaway_factor.csv")
+            homeaway_dict = {(row['Team'], row['Event']): row['homeaway_factor_shrunk'] for _, row in team_factors.iterrows()}
+            print(f"Loaded per-team home/away factors for {team_factors['Team'].nunique()} teams")
         except FileNotFoundError:
-            print("Warning: league_homeaway_factor_2025.csv not found, skipping home adjustment")
-            homeaway_dict = {}
+            print("Warning: team_homeaway_factor.csv not found, skipping per-team home adjustment")
+        try:
+            league_factors = pd.read_csv("Files/league_homeaway_factor.csv")
+            league_homeaway_dict = dict(zip(league_factors['Event'], league_factors['homeaway_factor']))
+            print(f"Loaded league-wide fallback factors: {league_homeaway_dict}")
+        except FileNotFoundError:
+            print("Warning: league_homeaway_factor.csv not found, skipping fallback home adjustment")
 
     # Apply home advantage and double header adjustments
     # Logic:
@@ -191,9 +196,10 @@ def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files
     var_coefficients = None
     individual_variances = None
     individual_maxes = None
+    if home_teams or double_header_teams:
+        individual_maxes = get_individual_maxes()
     if double_header_teams:
         var_coefficients = get_var_coefficients()
-        individual_maxes = get_individual_maxes()
         if week is not None and week >= 7:
             individual_variances = get_individual_variances()
             print(f"Week {week}: Using individual variance for double header boost")
@@ -212,8 +218,10 @@ def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files
         is_home = team in home_teams
         team_home_count = home_counts.get(team, 0)
 
-        # Get home factor for this event
-        home_factor = homeaway_dict.get(event, 0) if homeaway_dict else 0
+        # Get home factor for this event (per-team, fallback to league-wide)
+        home_factor = homeaway_dict.get((team, event), league_homeaway_dict.get(event, 0))
+
+        gymnast_id = df.loc[idx, 'GymnastID']
 
         if is_double_header:
             # Determine home adjustment based on how many meets are at home
@@ -227,9 +235,15 @@ def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files
                 home_adjusted_count += 1
             # else: no home meets, no home adjustment
 
+            # Cap home boost so adjusted score doesn't exceed historical max
+            if individual_maxes is not None:
+                hist_max = individual_maxes.get((gymnast_id, event))
+                if hist_max is not None:
+                    max_home_boost = max(0, hist_max - base_score)
+                    df.loc[idx, 'home_boost'] = min(df.loc[idx, 'home_boost'], max_home_boost)
+
             # Then apply double header boost
             score_after_home = base_score + df.loc[idx, 'home_boost']
-            gymnast_id = df.loc[idx, 'GymnastID']
             boost = simulate_double_header_boost(
                 score_after_home, event, var_coefficients, n_sims=5000,
                 week=week, gymnast_id=gymnast_id, individual_variances=individual_variances,
@@ -240,7 +254,13 @@ def optimize_team(input_csv="Files/team_opt_input_linear.csv", output_csv="Files
 
         elif is_home:
             # Single meet at home: full home adjustment
-            df.loc[idx, 'home_boost'] = home_factor
+            home_boost = home_factor
+            # Cap so adjusted score doesn't exceed historical max
+            if individual_maxes is not None:
+                hist_max = individual_maxes.get((gymnast_id, event))
+                if hist_max is not None:
+                    home_boost = min(home_boost, max(0, hist_max - base_score))
+            df.loc[idx, 'home_boost'] = home_boost
             home_adjusted_count += 1
 
     # Calculate adjusted score as sum of base + boosts

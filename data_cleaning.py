@@ -76,7 +76,7 @@ def clean_data(input_csv="Files/road_to_nationals.csv", week_1_start="2025-12-30
 
     # Transform scores df to have events on separate rows
     # Melt the DataFrame to make one row per event per week per meet
-    df_melted = df.melt(id_vars=['GymnastID', 'HomeAway', 'Week', 'Date', 'MeetID'],
+    df_melted = df.melt(id_vars=['GymnastID', 'Team', 'HomeAway', 'Week', 'Date', 'MeetID'],
                          value_vars=['VT', 'UB', 'BB', 'FX', 'AA'],
                          var_name='Event',
                          value_name='Score')
@@ -85,15 +85,23 @@ def clean_data(input_csv="Files/road_to_nationals.csv", week_1_start="2025-12-30
     df_melted.to_csv("Files/road_to_nationals_long.csv", index=False)
     print(f"Saved Files/road_to_nationals_long.csv with {len(df_melted)} rows")
 
-    # Load the league homeaway factor from saved 2025 calculation
-    league_homeaway_factor = pd.read_csv("Files/league_homeaway_factor_2025.csv")
+    # Load per-team homeaway factors, with league-wide fallback
+    team_homeaway_factor = pd.read_csv("Files/team_homeaway_factor.csv")
+    league_homeaway_factor = pd.read_csv("Files/league_homeaway_factor.csv")
 
     # Apply homeaway adjustment to scores
     df_adj = df_melted.dropna().copy()
     df_adj = df_adj.merge(
-        league_homeaway_factor[['Event', 'homeaway_factor']],
-        on='Event',
+        team_homeaway_factor[['Team', 'Event', 'homeaway_factor_shrunk']],
+        on=['Team', 'Event'],
         how='left'
+    )
+
+    # Fill missing team factors with league-wide fallback
+    league_dict = dict(zip(league_homeaway_factor['Event'], league_homeaway_factor['homeaway_factor']))
+    df_adj['homeaway_factor'] = df_adj.apply(
+        lambda row: league_dict.get(row['Event'], 0) if pd.isna(row['homeaway_factor_shrunk']) else row['homeaway_factor_shrunk'],
+        axis=1
     )
 
     # Subtract homeaway factor from home meet scores
@@ -110,86 +118,189 @@ def clean_data(input_csv="Files/road_to_nationals.csv", week_1_start="2025-12-30
 
 
 # ==============================================================================
-# ONE-TIME SETUP FUNCTIONS (run once to generate league_homeaway_factor_2025.csv)
+# ONE-TIME SETUP FUNCTIONS (run once to generate homeaway factor CSVs)
 # ==============================================================================
 
-def calculate_homeaway_factor(input_csv="2025 files/road_to_nationals_long.csv", output_csv="Files/league_homeaway_factor_2025.csv"):
+def _raw_to_long(filepath, year):
+    """Convert a raw scraped scores CSV to long format with Team and Year columns.
+    Excludes AA — it is derived as VT+UB+BB+FX in _add_aa_factor."""
+    df = pd.read_csv(filepath)
+    df_long = df.melt(
+        id_vars=['GymnastID', 'Team', 'HomeAway'],
+        value_vars=['VT', 'UB', 'BB', 'FX'],
+        var_name='Event',
+        value_name='Score'
+    )
+    df_long['Year'] = year
+    return df_long.dropna(subset=['Score'])
+
+
+def _compute_homeaway_factors(df, groupby_cols):
     """
-    Calculate league-wide home/away factor from historical data.
-    Only needs to be run once per season with prior year's data.
+    Given a long-format scores dataframe, compute weighted home/away factors.
+    groupby_cols: columns to group by for the output factor (e.g. ['Event'] or ['Team', 'Event'])
+    Returns a DataFrame with groupby_cols + ['homeaway_factor'].
     """
-    df_2025 = pd.read_csv(input_csv)
-    df_2025 = df_2025.dropna()
-
-    # Handle weeks with more than one meet for the same gymnast
-    df_2025_agg = df_2025.groupby(['GymnastID','Week','Event']).agg(
-        Score=pd.NamedAgg(column='Score', aggfunc='mean'),
-        Home_Percent=pd.NamedAgg(column='HomeAway', aggfunc=(lambda x: sum(x == 'H')/sum(x == x))),
-        Week_Weight=pd.NamedAgg(column='Score', aggfunc='count')
+    # Per-gymnast home/away averages within each group
+    gymnast_stats = (
+        df.groupby(groupby_cols + ['GymnastID', 'HomeAway'])['Score']
+        .agg(avg='mean', count='count')
+        .reset_index()
     )
 
-    # Pivot to create week columns for scores
-    df_2025_pivot = df_2025_agg.pivot_table(
-        index=['GymnastID', 'Event'],
-        columns='Week',
-        values=['Score','Home_Percent','Week_Weight'],
-        aggfunc='first'
+    gymnast_pivot = gymnast_stats.pivot_table(
+        index=groupby_cols + ['GymnastID'],
+        columns='HomeAway',
+        values=['avg', 'count']
     )
-    df_2025_pivot.columns = [col[0] + "_" + str(col[1]) for col in df_2025_pivot.columns.values]
+    gymnast_pivot.columns = [f"{v}_{k}" for v, k in gymnast_pivot.columns]
+    gymnast_pivot = gymnast_pivot.reset_index()
 
-    # Identify score and homeaway columns
-    score_cols_2025 = [col for col in df_2025_pivot.columns if 'Score' in col]
-    homeaway_cols_2025 = [col for col in df_2025_pivot.columns if 'Home' in col]
-
-    # Calculate average home and away scores per gymnast per event (row-wise)
-    df_2025_pivot['home_avg'] = df_2025_pivot.apply(
-        lambda row: row[[s for s, h in zip(score_cols_2025, homeaway_cols_2025) if row[h] == 1]].mean(),
-        axis=1
-    )
-    df_2025_pivot['away_avg'] = df_2025_pivot.apply(
-        lambda row: row[[s for s, h in zip(score_cols_2025, homeaway_cols_2025) if row[h] == 0]].mean(),
-        axis=1
+    # Only keep gymnasts with both home and away scores
+    gymnast_pivot = gymnast_pivot.dropna(subset=['avg_H', 'avg_A'])
+    gymnast_pivot['diff'] = gymnast_pivot['avg_H'] - gymnast_pivot['avg_A']
+    # Harmonic mean weight — penalises imbalance less aggressively than min()
+    gymnast_pivot['weight'] = (
+        2 * gymnast_pivot['count_H'] * gymnast_pivot['count_A']
+        / (gymnast_pivot['count_H'] + gymnast_pivot['count_A'])
     )
 
-    # Count home and away competitions for weighted average
-    df_2025_pivot['home_count'] = df_2025_pivot.apply(
-        lambda row: sum((row[h] == 1) and (pd.notna(row[s])) for s, h in zip(score_cols_2025, homeaway_cols_2025)),
-        axis=1
-    )
-    df_2025_pivot['away_count'] = df_2025_pivot.apply(
-        lambda row: sum((row[h] == 0) and (pd.notna(row[s])) for s, h in zip(score_cols_2025, homeaway_cols_2025)),
-        axis=1
-    )
+    # Weighted factor + effective sample size + within-group variance of diffs
+    def group_stats(g):
+        total_weight = g['weight'].sum()
+        if total_weight == 0:
+            return None
+        factor = (g['diff'] * g['weight']).sum() / total_weight
+        # Weighted variance of gymnast diffs (estimation noise)
+        var = (g['weight'] * (g['diff'] - factor) ** 2).sum() / total_weight
+        return pd.Series({'homeaway_factor': factor, 'total_weight': total_weight, 'within_var': var})
 
-    # Calculate difference and weighting factor
-    df_2025_pivot['home_away_diff'] = df_2025_pivot['home_avg'] - df_2025_pivot['away_avg']
-    df_2025_pivot['weight'] = df_2025_pivot[['home_count', 'away_count']].min(axis=1)
-
-    # Group by event to calculate weighted league-wide average difference
-    league_homeaway_factor = (
-        df_2025_pivot.groupby('Event')
-        .apply(lambda x: (
-            (x['home_away_diff'] * x['weight']).sum() / x['weight'].sum()
-            if x['weight'].sum() > 0 else None
-        ), include_groups=False)
-        .reset_index(name='homeaway_factor')
+    factors = (
+        gymnast_pivot.groupby(groupby_cols)
+        .apply(group_stats, include_groups=False)
+        .reset_index()
         .dropna(subset=['homeaway_factor'])
     )
+    factors['homeaway_factor'] = factors['homeaway_factor'].clip(lower=0)
+    return factors
 
-    # Set negative factors to zero
-    league_homeaway_factor['homeaway_factor'] = league_homeaway_factor['homeaway_factor'].clip(lower=0)
 
-    # Add AA factor as sum of VT, UB, BB, FX factors
-    aa_factor = league_homeaway_factor[league_homeaway_factor['Event'].isin(['VT', 'UB', 'BB', 'FX'])]['homeaway_factor'].sum()
-    league_homeaway_factor = pd.concat([
-        league_homeaway_factor,
-        pd.DataFrame({'Event': ['AA'], 'homeaway_factor': [aa_factor]})
-    ], ignore_index=True)
+def _shrink_towards_league(team_factors, league_factors, groupby_cols):
+    """
+    Empirical Bayes shrinkage of per-team factors towards the league mean.
 
-    league_homeaway_factor.to_csv(output_csv, index=False)
-    print(f"Saved {output_csv}")
+    For each team+event:
+        shrunk = league_mean + (1 - B) * (team_factor - league_mean)
+        B = sigma2_i / (sigma2_i + tau2)
 
-    return league_homeaway_factor
+    where:
+        sigma2_i = within-team estimation variance = within_var / total_weight
+        tau2     = between-team variance (estimated from data, floored at 0)
+    """
+    other_cols = [c for c in groupby_cols if c != 'Event']
+    league_dict = dict(zip(league_factors['Event'], league_factors['homeaway_factor']))
+
+    result_rows = []
+    for event, group in team_factors.groupby('Event'):
+        league_mean = league_dict.get(event, 0)
+
+        # Per-team estimation variance
+        group = group.copy()
+        group['sigma2'] = group['within_var'] / group['total_weight']
+
+        # Between-team variance: observed variance of team factors minus mean estimation variance
+        observed_var = group['homeaway_factor'].var(ddof=1) if len(group) > 1 else 0
+        tau2 = max(0, observed_var - group['sigma2'].mean())
+
+        # Shrinkage: B=1 → full shrinkage to league mean; B=0 → keep team estimate
+        if tau2 == 0:
+            group['homeaway_factor_shrunk'] = league_mean
+        else:
+            group['B'] = group['sigma2'] / (group['sigma2'] + tau2)
+            group['homeaway_factor_shrunk'] = (
+                league_mean + (1 - group['B']) * (group['homeaway_factor'] - league_mean)
+            )
+
+        group['homeaway_factor_shrunk'] = group['homeaway_factor_shrunk'].clip(lower=0)
+        result_rows.append(group)
+
+    shrunk = pd.concat(result_rows, ignore_index=True)
+    keep_cols = groupby_cols + ['homeaway_factor', 'homeaway_factor_shrunk', 'total_weight']
+    return shrunk[keep_cols]
+
+
+def _add_aa_factor(factors, groupby_cols):
+    """Add AA row(s) as the sum of VT+UB+BB+FX factors (for all numeric columns)."""
+    event_factors = factors[factors['Event'].isin(['VT', 'UB', 'BB', 'FX'])]
+    other_cols = [c for c in groupby_cols if c != 'Event']
+    numeric_cols = [c for c in factors.columns if c not in groupby_cols]
+    if other_cols:
+        aa = event_factors.groupby(other_cols)[numeric_cols].sum().reset_index()
+    else:
+        aa = pd.DataFrame({c: [event_factors[c].sum()] for c in numeric_cols})
+    aa['Event'] = 'AA'
+    return pd.concat([factors, aa], ignore_index=True)
+
+
+def calculate_homeaway_factor(
+    year_csvs=None,
+    output_team_csv="Files/team_homeaway_factor.csv",
+    output_league_csv="Files/league_homeaway_factor.csv",
+    output_yearly_csv="Files/yearly_homeaway_factor.csv"
+):
+    """
+    Calculate home/away factors from 2022-2025 historical data.
+
+    Args:
+        year_csvs: dict of {year: filepath} for raw scraped CSVs.
+                   Defaults to the standard historical + 2025 files.
+        output_team_csv: per-team/event factor output path
+        output_league_csv: league-wide/event factor output path (fallback)
+        output_yearly_csv: per-year/event breakdown output path
+    """
+    if year_csvs is None:
+        year_csvs = {
+            2022: "Historical/scores_2022.csv",
+            2023: "Historical/scores_2023.csv",
+            2024: "Historical/scores_2024.csv",
+            2025: "2025 files/road_to_nationals.csv",
+        }
+
+    # Load and combine all years
+    frames = []
+    for year, path in year_csvs.items():
+        try:
+            frames.append(_raw_to_long(path, year))
+            print(f"Loaded {year}: {path}")
+        except FileNotFoundError:
+            print(f"Warning: {path} not found, skipping {year}")
+    df = pd.concat(frames, ignore_index=True)
+    print(f"Combined dataset: {len(df)} rows across {df['Year'].nunique()} years")
+
+    # League-wide/event factors (needed for shrinkage target)
+    league_factors = _compute_homeaway_factors(df, ['Event'])
+    league_factors = _add_aa_factor(league_factors, ['Event'])
+    league_factors.to_csv(output_league_csv, index=False)
+    print(f"Saved {output_league_csv}")
+    print(f"  League-wide factors:\n{league_factors[['Event','homeaway_factor']].to_string(index=False)}")
+
+    # Per-team/event factors with empirical Bayes shrinkage towards league mean
+    team_factors_raw = _compute_homeaway_factors(df, ['Team', 'Event'])
+    team_factors = _shrink_towards_league(team_factors_raw, league_factors, ['Team', 'Event'])
+    team_factors = _add_aa_factor(team_factors, ['Team', 'Event'])
+    # homeaway_factor_shrunk is the operative value used downstream
+    team_factors.to_csv(output_team_csv, index=False)
+    print(f"Saved {output_team_csv} ({len(team_factors)} rows)")
+
+    # Per-year/event breakdown
+    yearly_factors = _compute_homeaway_factors(df, ['Year', 'Event'])
+    yearly_factors = _add_aa_factor(yearly_factors, ['Year', 'Event'])
+    yearly_factors = yearly_factors.sort_values(['Event', 'Year'])
+    yearly_factors.to_csv(output_yearly_csv, index=False)
+    print(f"Saved {output_yearly_csv}")
+    print(f"  Yearly breakdown:\n{yearly_factors[['Year','Event','homeaway_factor']].to_string(index=False)}")
+
+    return team_factors, league_factors, yearly_factors
 
 
 if __name__ == "__main__":

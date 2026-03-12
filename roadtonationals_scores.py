@@ -10,13 +10,14 @@ import pandas as pd
 import re
 
 #%%
-def scrape_scores(fantasizr_csv="Files/fantasizr_player_pricing.csv", output_csv="Files/road_to_nationals.csv"):
+def scrape_scores(fantasizr_csv="Files/fantasizr_player_pricing.csv", output_csv="Files/road_to_nationals.csv", year=2026):
     """
     Scrape gymnast scores from Road to Nationals website.
 
     Args:
         fantasizr_csv: Path to Fantasizr pricing CSV (used to filter teams)
         output_csv: Path to save scraped scores
+        year: Season year to scrape (default 2026)
 
     Returns:
         DataFrame with scraped scores
@@ -29,13 +30,18 @@ def scrape_scores(fantasizr_csv="Files/fantasizr_player_pricing.csv", output_csv
 
     try:
         # Open the website to any team and gymnast (but not the first team)
-        url = "https://roadtonationals.com/results/teams/gymnast/2026/3/32927"
+        url = f"https://roadtonationals.com/results/teams/gymnast/{year}/3/32927"
         driver.get(url)
 
-        # Wait for the team dropdown to load
-        WebDriverWait(driver, 10).until(
-            EC.presence_of_element_located((By.CLASS_NAME, "rt-td"))
-        )
+        # Wait for the team dropdown to load with options
+        def team_dropdown_has_options(d):
+            try:
+                dropdown = Select(d.find_element(By.ID, "team_filter"))
+                return len([o for o in dropdown.options if o.get_attribute("value")]) > 0
+            except:
+                return False
+
+        WebDriverWait(driver, 20).until(team_dropdown_has_options)
 
         # Find the team dropdown menu
         team_dropdown = Select(driver.find_element(By.ID, "team_filter"))
