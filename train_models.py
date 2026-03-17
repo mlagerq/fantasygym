@@ -18,29 +18,34 @@ def compute_rolling_features(group):
 
 
 def create_weekly_format(df):
-    """Convert scores dataframe to weekly format with all gymnast/event/week combinations."""
+    """Convert scores dataframe to weekly format with all gymnast/event/week combinations.
+    If a Year column is present, the grid is created independently per year."""
+    if 'Year' in df.columns:
+        frames = [_create_weekly_format_single(year_df).assign(Year=year)
+                  for year, year_df in df.groupby('Year')]
+        return pd.concat(frames, ignore_index=True)
+    return _create_weekly_format_single(df)
+
+
+def _create_weekly_format_single(df):
+    """Create weekly format for a single season."""
     weekly_counts = (
         df
         .groupby(["GymnastID", "Event", "Week"])
         .size()
         .reset_index(name="n_competes")
     )
-
-    # All rows will have competed_this_week = 1 if they competed at least once in a week
     weekly_counts["competed_this_week"] = (weekly_counts["n_competes"] > 0).astype(int)
 
-    # Get all possible weeks
     gymnasts = df["GymnastID"].unique()
     events = df["Event"].unique()
     all_weeks = np.arange(1, df["Week"].max() + 1)
 
-    # Create full MultiIndex for all combinations
     full_index = pd.MultiIndex.from_product(
         [gymnasts, events, all_weeks],
         names=["GymnastID", "Event", "Week"]
     )
 
-    # Reindex weekly counts to this full index, add 0 if they did not compete
     weekly_full = (
         weekly_counts
         .set_index(["GymnastID", "Event", "Week"])
@@ -48,15 +53,18 @@ def create_weekly_format(df):
         .reset_index()
     )
 
-    # Define competed_this_week
     weekly_full["competed_this_week"] = (weekly_full["n_competes"] > 0).astype(int)
     weekly_full = weekly_full.drop(columns="n_competes")
-
     return weekly_full
 
 
 def compute_compete_features(weekly_full, player_info):
-    """Compute features for likelihood to compete model."""
+    """Compute features for likelihood to compete model.
+    If a Year column is present, cumulative counts reset each year."""
+    multi_year = 'Year' in weekly_full.columns
+    gymnast_group = ["GymnastID", "Event", "Year"] if multi_year else ["GymnastID", "Event"]
+    team_group    = ["Team", "Week", "Year"]        if multi_year else ["Team", "Week"]
+
     # Join player info
     weekly_full = weekly_full.join(
         player_info.set_index('GymnastID'),
@@ -66,23 +74,23 @@ def compute_compete_features(weekly_full, player_info):
     # Which teams competed each week
     weekly_team = (
         weekly_full
-        .groupby(['Team', 'Week'])['competed_this_week']
+        .groupby(team_group)['competed_this_week']
         .max()
         .reset_index()
     )
 
     weekly_full = weekly_full.join(
-        weekly_team.set_index(['Team', 'Week']),
-        on=['Team', 'Week'],
+        weekly_team.set_index(team_group),
+        on=team_group,
         rsuffix='_team'
     )
 
     # Compute prior_competitions based on competed_this_week
-    weekly_full = weekly_full.sort_values(["GymnastID", "Event", "Week"])
+    weekly_full = weekly_full.sort_values(gymnast_group + ["Week"])
 
     weekly_full["prior_competitions_temp"] = (
         weekly_full
-        .groupby(["GymnastID", "Event"])["competed_this_week"]
+        .groupby(gymnast_group)["competed_this_week"]
         .cumsum()
         .fillna(0)
         .astype(int)
@@ -90,7 +98,7 @@ def compute_compete_features(weekly_full, player_info):
 
     weekly_full["team_competitions_temp"] = (
         weekly_full
-        .groupby(["GymnastID", "Event"])["competed_this_week_team"]
+        .groupby(gymnast_group)["competed_this_week_team"]
         .cumsum()
         .fillna(0)
         .astype(int)
@@ -106,16 +114,70 @@ def compute_compete_features(weekly_full, player_info):
     )
     weekly_full['prior_competitions_percent'] = weekly_full['prior_competitions_percent'].fillna(0.0)
 
-    # Define competed_last_week
+    # Define competed_last_week (0 at the start of each season)
     weekly_full["competed_last_week"] = (
         weekly_full
-        .groupby(["GymnastID", "Event"])["competed_this_week"]
+        .groupby(gymnast_group)["competed_this_week"]
         .shift(1)
         .fillna(0)
         .astype(int)
     )
 
     return weekly_full
+
+
+def compute_prior_season_features(df, target_year):
+    """
+    Compute career_high, prev_season_avg, and has_prior_season_data for each
+    GymnastID+Event combination, using data from years prior to target_year.
+
+    Freshmen (no prior data) are imputed with per-event league means and
+    has_prior_season_data=0.
+
+    Args:
+        df: Full multi-year scores DataFrame with Year column (all events, no AA filter needed)
+        target_year: The season being predicted/trained
+
+    Returns:
+        DataFrame with columns: GymnastID, Event, career_high, prev_season_avg, has_prior_season_data
+    """
+    prior = df[(df["Year"] < target_year) & (df["Event"] != "AA")].copy()
+
+    # Career high: best score ever before target_year
+    career_high = (
+        prior.groupby(["GymnastID", "Event"])["score_adj"]
+        .max()
+        .rename("career_high")
+        .reset_index()
+    )
+
+    # Previous season average: mean score in target_year - 1
+    prev_year_data = prior[prior["Year"] == target_year - 1]
+    prev_season_avg = (
+        prev_year_data.groupby(["GymnastID", "Event"])["score_adj"]
+        .mean()
+        .rename("prev_season_avg")
+        .reset_index()
+    )
+
+    # Merge career high and prev season avg
+    features = career_high.merge(prev_season_avg, on=["GymnastID", "Event"], how="outer")
+    features["has_prior_season_data"] = features["career_high"].notna().astype(int)
+
+    # League mean per event (for imputation of freshmen)
+    league_means = (
+        prior.groupby("Event")["score_adj"]
+        .mean()
+        .rename("league_mean")
+        .reset_index()
+    )
+
+    features = features.merge(league_means, on="Event", how="left")
+    features["career_high"] = features["career_high"].fillna(features["league_mean"])
+    features["prev_season_avg"] = features["prev_season_avg"].fillna(features["league_mean"])
+    features = features.drop(columns=["league_mean"])
+
+    return features
 
 
 # ==============================================================================
@@ -131,26 +193,55 @@ if __name__ == "__main__":
     # Train Score Prediction Model
     # =========================================================================
 
-    # Load the 2025 dataset for training
-    df = pd.read_csv("2025 files/scores_long_adjusted.csv")
+    # Load combined 2022-2025 dataset for training
+    df_all_years = pd.read_csv("Historical/scores_all_years_adjusted.csv")
+    df = df_all_years.copy()
 
     # One-Hot Encode the 'Event' column
     event_dummies = pd.get_dummies(df['Event'], prefix='Event', dtype=int)
     df = df.join(event_dummies)
 
-    # Sort by GymnastID, Event, and Date to ensure chronological order
-    df = df.sort_values(by=["GymnastID", "Event", "Date"])
+    # Exclude post-season weeks (regionals/nationals) — different dynamics, not predicted
+    df = df[df['Week'] <= 12]
 
-    # Apply function grouped by Gymnast and Event
-    df = df.groupby(["GymnastID", "Event"], group_keys=False).apply(compute_rolling_features)
+    # Exclude AA — predicted as sum of 4 events, not directly modelled
+    df = df[df['Event'] != 'AA']
+
+    # Compute prior season features (career_high, prev_season_avg, has_prior_season_data)
+    # For each year in training data, use all data from prior years.
+    # Must be done before the groupby.apply since include_groups=False drops the Event column.
+    prior_season_frames = []
+    for yr in sorted(df['Year'].unique()):
+        psf = compute_prior_season_features(df_all_years, yr)
+        psf['Year'] = yr
+        prior_season_frames.append(psf)
+    prior_season_df = pd.concat(prior_season_frames, ignore_index=True)
+    df = df.merge(prior_season_df, on=['GymnastID', 'Event', 'Year'], how='left')
+
+    # Impute any remaining NaN (e.g. 2022 has no prior years; use per-event mean from non-NaN rows)
+    for col in ['career_high', 'prev_season_avg']:
+        event_means = df.groupby('Event')[col].transform('mean')
+        df[col] = df[col].fillna(event_means)
+    df['has_prior_season_data'] = df['has_prior_season_data'].fillna(0).astype(int)
+
+    # Sort by GymnastID, Event, Year, and Date to ensure chronological order
+    df = df.sort_values(by=["GymnastID", "Event", "Year", "Date"])
+
+    # Apply rolling features grouped by Gymnast+Season and Event so they reset each season.
+    # Save Year first since include_groups=False drops groupby keys from output.
+    df['GymnastSeason'] = df['GymnastID'].astype(str) + '_' + df['Year'].astype(str)
+    year_index = df['Year']
+    df = df.groupby(["GymnastSeason", "Event"], group_keys=False).apply(compute_rolling_features, include_groups=False)
+    df['Year'] = year_index
 
     # Require at least 2 prior scores
     df = df.dropna(subset=["score_2"])
     df.to_csv("linear_features.csv", index=False)
 
     # Define features and target
-    features = ['Week','high_score','average','score_1','score_2',
-                'Event_BB','Event_FX','Event_UB','Event_VT']
+    features = ['Week','Year','high_score','average','score_1','score_2',
+                'Event_BB','Event_FX','Event_UB','Event_VT',
+                'career_high','prev_season_avg','has_prior_season_data']
     target = 'score_adj'
 
     # Evaluate with rolling origin
@@ -190,8 +281,9 @@ if __name__ == "__main__":
     # Train Likelihood to Compete Model
     # =========================================================================
 
-    df = pd.read_csv("2025 files/scores_long_adjusted.csv")
-    info = pd.read_csv("2025 files/player_info.csv")
+    df = pd.read_csv("Historical/scores_all_years_adjusted.csv")
+    df = df[df['Week'] <= 12]
+    info = pd.read_csv("Files/player_info.csv")
 
     weekly_full = create_weekly_format(df)
     weekly_full = compute_compete_features(weekly_full, info)
