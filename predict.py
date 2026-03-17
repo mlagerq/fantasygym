@@ -5,7 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.preprocessing import OneHotEncoder
 import joblib
-from train_models import create_weekly_format, compute_compete_features, compute_rolling_features
+from train_models import create_weekly_format, compute_compete_features, compute_rolling_features, compute_prior_season_features
 
 
 def run_predictions(scores_csv="Files/scores_long_adjusted.csv", output_csv="Files/team_opt_input_linear.csv", target_week=None):
@@ -25,8 +25,9 @@ def run_predictions(scores_csv="Files/scores_long_adjusted.csv", output_csv="Fil
     compete_model = joblib.load("likelihood_to_compete.joblib")
 
     # Define features for score prediction
-    features = ['Week','high_score','average','score_1','score_2',
-                'Event_BB','Event_FX','Event_UB','Event_VT']
+    features = ['Week','Year','high_score','average','score_1','score_2',
+                'Event_BB','Event_FX','Event_UB','Event_VT',
+                'career_high','prev_season_avg','has_prior_season_data']
     log_features = ['Week', 'prior_competitions_percent', 'competed_last_week']
 
     # =========================================================================
@@ -35,6 +36,11 @@ def run_predictions(scores_csv="Files/scores_long_adjusted.csv", output_csv="Fil
 
     # Load current season data
     df_2026 = pd.read_csv(scores_csv)
+
+    # Infer season year from the latest date in the data (e.g. 2026 for the 2026 season)
+    df_2026['Date'] = pd.to_datetime(df_2026['Date'], errors='coerce')
+    season_year = df_2026['Date'].dt.year.max()
+    df_2026['Year'] = season_year
 
     # Filter to only weeks before target week (if specified)
     if target_week is not None:
@@ -47,6 +53,7 @@ def run_predictions(scores_csv="Files/scores_long_adjusted.csv", output_csv="Fil
     gymnast_events = df_2026[["GymnastID", "Event"]].drop_duplicates()
     next_week_rows = gymnast_events.copy()
     next_week_rows["Week"] = next_week
+    next_week_rows["Year"] = season_year
 
     # Append blank next week rows to the data
     df_2026 = pd.concat([df_2026, next_week_rows], ignore_index=True)
@@ -55,9 +62,27 @@ def run_predictions(scores_csv="Files/scores_long_adjusted.csv", output_csv="Fil
     event_dummies_2026 = pd.get_dummies(df_2026['Event'], prefix='Event', dtype=int)
     df_2026 = df_2026.join(event_dummies_2026)
 
+    # Compute prior season features before apply (Event column is dropped by include_groups=False)
+    df_historical = pd.read_csv("Historical/scores_all_years_adjusted.csv")
+    prior_season = compute_prior_season_features(df_historical, season_year)
+    df_2026 = df_2026.merge(prior_season, on=["GymnastID", "Event"], how="left")
+
+    # Impute any still-missing prior season features (gymnasts not in historical data)
+    event_means = df_historical[df_historical["Event"] != "AA"].groupby("Event")["score_adj"].mean()
+    for col in ["career_high", "prev_season_avg"]:
+        mask = df_2026[col].isna()
+        if mask.any():
+            df_2026.loc[mask, col] = df_2026.loc[mask, "Event"].map(event_means)
+    df_2026["has_prior_season_data"] = df_2026["has_prior_season_data"].fillna(0).astype(int)
+
     # Sort and compute rolling features (next week rows will get features from prior weeks)
+    # Save GymnastID and Event — include_groups=False drops groupby keys from apply output
+    gymnast_index = df_2026["GymnastID"]
+    event_index = df_2026["Event"]
     df_2026 = df_2026.sort_values(by=["GymnastID", "Event", "Week"])
-    df_2026 = df_2026.groupby(["GymnastID", "Event"], group_keys=False).apply(compute_rolling_features)
+    df_2026 = df_2026.groupby(["GymnastID", "Event"], group_keys=False).apply(compute_rolling_features, include_groups=False)
+    df_2026["GymnastID"] = gymnast_index
+    df_2026["Event"] = event_index
 
     # Extract next week rows and filter to those with 2+ prior scores
     pred_df_2026 = df_2026[df_2026["Week"] == next_week].copy()
@@ -65,6 +90,7 @@ def run_predictions(scores_csv="Files/scores_long_adjusted.csv", output_csv="Fil
 
     # Predict only for individual events (not AA)
     pred_df_2026 = pred_df_2026[pred_df_2026["Event"] != "AA"]
+
     X_2026 = pred_df_2026[features]
     pred_df_2026["pred_score"] = score_model.predict(X_2026)
 
